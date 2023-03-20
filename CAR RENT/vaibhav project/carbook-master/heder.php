@@ -49,8 +49,8 @@
           <li class="nav-item"><a href="blog" class="nav-link">Blog</a></li>
           <li class="nav-item"><a href="contact" class="nav-link">Contact</a></li>
 
-           <li class="nav-item"><a href="signup" class="nav-link">SIGN UP</a></li> 
-           <li Class="nav-item"><a href="login" class="nav-link">Login</a></li> 
+           <!-- <li class="nav-item"><a href="signup" class="nav-link">SIGN UP</a></li>  -->
+            <li Class="nav-item"><a href="login" class="nav-link">Login</a></li>  
 
         </ul>
 
@@ -60,6 +60,6 @@
 
       <!-- </ul> -->
     </div>
-    </div>
+    <!-- </div> -->
   </nav>
   <!-- END nav -->

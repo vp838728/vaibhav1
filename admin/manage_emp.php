@@ -24,21 +24,35 @@ include_once('header.php');
                                 <table class="table table-striped table-bordered table-hover" id="dataTables-example">
                                     <thead>
                                         <tr>
-                                            <th>Rendering engine</th>
-                                            <th>Browser</th>
-                                            <th>Platform(s)</th>
-                                            <th>Engine version</th>
-                                            <th>CSS grade</th>
+                                            <th>employee_id</th>
+                                            <th> name</th>
+                                            <th>mobile</th>
+                                            <th>email</th>
+                                            <th>address</th>
+                                            <th>username</th>
+                                            <th>created</th>
+                                            <th>updated</th>
                                         </tr>
                                     </thead>
                                     <tbody>
+                                        <?php
+                                        if(!empty($customer_arr))
+                                        {
+                                            foreach($customer_arr as $data)
+                                            {
+                                        ?>
                                         <tr class="odd gradeX">
-                                            <td>Trident</td>
-                                            <td>Internet Explorer 4.0</td>
-                                            <td>Win 95+</td>
-                                            <td class="center">4</td>
-                                            <td class="center">X</td>
+                                            <td><?php echo $data->employee_id;?></td>
+                                            <td><?php echo $data->name;?></td>
+                                            <td><?php echo $data->mobile;?></td>
+                                            <td><?php echo $data->email;?></td>
+                                            <td><?php echo $data->address;?></td>
+                                            <td><?php echo $data->username;?></td>
                                         </tr>
+                                        <?php
+                                            }
+                                        }
+                                        ?>
                                         
                                     </tbody>
                                 </table>

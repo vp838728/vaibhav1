@@ -1,5 +1,7 @@
+
 <?php
-class control
+include_once('model.php');   //step1 : load model page
+class control extends model
 {
 	function __construct()
 	{
