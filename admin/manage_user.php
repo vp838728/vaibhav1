@@ -24,23 +24,41 @@ include_once('header.php');
                                 <table class="table table-striped table-bordered table-hover" id="dataTables-example">
                                     <thead>
                                         <tr>
-                                            <th>User ID</th>
-                                            <th>User Name</th>
+                                            <th>user_id</th>
+                                            <th> name</th>
+                                            <th>email</th>
+                                            <th>username</th>
+                                            <th>created_dt</th>
+                                            <th>updated_dt</th>
                                             <th>Action</th>
                                         </tr>
                                     </thead>
+                                    
                                     <tbody>
+                                        <?php
+                                        if(!empty($user_arr))
+                                        {
+                                            foreach($user_arr as $data)
+                                            {
+                                        ?>
                                         <tr class="odd gradeX">
-                                            <td>1</td>
-                                            <td>Raj</td>
+                                            <td><?php echo $data->user_id;?></td>
+                                            <td><?php echo $data->name;?></td>
+                                            <td><?php echo $data->email;?></td>
+                                            <td><?php echo $data->username;?></td>
+                                            <td><?php echo $data->created_dt;?></td>
+                                            <td><?php echo $data->updated_dt;?></td>
+                                            
                                             <td>
 												<a href="#" class="btn btn-primary">Edit</a>
 												<a href="#" class="btn btn-danger">Delete</a>
-												<a href="#" class="btn btn-success">Status</a>
+												<a href="#" class="btn btn-success"><?php echo $data->status;?></a>
 											</td>
-                                        
-                                            
                                         </tr>
+                                        <?php
+                                            }
+                                        }
+                                        ?>
                                         
                                     </tbody>
                                 </table>

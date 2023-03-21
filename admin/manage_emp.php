@@ -32,13 +32,14 @@ include_once('header.php');
                                             <th>username</th>
                                             <th>created</th>
                                             <th>updated</th>
+                                            <th>action</th>
                                         </tr>
                                     </thead>
                                     <tbody>
                                         <?php
-                                        if(!empty($customer_arr))
+                                        if(!empty($emp_arr))
                                         {
-                                            foreach($customer_arr as $data)
+                                            foreach($emp_arr as $data)
                                             {
                                         ?>
                                         <tr class="odd gradeX">
@@ -48,6 +49,14 @@ include_once('header.php');
                                             <td><?php echo $data->email;?></td>
                                             <td><?php echo $data->address;?></td>
                                             <td><?php echo $data->username;?></td>
+                                            <td><?php echo $data->created;?></td>
+                                            <td><?php echo $data->updated;?></td>
+                                            
+                                            <td>
+												<a href="#" class="btn btn-primary">Edit</a>
+												<a href="#" class="btn btn-danger">Delete</a>
+												<a href="#" class="btn btn-success"><?php echo $data->status;?></a>
+											</td>
                                         </tr>
                                         <?php
                                             }
