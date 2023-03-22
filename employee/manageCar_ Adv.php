@@ -36,37 +36,49 @@ include_once('header.php');
                                             <th>driver</th>
                                             <th>charge</th>
                                             <th>terms_conditon</th>
-                                            <th>CREATEd</th>
                                             <th>updated</th>
+                                            <th>deleated</th>
+                                            <th>action</th>
                                             
                                         
                                         </tr>
                                     </thead>
                                     <tbody>
+                                        <?php
+                                        if(!empty($caradv_arr))
+                                        {
+                                            foreach ($caradv_arr as $data)
+                                            {
+                                                ?>
+                                            
+                                        
                                         <tr class="odd gradeX">
-                                            <td>1</td>
-                                            <td>1</td>
-                                            <td>1</td>
-                                            <td>vaibhav</td>
-                                            <td>swedan</td>
-                                            <td>GJ-1</td>
-                                            <td>1234567890</td>
-                                            <td>rajkot</td>
-                                            <td>10000</td>
-                                            <td>vicky</td>
-                                            <td>12000</td>
-                                            <td>yes i accept condition</td>
-                                            <td>12:00</td>
-                                            <td>1:00</td>
+                                            <td><?php echo $data->adv_id;?></td>
+                                            <td><?php echo $data->category_id;?></td>
+                                            <td><?php echo $data->location_id;?></td>
+                                            <td><?php echo $data->owner_name;?></td>
+                                            <td><?php echo $data->car_name;?></td>
+                                            <td><?php echo $data->vehical_number;?></td>
+                                            <td><?php echo $data->mobile;?></td>
+                                            <td><?php echo $data->address;?></td>
+                                            <td><?php echo $data->deposite;?></td>
+                                            <td><?php echo $data->driver;?></td>
+                                            <td><?php echo $data->charge;?></td>
+                                            <td><?php echo $data->terms_conditon;?></td>
+                                            <td><?php echo $data->updated;?></td>
+                                            <td><?php echo $data->deleated;?></td>
                                             <td>
 												<a href="#" class="btn btn-primary">Edit</a>
 												<a href="#" class="btn btn-danger">Delete</a>
-												<a href="#" class="btn btn-success">Status</a>
+												<a href="#" class="btn btn-success"><?php echo $data->status;?></a>
 											</td>
                                         
                                             
                                         </tr>
-                                        
+                                        <?php
+                                            }
+                                        }
+                                        ?>
                                     </tbody>
                                 </table>
                             </div>

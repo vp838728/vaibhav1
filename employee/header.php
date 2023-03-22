@@ -286,15 +286,27 @@
                     <li class="selected">
                         <a href="index.php"><i class="fa fa-dashboard fa-fw"></i>Dashboard</a>
                     </li>
+                    <li>
+                        <a href="#"><i class="fa fa-bar-chart-o fa-fw"></i> Employee<span class="fa arrow"></span></a>
+                        <ul class="nav nav-second-level">
+                            <li>
+                                <a href="add_emp.php">Add Employee</a>
+                            </li>
+                            <li>
+                                <a href="manage_emp.php">Manage Employee</a>
+                            </li>
+                        </ul>
+                        <!-- second-level-items -->
+                    </li>
 					
 					<li>
                         <a href="#"><i class="fa fa-bar-chart-o fa-fw"></i> Categories<span class="fa arrow"></span></a>
                         <ul class="nav nav-second-level">
                             <li>
-                                <a href="add_cat">Add Categories</a>
+                                <a href="add_cat.php">Add Categories</a>
                             </li>
                             <li>
-                                <a href="manage_cat">Manage Categories</a>
+                                <a href="manage_cat.php">Manage Categories</a>
                             </li>
                         </ul>
                         <!-- second-level-items -->
@@ -303,22 +315,19 @@
                         <a href="#"><i class="fa fa-bar-chart-o fa-fw"></i> Location<span class="fa arrow"></span></a>
                         <ul class="nav nav-second-level">
                             <li>
-                                <a href="add_loc">Add Location</a>
+                                <a href="add_loc.php">Add Location</a>
                             </li>
                             <li>
-                                <a href="manage_loc">Manage Location</a>
+                                <a href="manage_loc.php">Manage Location</a>
                             </li>
                         </ul>
                         <!-- second-level-items -->
                     </li>
                      <li>
-                        <a href="manage_user"><i class="fa fa-flask fa-fw"></i>Manage User</a>
+                        <a href="manage_user.php"><i class="fa fa-flask fa-fw"></i>Manage User</a>
                     </li>
 					 <li>
-                        <a href="manage_contact"><i class="fa fa-flask fa-fw"></i>Manage Contact</a>
-                    </li>
-                    <li>
-                        <a href="manageCar_ Adv"><i class="fa fa-flask fa-fw"></i>ManageCar Adv</a>
+                        <a href="manage_contact.php"><i class="fa fa-flask fa-fw"></i>Manage Contact</a>
                     </li>
                  
                 </ul>

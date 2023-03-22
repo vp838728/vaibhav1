@@ -1,6 +1,5 @@
 <?php
 include_once('header.php');
-
 ?>
         <!--  page-wrapper -->
         <div id="page-wrapper">

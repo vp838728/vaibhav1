@@ -329,17 +329,6 @@
 					 <li>
                         <a href="manage_contact"><i class="fa fa-flask fa-fw"></i>Manage Contact</a>
                     </li>
-                    <li>
-                    <a href="view_booking"><i class="fa fa-flask fa-fw"></i>VIEW BOOKING</a>    
-                </li>
-                <li>
-                    <a href="view_review"><i class="fa fa-flask fa-fw"></i>VIEW REVIEW</a>    
-                </li>
-                <li>
-                        <a href="manageCar_ Adv"><i class="fa fa-flask fa-fw"></i>ManageCar Adv</a>
-                    </li>
-                       
-
                  
                 </ul>
                 <!-- end side-menu -->

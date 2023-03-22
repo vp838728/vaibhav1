@@ -26,17 +26,13 @@ include_once('header.php');
                                         <tr>
                                             <th>Location ID</th>
                                             <th>Location Name</th>
-                                            <th>created_dt</th>
-                                            <th>update_dt</th>
-                                          <th>Action</th>
+                                            <th>Action</th>
                                         </tr>
                                     </thead>
                                     <tbody>
                                         <tr class="odd gradeX">
                                             <td>1</td>
                                             <td>Ahmedabad</td>
-                                            <td>12:00</td>
-                                            <td>1:00</td>
                                             <td>
 												<a href="#" class="btn btn-primary">Edit</a>
 												<a href="#" class="btn btn-danger">Delete</a>

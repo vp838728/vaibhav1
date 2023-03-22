@@ -1,11 +1,15 @@
 <?php
-include_once('model.php');  //step1 load model page
-class control extends model // step2:extends model class for call function
+include_once('model.php');  // step 1 load model page
+
+class control extends model  // step 2 extends model class for call func
 {
- 	function __construct()
+	
+	function __construct()
 	{
-		model::__construct(); //step3 call model _constuct func
-		$path=$_SERVER['PATH_INFO']; //http://localhost/Project/admin/control.php	
+		
+		model::__construct();  // step 3 call modell __construct func 
+		
+		$path=$_SERVER['PATH_INFO']; //http://localhost/students/16th_Jan_PHP_2023/Project/web/control.php	
 		switch($path)
 		{
 			case '/admin':
@@ -21,7 +25,7 @@ class control extends model // step2:extends model class for call function
 			break;
 			
 			case '/manage_emp':
-			$emp_arr=$this->select('employee');
+			$emp_arr=$this->select('employees');
 			include_once('manage_emp.php');
 			break;
 			
@@ -30,7 +34,6 @@ class control extends model // step2:extends model class for call function
 			break;
 			
 			case '/manage_cat':
-			$cat_arr=$this->select('category');
 			include_once('manage_cat.php');
 			break;
 			
@@ -39,32 +42,18 @@ class control extends model // step2:extends model class for call function
 			break;
 			
 			case '/manage_loc':
-			$loc_arr=$this->select('location');
+			$countries_arr=$this->select('countries');
 			include_once('manage_loc.php');
 			break;
 			
 			case '/manage_user':
-			$user_arr=$this->select('user1');
+			$customer_arr=$this->select('customer');
 			include_once('manage_user.php');
 			break;
 			
 			case '/manage_contact':
 			$contact_arr=$this->select('contact');
 			include_once('manage_contact.php');
-			break;
-			case '/manageCar_ Adv':
-			$caradv_arr=$this->select('caradv');
-				include_once('manageCar_ Adv.php');
-				break;
-
-			case '/view_booking':
-			$booking_arr=$this->select('booking');
-			include_once('view_booking.php');
-			break;
-
-			case '/view_review':
-			$review_arr=$this->select('review');
-			include_once('view_review.php');
 			break;
 			
 			default:

@@ -27,7 +27,6 @@ include_once('header.php');
                                             <input type="text" name="cate_name" class="form-control" placeholder="Categories Name">
                                         </div>
                                         
-                                        
                                         <input type="submit" name="submit" class="btn btn-primary" value="Submit">
                                        
                                     </form>

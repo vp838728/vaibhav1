@@ -26,11 +26,6 @@ include_once('header.php');
                                         <tr>
                                             <th>User ID</th>
                                             <th>User Name</th>
-                                            <th>email</th>
-                                            <th>mobile</th>
-                                            <th>msg</th>
-                                            <th>created_dt</th>
-                                            <th>updated_dt</th>
                                             <th>Action</th>
                                         </tr>
                                     </thead>
@@ -38,11 +33,6 @@ include_once('header.php');
                                         <tr class="odd gradeX">
                                             <td>1</td>
                                             <td>Raj</td>
-                                            <td>123@gmail.com</td>
-                                            <td>1234567890</td>
-                                            <td>hii </td>
-                                            <td>12:00</td>
-                                            <td>1:00</td>
                                             <td>
 												<a href="#" class="btn btn-primary">Edit</a>
 												<a href="#" class="btn btn-danger">Delete</a>

@@ -1,10 +1,11 @@
 
 <?php
-include_once('model.php');   //step1 : load model page
-class control extends model
+// include_once('model.php');   //step1 : load model page
+class control 
 {
 	function __construct()
 	{
+		// model:__construct();
 		$path=$_SERVER['PATH_INFO']; //http://localhost/Project/admin/control.php	
 		switch($path)
 		{
@@ -40,8 +41,8 @@ class control extends model
 				include_once('login.php');
 				break;
 
-			case '/signup':
-				include_once('signup.php');
+			case '/sign':
+				include_once('sign.php');
 				break;
 			
 			default:

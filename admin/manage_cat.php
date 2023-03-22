@@ -26,8 +26,6 @@ include_once('header.php');
                                         <tr>
                                             <th>Categories ID</th>
                                             <th>Categories Name</th>
-                                            <th>created_dt</th>
-                                            <th>updated_dt</th>
                                             <th>Action</th>
                                         </tr>
                                     </thead>
@@ -35,8 +33,6 @@ include_once('header.php');
                                         <tr class="odd gradeX">
                                             <td>1</td>
                                             <td>Sedan</td>
-                                            <td>12:00</td>
-                                            <td>1:00</td>
                                             <td>
 												<a href="#" class="btn btn-primary">Edit</a>
 												<a href="#" class="btn btn-danger">Delete</a>

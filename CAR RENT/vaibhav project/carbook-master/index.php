@@ -45,8 +45,7 @@
 	          <li class="nav-item"><a href="car" class="nav-link">Cars</a></li>
 	          <li class="nav-item"><a href="blog" class="nav-link">Blog</a></li>
 	          <li class="nav-item"><a href="contact" class="nav-link">Contact</a></li>
-             <li class="nav-item"><a href="signup" class="nav-link">SIGN UP</a></li> 
-            <li class ="nav-item"><a href="login" class="nav-link">Login</a></li>
+             <li class="nav-item"><a href="sign" class="nav-link">SIGN UP</a></li> 
             
 
 	        </ul>
