@@ -24,44 +24,48 @@ include_once('header.php');
                                 <table class="table table-striped table-bordered table-hover" id="dataTables-example">
                                     <thead>
                                         <tr>
-											<th>Profile</th>
-                                            <th>User ID</th>
-											<th>Name</th>
-                                            <th>User Name</th>
-											<th>Gender</th>
-											<th>Lag</th>
-											<th>Countries</th>
+                                            <th>file</th>
+                                           <th>user_id</th>
+                                            <th>name</th>
+                                            <th>unm</th>
+                                            <th>gen</th>
+                                            <th>lag</th>
+                                            <th>cid </th>
+                                            <th>created_at</th>
+                                            <th>updated_at</th>
                                             <th>Action</th>
                                         </tr>
                                     </thead>
                                     <tbody>
+                                    
+                                    <?php
+                                        if(!empty($user_arr))
+                                        {
+                                            foreach($user_arr as $data)
+                                            {
+                                        ?>
+                                        <tr class="odd gradeX">
+                                            <td><img src="../CAR RENT/car-bookmaster/UPLOAD/USER1<?PHP echo $data->file;?>"width="50px"alt="imges"></td>
+                                            <td><?php echo $data->user_id;?></td>
+                                            <td><?php echo $data->name;?></td>
+                                            <td><?php echo $data->unm;?></td>
+                                            <td><?php echo $data->gen;?></td>
+                                            <td><?php echo $data->lag;?></td>
+                                            <td><?php echo $data->cid;?></td>
+                                            <td><?php echo $data->created_at;?></td>
+                                            <td><?php echo $data->updated_at;?></td>
+                                            
+                                            <td>
+												<a href="#" class="btn btn-primary">Edit</a>
+												<a href="delete?del_user_id=<?php echo $data->user_id;?>" class="btn btn-danger">Delete</a>
+												<a href="#" class="btn btn-success"><?php echo $data->status;?></a>
+											</td>
+                                        </tr>
                                         <?php
-									if(!empty($customer_arr))
-									{
-										foreach($customer_arr as $data)
-										{
-										?>
-											<tr class="odd gradeX">
-												<td><img src="../web/upload/customer/<?php echo $data->file;?>" width="50px"></td>
-												<td><?php echo $data->uid;?></td>
-												<td><?php echo $data->name;?></td>
-												<td><?php echo $data->unm;?></td>
-												<td><?php echo $data->gen;?></td>
-												<td><?php echo $data->lag;?></td>
-												<td><?php echo $data->cid;?></td>
-												
-												<td>
-													<a href="#" class="btn btn-primary">Edit</a>
-													<a href="#" class="btn btn-danger">Delete</a>
-													<a href="#" class="btn btn-success"><?php echo $data->status;?></a>
-												</td>        
-											</tr>
-										<?php
-										}
-									}
-									?>    
-                                        
-                                    </tbody>
+                                            }
+                                        }
+                                        ?>
+                                        </tbody>
                                 </table>
                             </div>
                             

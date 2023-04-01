@@ -1,4 +1,12 @@
 <?php
+if(isset($_SESSION['user_id']))
+{
+	echo "
+		<script>
+		window.location='index';
+		</script>
+		";
+}
 include_once('heder.php')
 ?>
 
@@ -62,12 +70,12 @@ include_once('heder.php')
                             <input type="password" class="form-control" name="pass" placeholder="password">
                         </div>
                         <div class="form-group">
-                            GEN:
+                            gen:
                             <input type="radio" name="gen" value="male">Male
                             <input type="radio" name="gen" value="female">female
                         </div>
                         <div class="form-group">
-                            lng:
+                            lag:
                             <input type="checkbox" name="lag[]" value="HINDI">HINDI
                             <input type="checkbox" name="lag[]" value="ENGLISH">ENGLISH
                             <input type="checkbox" name="lag[]" value="Gujarati">Gujarati
@@ -80,18 +88,29 @@ include_once('heder.php')
                          <div class="from-group">
                             <select name="cid" class="form-control" require="">
                                 <option>------SELECT COUNTRY-----</option>
+                                <?php
+                                foreach ($countries_arr as $c)
+                                 {
+                                    ?>
+                                  <option value="<?php echo $c->cid;?>"><?php echo $c->name;?></option>
+                                  <?php
+                                 }
+                                 ?>
+                                 </select>
+                                    
+                                
 </select>
                            </div>
                            <div class="form-group">
-                           <input type="submit" class="btn btn-warning py-3 px-5" name="submit">
+                           <input type="submit" class="btn btn-warning py-3 px-5" name="submit" value="submit">
 </div>
                         <!-- <div class="form-group">
                             <textarea name="" id="" cols="30" rows="7" class="form-control"
                                 placeholder="Message"></textarea>
                         </div> -->
-                        <div class="form-group">
+                        <!-- <div class="form-group">
                             <input type="submit" value="Send Message" class="btn btn-primary py-3 px-5">
-                        </div>
+                        </div> -->
                     </form>
 
                 </div>

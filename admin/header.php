@@ -284,7 +284,7 @@
                         <!--end search section-->
                     </li>
                     <li class="selected">
-                        <a href="index"><i class="fa fa-dashboard fa-fw"></i>Dashboard</a>
+                        <a href="dashboard"><i class="fa fa-dashboard fa-fw"></i>Dashboard</a>
                     </li>
                     <li>
                         <a href="#"><i class="fa fa-bar-chart-o fa-fw"></i> Employee<span class="fa arrow"></span></a>
@@ -329,6 +329,17 @@
 					 <li>
                         <a href="manage_contact"><i class="fa fa-flask fa-fw"></i>Manage Contact</a>
                     </li>
+                    <li>
+                    <a href="view_booking"><i class="fa fa-flask fa-fw"></i>VIEW BOOKING</a>    
+                </li>
+                <li>
+                    <a href="view_review"><i class="fa fa-flask fa-fw"></i>VIEW REVIEW</a>    
+                </li>
+                <li>
+                        <a href="manageCar_ Adv"><i class="fa fa-flask fa-fw"></i>ManageCar Adv</a>
+                    </li>
+                       
+
                  
                 </ul>
                 <!-- end side-menu -->

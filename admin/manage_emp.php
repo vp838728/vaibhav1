@@ -24,34 +24,43 @@ include_once('header.php');
                                 <table class="table table-striped table-bordered table-hover" id="dataTables-example">
                                     <thead>
                                         <tr>
-                                            <th>Emp ID</th>
-                                            <th>Name</th>
-                                            <th>Email</th>
-                                            <th>Action</th>
+                                            <th>employee_id</th>
+                                            <th>name</th>
+                                            <th>mobile</th>
+                                            <th>email</th>
+                                            <th>address</th>
+                                            <th>username</th>
+                                            <th>created</th>
+                                            <th>updated</th>
+                                            <th>ACTION</th>
                                         </tr>
                                     </thead>
                                     <tbody>
-                                       <?php
-									if(!empty($emp_arr))
-									{
-										foreach($emp_arr as $data)
-										{
-										?>
-											<tr class="odd gradeX">
-												<td><?php echo $data->emp_id;?></td>
-												<td><?php echo $data->name;?></td>
-												<td><?php echo $data->email;?></td>
-												
-												<td>
-													<a href="#" class="btn btn-primary">Edit</a>
-													<a href="#" class="btn btn-danger">Delete</a>
-													<a href="#" class="btn btn-success">Status</a>
-												</td>        
-											</tr>
-										<?php
-										}
-									}
-									?>    
+                                        <?php
+                                        if(!empty($emp_arr))
+                                        {
+                                            foreach($emp_arr as $data)
+                                            {
+                                        ?>
+                                        <tr class="odd gradeX">
+                                            <td><?php echo $data->employee_id;?></td>
+                                            <td><?php echo $data->name;?></td>
+                                            <td><?php echo $data->mobile;?></td>
+                                            <td><?php echo $data->email;?></td>
+                                            <td><?php echo $data->address;?></td>
+                                            <td><?php echo $data->username;?></td>
+                                            <td><?php echo $data->created;?></td>
+                                            <td><?php echo $data->created;?></td>
+                                            <td>
+												<a href="#" class="btn btn-primary">Edit</a>
+												<a href="#" class="btn btn-danger">Delete</a>
+												<a href="#" class="btn btn-success"><?php echo $data->status;?></a>
+											</td>
+                                        </tr>
+                                        <?php
+                                            }
+                                        }
+                                        ?>
                                         
                                     </tbody>
                                 </table>

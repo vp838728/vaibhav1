@@ -1,7 +1,7 @@
 <?php
 class model
 {
-    public $conn = "";
+    public $conn ="";
     
     function __construct()
     {

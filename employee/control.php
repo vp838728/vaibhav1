@@ -1,5 +1,5 @@
 <?php
-include_once('model2.php');
+include_once('model.php');
 class control extends model
 {
 	function __construct()
@@ -24,9 +24,6 @@ class control extends model
 			include_once('dashboard.php');
 			break;
 			
-			case'/header':
-			include_once('header.php');
-			break;
 
 			case'/index':
 		    include_once('index.php');

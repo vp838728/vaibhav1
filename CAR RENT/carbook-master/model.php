@@ -10,8 +10,9 @@ class model
     
     function select($tbl)
     {
-        $sel = "SELECT * FROM $tbl"; // QUERY
+        $sel = "SELECT * FROM $tbl";
         $run = $this->conn->query($sel);
+        $arr = [];
         while ($fetch = $run->fetch_object()) {
             $arr[] = $fetch;
         }
@@ -26,7 +27,7 @@ class model
 		$value_arr=array_values($arr);
 		$value=implode("','",$value_arr);
 		
-		echo $sel="insert into $tbl($col)values('$value')"; // query
+		echo $sel="insert into $tbl($col) values('$value')"; // query
 		
 		$run=$this->conn->query($sel);	 // run query database
 		return $run;
@@ -46,7 +47,6 @@ class model
         $run=$this->conn->query($sel);
         return $run;
     }
-    	
     
 	function delete_where($tbl,$arr)
 	{
@@ -63,9 +63,10 @@ class model
 		$run=$this->conn->query($sel);	 // run query database
 		return $run;
 	}
+
 }
 
-$obj = new model();
+$obj = new model;
 // $result = $obj->select('employee');
 // print_r($result);
 ?>

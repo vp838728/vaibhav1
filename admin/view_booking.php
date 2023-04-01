@@ -36,43 +36,33 @@ include_once('header.php');
                                             <th>city</th>
                                             <th>adhar_no</th>
                                             <th>updated</th>
-                                            <th>deleated</th>
-                                             <th>Action</th>
+                                            <th>deleated_dt</th>
+	
+                                            <th>Action</th>
                                         </tr>
                                     </thead>
-                                    
-                                    
                                     <tbody>
-                                        <?php
-                                        if(!empty($booking_arr))
-                                        {
-                                            foreach($booking_arr as $data)
-                                            {
-                                        ?>
                                         <tr class="odd gradeX">
-                                            <td><?php echo $data->BOOKING_ID;?></td>
-                                            <td><?php echo $data->USER_ID;?></td>
-                                            <td><?php echo $data->ADV_ID;?></td>
-                                            <td><?php echo $data->name;?></td>
-                                            <td><?php echo $data->email;?></td>
-                                            <td><?php echo $data->moblie;?></td>
-                                            <td><?php echo $data->ADDRESS;?></td>
-                                            <td><?php echo $data->city;?></td>
-                                            <td><?php echo $data->STATE;?></td>
-                                            <td><?php echo $data->adhar_no;?></td>
-                                            <td><?php echo $data->updated;?></td>
-                                            <td><?php echo $data->deleated;?></td>
-                                            
+                                            <td>1</td>
+                                            <td>1</td>
+                                            <td>1</td>
+                                            <td>vaibahv</td>
+                                            <td>123@gmail.com</td>
+                                            <td>1234567890</td>
+                                            <td>vatva</td>
+                                            <td>gujart</td>
+                                            <td>ahmedabad</td>
+                                            <td>23908888888</td>
+                                            <td> 12:00</td>
+                                            <td>1:00</td>
                                             <td>
 												<a href="#" class="btn btn-primary">Edit</a>
 												<a href="#" class="btn btn-danger">Delete</a>
-												<a href="#" class="btn btn-success"><?php echo $data->status;?></a>
+												<a href="#" class="btn btn-success">Status</a>
 											</td>
+                                        
+                                            
                                         </tr>
-                                        <?php
-                                            }
-                                        }
-                                        ?>
                                         
                                     </tbody>
                                 </table>

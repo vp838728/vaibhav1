@@ -48,13 +48,36 @@
           <li class="nav-item"><a href="car" class="nav-link">Cars</a></li>
           <li class="nav-item"><a href="blog" class="nav-link">Blog</a></li>
           <li class="nav-item"><a href="contact" class="nav-link">Contact</a></li>
-          <li class="nav-item"><a href="sign" class="nav-link">SIGN UP</a></li>
+          <?php
+          if(isset ($_SESSION['user_id']))
+          {
+            ?>
+          <li class="nav-item"><a href="sign" class="nav-link">SIGN UP</a></li><?php echo $_SESSION['name']?>
+          <li class="nav-item"><a href="logout" class="nav-link">Logout</a></li>
 
 
         </ul> 
 
-      </div>
 
+
+
+
+
+
+      </div>
+      <?php 
+      }
+      else
+      {
+        ?>
+        <div class="collapse navbar-collapse" id="ftco-nav">
+          <ul class="navbar-nav ml-auto">
+            <li class="nav-item"><a href="sign" class="nav-link">sign</a></li>
+            <li class="nav-item"><a href="login" class="nav-link">login</a></li>
+      </div>
+      <?php
+      }
+      ?>
 
 
 

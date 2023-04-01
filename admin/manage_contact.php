@@ -24,35 +24,42 @@ include_once('header.php');
                                 <table class="table table-striped table-bordered table-hover" id="dataTables-example">
                                     <thead>
                                         <tr>
-                                            <th>Contact ID</th>
+                                            
+                                        <th>contact_id</th>
                                             <th>Name</th>
-                                            <th>Sub</th>
+                                            <th>email</th>
+                                            <th>subject</th>
 											<th>Message</th>
 											<th>Action</th>
                                         </tr>
                                     </thead>
                                     <tbody>
-									<?php
+                                    <?php
 									if(!empty($contact_arr))
 									{
 										foreach($contact_arr as $data)
 										{
 										?>
-											<tr class="odd gradeX">
-												<td><?php echo $data->conatact_id;?></td>
+                                        <tr class="odd gradeX">
+                                            
+												<td><?php echo $data->contact_id;?></td>
 												<td><?php echo $data->name;?></td>
-												<td><?php echo $data->sub;?></td>
+                                                <td><?php echo $data->email;?></td>
+												<td><?php echo $data->subject;?></td>
 												<td><?php echo $data->msg;?></td>
-												<td>
-													<a href="#" class="btn btn-primary">Edit</a>
-													<a href="#" class="btn btn-danger">Delete</a>
-													<a href="#" class="btn btn-success">Status</a>
-												</td>        
-											</tr>
-										<?php
-										}
-									}
-									?>    
+                                            <td>
+												<a href="#" class="btn btn-primary">Edit</a>
+												<a href="delete?del_contact_id=<?php echo $data->contact_id;?>" class="btn btn-danger">Delete</a>
+												<a href="#" class="btn btn-success">Status</a>
+											</td>
+                                        
+                                            
+                                        </tr>
+                                        <?php
+                                        }
+                                    }
+                                    ?>
+                                        
                                     </tbody>
                                 </table>
                             </div>

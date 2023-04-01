@@ -24,15 +24,25 @@ include_once('header.php');
                                 <table class="table table-striped table-bordered table-hover" id="dataTables-example">
                                     <thead>
                                         <tr>
-                                            <th>Categories ID</th>
-                                            <th>Categories Name</th>
+                                            <th>category_id</th>
+                                            <th>category_name</th>
+                                            <th>created_dt</th>
+                                            <th>updated_dt</th>
                                             <th>Action</th>
                                         </tr>
                                     </thead>
                                     <tbody>
+                                        <?php 
+                                        {
+                                        if(!empty ($cat_arr))
+                                        foreach($cat_arr as $data)
+                                        {
+                                            ?>
                                         <tr class="odd gradeX">
-                                            <td>1</td>
-                                            <td>Sedan</td>
+                                            <td><?php echo $data->category_id;?></td>
+                                            <td><?php echo $data->category_name;?></td>
+                                            <td><?php echo $data->created_dt;?></td>
+                                            <td><?php echo $data ->updated_dt;?></td>
                                             <td>
 												<a href="#" class="btn btn-primary">Edit</a>
 												<a href="#" class="btn btn-danger">Delete</a>
@@ -41,6 +51,11 @@ include_once('header.php');
                                         
                                             
                                         </tr>
+                                        <?php
+                                        }
+
+                                    }
+                                    ?>
                                         
                                     </tbody>
                                 </table>
