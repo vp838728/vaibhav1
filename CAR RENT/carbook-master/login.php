@@ -58,7 +58,7 @@ include_once('heder.php')
             </div>
             <div class="col-md-8 block-9 mb-md-5">
                 <div class="contact-from-top">
-                    <h3>Signup</h3>
+                    <h3 class="text-center">LOGIN</h3>
                     <form action="" method="post" enctype="multipart/from-data" class="bg-light p-5 contact-form">
                         
                         <div class="form-group">

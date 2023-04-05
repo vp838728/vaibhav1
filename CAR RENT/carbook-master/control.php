@@ -83,6 +83,7 @@ class control extends model
                         $_SESSION['user_id']=$fetch->user_id;
                         $_SESSION['unm']=$fetch->unm;
                         $_SESSION['pass']=$fetch->pass;
+                        $_SESSION['name']=$fetch->name;
                         echo "
                         <script>
                         alert('login sucess');
@@ -107,6 +108,7 @@ class control extends model
                     unset($_SESSION['user_id']);
                     unset($_SESSION['unm']);
                     unset($_SESSION['pass']);
+                    unset($_SESSION ['name']);
                     echo"
                     <script>
                     alert('logut sucess');
@@ -130,11 +132,12 @@ class control extends model
                     date_default_timezone_set('asia/calcutta');
                     $created_at=date('Y-m-d H:i:s');
                     $updated_at=date('Y-m-d H:i:s');
-                    $file=$_FILES['file']['name'];
-                    $path='UPLOAD/USER1'.$file;
-                    $tmp_file=$_FILES['file']['tmp_name'];
-                    move_uploaded_file($tmp_file,$path);
-                    $arr=array("name"=>$name,"unm"=>$unm,"pass"=>$pass,"gen"=>$gen ,"lag"=>$lag,"cid"=>$cid,"file"=>$file,"created_at"=>$created_at,"updated_at"=>$updated_at);
+                    print_r($_FILES['file']['name']);
+                     $file=$_FILES['file']['name'];
+                     $path='UPLOAD/USER1/'.$file;
+                     $tmp_file=$_FILES['file']['tmp_name'];
+                     move_uploaded_file($tmp_file,$path);
+                    $arr=array("name"=>$name,"unm"=>$unm,"pass"=>$pass,"gen"=>$gen,"lag"=>$lag,"cid"=>$cid,"created_at"=>$created_at,"file"=>$file;"updated_at"=>$updated_at);
 
                     $res=$this->insert('user1',$arr);
                     if($res)
@@ -152,8 +155,79 @@ class control extends model
                     }
 
                 }
+                
                 include_once('sign.php');
                 break;
+                case'/profile':
+                    // $where=array("user_id"=>$user_id);
+                     $where=array("user_id"=>$_SESSION['user_id']);
+                    $res=$this->select_where('user1',$where);
+                    
+                    $fetch=$res->fetch_object();
+                    include_once('profile.php');
+                    break;
+
+                    case'/edit':
+                        if(isset($_REQUEST['edit_user_id']))
+                        {
+                            $user_id=$_REQUEST['edit_user_id'];
+                            $where=array("user_id"=>$user_id);
+                            $res=$this->select_where('user1',$where);
+                            $fetch=$res->fetch_object();
+                            // get old file for dekte
+                            $old_img=$fetch->file;
+                            if(isset($_REQUEST['save']))
+                            {
+                                $name=$_REQUEST['name'];
+                                $unm=$_REQUEST['unm'];
+                                $gen=$_REQUEST['gen'];
+                                $lag_arr=$_REQUEST['lag'];
+                                $lag=implode(",",$lag_arr);
+                                $cid=$_REQUEST['cid'];
+
+                                date_default_timezone_set('asia/calcutta');
+                                $updated_at=date('Y-m-d H:i:s');
+                                if($_FILES['file']['size']>0)
+                                {
+                                    $file=$_FILES['file']['name'];
+                                    $path='UPLOAD/USER1'.$file;
+                                    $tmp_file=$_FILES['file']['tmp_name'];
+                                    move_uploaded_file($tmp_file,$path);
+                                    $arr=array("name"=>$name,"unm"=>$unm,"gen"=>$gen,"lag"=>$lag,"cid"=>$cid,"file"=>$file,"updated_at"=>$updated_at);
+                                    $res=$this->update('user1',$arr,$where);
+                                    if($res)
+                                    {
+                                        unlink('UPLOAD/USER1/'.$old_img);
+                                        echo"<script>
+                                        alert('update sucess');
+                                        window.location='profile';
+                                        </script>
+                                        ";
+                                    }
+
+                                }
+                                else
+                                {
+
+                                    $arr=array("name"=>$name,"unm"=>$unm,"gen"=>$gen,"lag"=>$lag,"cid"=>$cid,"updated_at"=>$updated_at);
+						
+                                    $res=$this->update('user1',$arr,$where);
+                                    if($res)
+                                    {
+                                        echo "
+                                        <script>
+                                        alert('Update Success');
+                                        window.location='profile';
+                                        </script>
+                                        ";
+                                    }
+                                }
+
+                            }
+                        }
+                        $countries_arr=$this->select('country');
+                        include_once('edit_profile.php');
+                        break;
 
             default:
                 echo "<h1>Page Not Found</h1>";

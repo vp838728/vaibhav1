@@ -45,7 +45,7 @@ include_once('header.php');
                                             {
                                         ?>
                                         <tr class="odd gradeX">
-                                            <td><img src="../CAR RENT/car-bookmaster/UPLOAD/USER1<?PHP echo $data->file;?>"width="50px"alt="imges"></td>
+                                            <td><img src="UPLOAD/USER1/<?PHP echo $data->file;?>"width="50px"alt="imges"></td>
                                             <td><?php echo $data->user_id;?></td>
                                             <td><?php echo $data->name;?></td>
                                             <td><?php echo $data->unm;?></td>

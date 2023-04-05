@@ -52,7 +52,7 @@
           if(isset ($_SESSION['user_id']))
           {
             ?>
-          <li class="nav-item"><a href="sign" class="nav-link">SIGN UP</a></li><?php echo $_SESSION['name']?>
+          <li class="nav-item"><a href="profile" class="nav-link"><?php echo $_SESSION['unm'];?></a></li><?php echo $_SESSION['unm']?>
           <li class="nav-item"><a href="logout" class="nav-link">Logout</a></li>
 
 
@@ -74,6 +74,7 @@
           <ul class="navbar-nav ml-auto">
             <li class="nav-item"><a href="sign" class="nav-link">sign</a></li>
             <li class="nav-item"><a href="login" class="nav-link">login</a></li>
+            <!-- <li class="nav-item"><a href="profile"class="nav-link">profile</a></li> -->
       </div>
       <?php
       }

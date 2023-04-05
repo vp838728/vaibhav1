@@ -26,7 +26,7 @@ class control extends model // step2:extends model class for call function
                    //session create
 				   $_SESSION['anm']=$fetch->anm;
 				   $_SESSION['apass']=$fetch->apass;
-				   $_SESSION['Name']=$fetch->Name;
+				//  /  $_SESSION['Name']=$fetch->Name;
 				   echo"
 				   <script>
 				   alert('login sucess')
@@ -208,11 +208,45 @@ class control extends model // step2:extends model class for call function
 					<script>
 					alert('delete sucess');
 					window.location='manage_user';
-					<script>
+					</script>
 					";
 				  }else{
 					echo"fail";
 				  }
+				}
+				if(isset($_REQUEST['del_location_id']))
+				{
+					$location_id=$_REQUEST['del_location_id'];
+					$where=array("location_id"=>$location_id);
+					$res=$this->delete_where('location',$where);
+					if($res)
+					{
+						echo"
+						<script>
+						alert('delete sucess');
+						window.location='manage_loc';
+						</script>
+						";
+					}else{
+						echo"fail";
+					}
+				}
+				if(isset($_REQUEST['del_BOOKING_ID']))
+				{
+					$BOOKING_ID=$_REQUEST['del_BOOKING_ID'];
+					$where=array("BOOKING_ID"=>$BOOKING_ID);
+					$res=$this->delete_where('booking',$where);
+					if($res)
+					{
+						echo"
+						<script>
+						alert('delete sucess');
+						window.location='view_booking';
+						</script>
+						";
+					}else {
+					      echo"fail";
+					}
 				}
 				break;
 			
