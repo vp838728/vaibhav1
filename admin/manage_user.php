@@ -24,6 +24,7 @@ include_once('header.php');
                                 <table class="table table-striped table-bordered table-hover" id="dataTables-example">
                                     <thead>
                                         <tr>
+<<<<<<< HEAD
                                             <th>file</th>
                                            <th>user_id</th>
                                             <th>name</th>
@@ -33,18 +34,32 @@ include_once('header.php');
                                             <th>cid </th>
                                             <th>created_at</th>
                                             <th>updated_at</th>
+=======
+                                            <th>user_id</th>
+                                            <th> name</th>
+                                            <th>email</th>
+                                            <th>username</th>
+                                            <th>created_dt</th>
+                                            <th>updated_dt</th>
+>>>>>>> f44eed26f43cf61b83fa00b44724580cd18b70ba
                                             <th>Action</th>
                                         </tr>
                                     </thead>
+                                    
                                     <tbody>
+<<<<<<< HEAD
                                     
                                     <?php
+=======
+                                        <?php
+>>>>>>> f44eed26f43cf61b83fa00b44724580cd18b70ba
                                         if(!empty($user_arr))
                                         {
                                             foreach($user_arr as $data)
                                             {
                                         ?>
                                         <tr class="odd gradeX">
+<<<<<<< HEAD
                                             <td><img src="UPLOAD/USER1/<?PHP echo $data->file_upload;?>"width="50px"alt="imges"></td>
                                             <td><?php echo $data->user_id;?></td>
                                             <td><?php echo $data->name;?></td>
@@ -59,13 +74,31 @@ include_once('header.php');
 												<a href="#" class="btn btn-primary">Edit</a>
 												<a href="delete?del_user_id=<?php echo $data->user_id;?>" class="btn btn-danger">Delete</a>
 												<a href="status?status_user_id=<?php echo $data->user_id;?>" class="btn btn-success"><?php echo $data->status;?></a>
+=======
+                                            <td><?php echo $data->user_id;?></td>
+                                            <td><?php echo $data->name;?></td>
+                                            <td><?php echo $data->email;?></td>
+                                            <td><?php echo $data->username;?></td>
+                                            <td><?php echo $data->created_dt;?></td>
+                                            <td><?php echo $data->updated_dt;?></td>
+                                            
+                                            <td>
+												<a href="#" class="btn btn-primary">Edit</a>
+												<a href="#" class="btn btn-danger">Delete</a>
+												<a href="#" class="btn btn-success"><?php echo $data->status;?></a>
+>>>>>>> f44eed26f43cf61b83fa00b44724580cd18b70ba
 											</td>
                                         </tr>
                                         <?php
                                             }
                                         }
                                         ?>
+<<<<<<< HEAD
                                         </tbody>
+=======
+                                        
+                                    </tbody>
+>>>>>>> f44eed26f43cf61b83fa00b44724580cd18b70ba
                                 </table>
                             </div>
                             
