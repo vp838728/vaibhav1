@@ -280,7 +280,11 @@ class control extends model // step2:extends model class for call function
 							{
 								echo "
 								<script>
+<<<<<<< HEAD
 								alert('customer unblock SUCESS');
+=======
+								alert('CUSTOMER unblock SUCESS');
+>>>>>>> 7e51511af046ad42b9457c0ba2e8a1ee884b9913
 								window.location='manage_user';
 								</script>
 								";

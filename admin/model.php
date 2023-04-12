@@ -32,6 +32,7 @@ class model
 		return $run;
 	}	
     function select_where($tbl,$arr)
+<<<<<<< HEAD
 	{
 		$col_arr=array_keys($arr);
 		$value_arr=array_values($arr);
@@ -46,6 +47,22 @@ class model
 		$run=$this->conn->query($sel);	 // run query database
 		return $run;
 	}
+=======
+    {
+        $col_arr=array_keys($arr);
+        $value_arr=array_values($arr);
+        $sel="select * from $tbl where 1=1"; //query continue
+        //lopp arr 
+        $i=0;
+        foreach($arr as $w)
+        {
+            echo $sel.=" and $col_arr[$i]='$value_arr[$i]'";
+            $i++;
+        }
+        $run=$this->conn->query($sel);
+        return $run;
+    }
+>>>>>>> 7e51511af046ad42b9457c0ba2e8a1ee884b9913
     	
     
 	function delete_where($tbl,$arr)

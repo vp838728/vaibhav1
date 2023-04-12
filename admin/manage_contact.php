@@ -24,6 +24,7 @@ include_once('header.php');
                                 <table class="table table-striped table-bordered table-hover" id="dataTables-example">
                                     <thead>
                                         <tr>
+<<<<<<< HEAD
                                             
                                         <th>contact_id</th>
                                             <th>Name</th>
@@ -31,9 +32,22 @@ include_once('header.php');
                                             <th>subject</th>
 											<th>Message</th>
 											<th>Action</th>
+=======
+                                            <th>contact_id</th>
+                                            <th> name</th>
+                                            <th>email</th>
+                                            <th>mobile</th>
+                                            <th>msg</th>
+                                            <th>created_dt</th>
+                                            <th>updated_dt</th>
+                                            <th>Action</th>
+>>>>>>> f44eed26f43cf61b83fa00b44724580cd18b70ba
                                         </tr>
                                     </thead>
+                                    
+                                    
                                     <tbody>
+<<<<<<< HEAD
                                     <?php
 									if(!empty($contact_arr))
 									{
@@ -51,14 +65,39 @@ include_once('header.php');
 												<a href="#" class="btn btn-primary">Edit</a>
 												<a href="delete?del_contact_id=<?php echo $data->contact_id;?>" class="btn btn-danger">Delete</a>
 												<a href="#" class="btn btn-success">Status</a>
-											</td>
-                                        
+=======
+                                        <?php
+                                        if(!empty($contact_arr))
+                                        {
+                                            foreach($contact_arr as $data)
+                                            {
+                                        ?>
+                                        <tr class="odd gradeX">
+                                            <td><?php echo $data->contact_id;?></td>
+                                            <td><?php echo $data->name;?></td>
+                                            <td><?php echo $data->email;?></td>
+                                            <td><?php echo $data->mobile;?></td>
+                                            <td><?php echo $data->msg;?></td>
+                                            <td><?php echo $data->created_dt;?></td>
+                                            <td><?php echo $data->updated_dt;?></td>
                                             
+                                            <td>
+												<a href="#" class="btn btn-primary">Edit</a>
+												<a href="#" class="btn btn-danger">Delete</a>
+												<a href="#" class="btn btn-success"><?php echo $data->status;?></a>
+>>>>>>> f44eed26f43cf61b83fa00b44724580cd18b70ba
+											</td>
                                         </tr>
                                         <?php
+<<<<<<< HEAD
                                         }
                                     }
                                     ?>
+=======
+                                            }
+                                        }
+                                        ?>
+>>>>>>> f44eed26f43cf61b83fa00b44724580cd18b70ba
                                         
                                     </tbody>
                                 </table>

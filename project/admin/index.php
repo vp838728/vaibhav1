@@ -1,4 +1,5 @@
 <?php
+<<<<<<< HEAD
 if(isset($_SESSION['aid']))
 {
 	echo "
@@ -7,6 +8,9 @@ if(isset($_SESSION['aid']))
 		</script>
 		";
 }
+=======
+include_once('index.php');
+>>>>>>> 7e51511af046ad42b9457c0ba2e8a1ee884b9913
 ?>
 <!DOCTYPE html>
 <html>
@@ -38,6 +42,7 @@ if(isset($_SESSION['aid']))
                         <h3 class="panel-title">Admin Please Sign In</h3>
                     </div>
                     <div class="panel-body">
+<<<<<<< HEAD
                         <form  action="" method="post">
                             <fieldset>
                                 <div class="form-group">
@@ -45,6 +50,15 @@ if(isset($_SESSION['aid']))
                                 </div>
                                 <div class="form-group">
                                     <input class="form-control" placeholder="Password" name="apass" type="password" >
+=======
+                        <form role="form" action="" method="post">
+                            <fieldset>
+                                <div class="form-group">
+                                    <input class="form-control" placeholder="E-mail" name="anm" type="email" autofocus>
+                                </div>
+                                <div class="form-group">
+                                    <input class="form-control" placeholder="Password" name="apass" type="password" value="">
+>>>>>>> 7e51511af046ad42b9457c0ba2e8a1ee884b9913
                                 </div>
                                 <div class="checkbox">
                                     <label>
@@ -53,7 +67,11 @@ if(isset($_SESSION['aid']))
                                 </div>
                                 <!-- Change this to a button or input when using this as a form -->
                                 <div class="form-group">
+<<<<<<< HEAD
                                     <input type="submit" name="submit" value="login" class="btn btn-lg btn-success btn-block">
+=======
+                                    <input type="submit" name="login" class="btn btn-lg btn-success btn-block">
+>>>>>>> 7e51511af046ad42b9457c0ba2e8a1ee884b9913
                                 </div>
                                  <!-- <a href="index.php" class="btn btn-lg btn-success btn-block">Login</a>  -->
                             </fieldset>

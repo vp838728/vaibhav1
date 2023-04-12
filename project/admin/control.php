@@ -10,13 +10,21 @@ class control extends model // step2:extends model class for call function
 		switch($path)
 		{
 			case '/admin':
+<<<<<<< HEAD
             if(isset($_REQUEST['submit']))
+=======
+            if(isset($_REQUEST['login']))
+>>>>>>> 7e51511af046ad42b9457c0ba2e8a1ee884b9913
 			{
 				$anm=$_REQUEST['anm'];
 				$apass=md5($_REQUEST['apass']);
 
 
+<<<<<<< HEAD
 				$arr=array("anm"=>$anm,"apass"=>md5($apass));
+=======
+				$arr=array("anm"=>$anm,"apass"=>$apass);
+>>>>>>> 7e51511af046ad42b9457c0ba2e8a1ee884b9913
 				$res=$this->select_where('admin',$arr);
 				$chk=$res->num_rows;
 
@@ -24,6 +32,7 @@ class control extends model // step2:extends model class for call function
 				{
 					$fetch=$res->fetch_object();
                    //session create
+<<<<<<< HEAD
 				   $_SESSION['aid']=$fetch->aid;
 				   $_SESSION['anm']=$fetch->anm;
 				   $_SESSION['apass']=$fetch->apass;
@@ -37,6 +46,18 @@ class control extends model // step2:extends model class for call function
 				   ";
 				}
 				else
+=======
+				   $_SESSION['anm']=$fetch->anm;
+				   $_SESSION['apass']=$fetch->apass;
+				//  /  $_SESSION['Name']=$fetch->Name;
+				   echo"
+				   <script>
+				   alert('login sucess')
+				   window.loction='dashboard';
+				   </script>
+				   ";
+				}else
+>>>>>>> 7e51511af046ad42b9457c0ba2e8a1ee884b9913
 				{
 
 					echo"login fail";
@@ -44,6 +65,7 @@ class control extends model // step2:extends model class for call function
 			}
 			include_once('index.php');
 			break;
+<<<<<<< HEAD
 			case'/adminlogout':
 				unset($_SESSION['aid']);
 				unset($_SESSION['anm']);
@@ -55,6 +77,8 @@ class control extends model // step2:extends model class for call function
 				 </script>
 				 ";
 				 break;
+=======
+>>>>>>> 7e51511af046ad42b9457c0ba2e8a1ee884b9913
 	
 			case '/dashboard':
 			include_once('dashboard.php');
@@ -280,7 +304,11 @@ class control extends model // step2:extends model class for call function
 							{
 								echo "
 								<script>
+<<<<<<< HEAD
 								alert('customer unblock SUCESS');
+=======
+								alert('CUSTOMER unblock SUCESS');
+>>>>>>> 7e51511af046ad42b9457c0ba2e8a1ee884b9913
 								window.location='manage_user';
 								</script>
 								";

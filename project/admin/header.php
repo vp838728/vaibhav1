@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 <?php
 if(isset($_SESSION['aid']))
 {
@@ -11,6 +12,8 @@ if(isset($_SESSION['aid']))
     ";
 }
 ?>
+=======
+>>>>>>> 7e51511af046ad42b9457c0ba2e8a1ee884b9913
 <!DOCTYPE html>
 <html>
 <head>
@@ -251,7 +254,11 @@ if(isset($_SESSION['aid']))
                         <li><a href="#"><i class="fa fa-gear fa-fw"></i>Settings</a>
                         </li>
                         <li class="divider"></li>
+<<<<<<< HEAD
                         <li><a href="adminlogout"><i class="fa fa-sign-out fa-fw"></i>Logout</a>
+=======
+                        <li><a href="login"><i class="fa fa-sign-out fa-fw"></i>Logout</a>
+>>>>>>> 7e51511af046ad42b9457c0ba2e8a1ee884b9913
                         </li>
                     </ul>
                     <!-- end dropdown-user -->
@@ -276,7 +283,11 @@ if(isset($_SESSION['aid']))
                                 <img src="assets/img/user.jpg" alt="">
                             </div>
                             <div class="user-info">
+<<<<<<< HEAD
                                 <div><?php echo $_SESSION['anm'];?></div>
+=======
+                                <div>Jonny <strong>Deen</strong></div>
+>>>>>>> 7e51511af046ad42b9457c0ba2e8a1ee884b9913
                                 <div class="user-text-online">
                                     <span class="user-circle-online btn btn-success btn-circle "></span>&nbsp;Online
                                 </div>

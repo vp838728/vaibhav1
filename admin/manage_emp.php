@@ -32,7 +32,11 @@ include_once('header.php');
                                             <th>username</th>
                                             <th>created</th>
                                             <th>updated</th>
+<<<<<<< HEAD
                                             <th>ACTION</th>
+=======
+                                            <th>action</th>
+>>>>>>> f44eed26f43cf61b83fa00b44724580cd18b70ba
                                         </tr>
                                     </thead>
                                     <tbody>
@@ -50,7 +54,12 @@ include_once('header.php');
                                             <td><?php echo $data->address;?></td>
                                             <td><?php echo $data->username;?></td>
                                             <td><?php echo $data->created;?></td>
+<<<<<<< HEAD
                                             <td><?php echo $data->created;?></td>
+=======
+                                            <td><?php echo $data->updated;?></td>
+                                            
+>>>>>>> f44eed26f43cf61b83fa00b44724580cd18b70ba
                                             <td>
 												<a href="#" class="btn btn-primary">Edit</a>
 												<a href="#" class="btn btn-danger">Delete</a>
