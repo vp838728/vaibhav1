@@ -31,9 +31,9 @@ include_once('header.php');
                                             <th>name</th>
                                             <th>email</th>
                                             <th>moblie</th>
-                                            
+                                            <th>ADDRESS</th>
                                             <th>city</th>
-                                            <th>adhar_no</th>
+                                            <th>STATE</th>
                                             <th>updated</th>
                                             <th>deleated</th>
                                              <th>Action</th>
@@ -47,8 +47,9 @@ include_once('header.php');
                                         {
                                             foreach($booking_arr as $data)
                                             {
-<<<<<<< HEAD
                                                 ?>
+                                        
+                                        
                                         <tr class="odd gradeX">
                                             <td><?php echo $data->BOOKING_ID;?></td>
                                             <td><?php echo $data->USER_ID;?></td>
@@ -56,37 +57,16 @@ include_once('header.php');
                                             <td><?php echo $data->name;?></td>
                                             <td><?php echo $data->email;?></td>
                                             <td><?php echo $data->moblie;?></td>
-                                            
-                                            
-                                            <td><?php echo $data->city;?></td>
-                                            <td><?php echo $data->adhar_no;?></td>
+                                            <td><?php echo $data->ADDRESS;?></td>
+                                           <td><?php echo $data->city;?></td>
+                                            <td><?php echo $data->STATE;?></td>
                                             <td><?php echo $data->updated;?></td>
                                             <td><?php echo $data->deleated_dt;?></td>
-                                            <td>
-												<a href="#" class="btn btn-primary">Edit</a>
-												<a href="delete?del_BOOKING_ID=<?php echo $data->BOOKING_ID;?>" class="btn btn-danger">Delete</a>
-												<a href="#" class="btn btn-success">Status</a>
-=======
-                                        ?>
-                                        <tr class="odd gradeX">
-                                            <td><?php echo $data->BOOKING_ID;?></td>
-                                            <td><?php echo $data->USER_ID;?></td>
-                                            <td><?php echo $data->ADV_ID;?></td>
-                                            <td><?php echo $data->name;?></td>
-                                            <td><?php echo $data->email;?></td>
-                                            <td><?php echo $data->moblie;?></td>
-                                            <td><?php echo $data->ADDRESS;?></td>
-                                            <td><?php echo $data->city;?></td>
-                                            <td><?php echo $data->STATE;?></td>
-                                            <td><?php echo $data->adhar_no;?></td>
-                                            <td><?php echo $data->updated;?></td>
-                                            <td><?php echo $data->deleated;?></td>
                                             
                                             <td>
 												<a href="#" class="btn btn-primary">Edit</a>
-												<a href="#" class="btn btn-danger">Delete</a>
+												<a href="del?del_BOOKING_ID=<?php echo $data->BOOKING_ID;?>" class="btn btn-danger">Delete</a>
 												<a href="#" class="btn btn-success"><?php echo $data->status;?></a>
->>>>>>> f44eed26f43cf61b83fa00b44724580cd18b70ba
 											</td>
                                         </tr>
                                         <?php

@@ -34,7 +34,7 @@ include_once('heder.php');
                   <div class="text pt-4">
                     <h4><i class="fas fa-user" aria-hidden="true"></i></h4>
                     <img src="UPLOAD/USER1/<?php echo $fetch->file_upload	?>" alt="img" width="100%" height="300px">
-
+                    
                     <P class="id">ID:<?php echo $fetch->user_id;?></P>
                     <p class="name">NAME:<?php echo $fetch->name;?></p>
                     <p class="gender">GEN:<?php echo $fetch->gen;?></p>

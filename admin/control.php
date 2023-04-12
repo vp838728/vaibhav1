@@ -258,7 +258,7 @@ class control extends model // step2:extends model class for call function
 						window.location='view_booking';
 						</script>
 						";
-					}else {
+					}else{
 					      echo"fail";
 					}
 				}
