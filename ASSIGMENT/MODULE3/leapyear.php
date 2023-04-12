@@ -33,4 +33,20 @@ function check_leap_year($start_year,$end_year)
 {
 
 }
+
+for ($year = 1901; $year <= 2016; $year++) {
+    if ($year % 4 == 0) {
+        if ($year % 100 == 0) {
+            if ($year % 400 == 0) {
+                echo $year . " is a leap year.\n";
+            } else {
+                echo $year . " is not a leap year.\n";
+            }
+        } else {
+            echo $year . " is a leap year.\n";
+        }
+    } else {
+        echo $year . " is not a leap year.\n";
+    }
+}
 ?>
