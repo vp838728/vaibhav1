@@ -1,9 +1,8 @@
 <?php
-<<<<<<< HEAD:CAR RENT/carbook-master/control.php
 //  error_reporting(0);
-=======
+
 // error_reporting(0);
->>>>>>> 7e51511af046ad42b9457c0ba2e8a1ee884b9913:CAR RENT/vaibhav project/carbook-master/control.php
+
 include_once('model.php'); //step1 : load model page
 class control extends model
 {
@@ -179,11 +178,8 @@ class control extends model
                             $res=$this->select_where('user1',$where);
                             $fetch=$res->fetch_object();
                             // get old file for dekte
-<<<<<<< HEAD:CAR RENT/carbook-master/control.php
                               $old_img=$fetch->file_upload;
-=======
                             $old_img=$fetch->file_upload;
->>>>>>> 7e51511af046ad42b9457c0ba2e8a1ee884b9913:CAR RENT/vaibhav project/carbook-master/control.php
                             if(isset($_REQUEST['save']))
                             {
                                 $name=$_REQUEST['name'];

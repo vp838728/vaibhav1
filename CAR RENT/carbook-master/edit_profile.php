@@ -114,11 +114,7 @@ include_once('heder.php');
                         
                         
                         <div class="form-group">
-<<<<<<< HEAD:CAR RENT/carbook-master/edit_profile.php
                             <input type="file" name="file_upload" class="form-control" require="">
-=======
-                            <input type="file" name="file" class="form-control" require="">
->>>>>>> 7e51511af046ad42b9457c0ba2e8a1ee884b9913:CAR RENT/vaibhav project/carbook-master/edit_profile.php
                             <img src="UPLOAD/USER1/<?php echo $fetch->file_upload?>"width="50px">
                          </div>
                          <div class="from-group">
