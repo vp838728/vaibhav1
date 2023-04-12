@@ -1,16 +1,12 @@
 <?php
-$n=5;
-$m=5;
-for ($i=1;$i<=$n;$i++){
-    for($j=1;$j<$m;$j++){
-        if($i==1 || $j==1 || $i=$n || $j==$m ){
-            echo "*";
-        }
-        {
-            echo"";
-        }
-        else{
-            echo"</br>";
-        }
+for($i=0; $i<5; $i++)
+{
+    for($j=0;$j<=5; $j++)
+    {
+        if($j==1 or($i==0 and $j>1 and $j<6)or ($i==4 and $j<5))
+        echo"* ";
+        else
+         echo" ";
     }
+    echo"</br>";
 }
