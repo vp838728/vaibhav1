@@ -1,7 +1,7 @@
 <?php
 
 include_once('heder.php');
-include_once('model.php');
+
 ?>
 
 
@@ -26,20 +26,16 @@ include_once('model.php');
       
     		<div class="row">
          <?php
-         $category=$this->select('category');
-        //  $category=select("category");
-         if(mysqli_num_rows($category)>0)
-           {
-            foreach($category as $ltem)
-          {
-          ?>
+         foreach($cat_arr as $d)
+         {
+         ?>
     			<div class="col-md-4">
     				<div class="car-wrap rounded ftco-animate">
     					<div class="img rounded d-flex align-items-end" style="background-image: url(images/car-1.jpg);">
     					</div>
     					<div class="text">
-    						<h2 class="mb-0"><a href="car-single.php">Mercedes Grand Sedan</a></h2>
-                <h4><?=$item['category_name'];?></h4>
+    						<h2 class="mb-0"><a href="car-single.php"><?php echo $d->category_name;?></a></h2>
+                <h4></h4>
     						<div class="d-flex mb-3">
 	    						<span class="cat">
                 </span>
@@ -48,18 +44,14 @@ include_once('model.php');
     						<p class="d-flex mb-0 d-block"><a href="booking" class="btn btn-primary py-2 mr-1">Book now</a> <a href="car-single.php" class="btn btn-secondary py-2 ml-1">Details</a></p>
     					</div>
     				</div>
-          
+          <?php
+         }
+          ?>
             
             
           
     			</div>
-          <?php
-          }
-      }else
-      {
-        echo"fail";
-      }
-      ?>
+        
           
         
         	

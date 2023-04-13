@@ -18,7 +18,7 @@ class control extends model
                 break;
 
              case'/car2':
-                $cat_arr=$this->select('category');
+               $cat_arr=$this->select('category');
 
                include_once('car2.php');
                break;
