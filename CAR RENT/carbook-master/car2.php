@@ -1,5 +1,5 @@
 <?php
-session_start();
+
 include_once('heder.php');
 include_once('model.php');
 ?>
@@ -26,9 +26,10 @@ include_once('model.php');
       
     		<div class="row">
          <?php
-         $category=select("category");
-          if(mysqli_num_rows($category)>0)
-          {
+         $category=$this->select('category');
+        //  $category=select("category");
+         if(mysqli_num_rows($category)>0)
+           {
             foreach($category as $ltem)
           {
           ?>
@@ -53,9 +54,8 @@ include_once('model.php');
           
     			</div>
           <?php
-        }
-      }
-      else
+          }
+      }else
       {
         echo"fail";
       }
