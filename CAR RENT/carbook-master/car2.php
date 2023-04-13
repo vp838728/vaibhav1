@@ -1,6 +1,9 @@
 <?php
+session_start();
 include_once('heder.php');
+include_once('model.php');
 ?>
+
 
     
     <section class="hero-wrap hero-wrap-2 js-fullheight" style="background-image: url('images/bg_3.jpg');" data-stellar-background-ratio="0.5">
@@ -14,38 +17,56 @@ include_once('heder.php');
         </div>
       </div>
     </section>
-    <?php 
-         if(!empty($booking_arr))
-         { 
-            foreach($booking_arr as $data)
-            {
-                ?>
+    
+                
 		
 
 		<section class="ftco-section bg-light">
-    	<div class="container">
+    <div class="container">
+      
     		<div class="row">
+         <?php
+         $category=select("category");
+          if(mysqli_num_rows($category)>0)
+          {
+            foreach($category as $ltem)
+          {
+          ?>
     			<div class="col-md-4">
     				<div class="car-wrap rounded ftco-animate">
     					<div class="img rounded d-flex align-items-end" style="background-image: url(images/car-1.jpg);">
     					</div>
     					<div class="text">
     						<h2 class="mb-0"><a href="car-single.php">Mercedes Grand Sedan</a></h2>
+                <h4><?=$item['category_name'];?></h4>
     						<div class="d-flex mb-3">
-	    						<span class="cat">Cheverolet</span>
+	    						<span class="cat">
+                </span>
 	    						<p class="price ml-auto">$500 <span>/day</span></p>
     						</div>
     						<p class="d-flex mb-0 d-block"><a href="booking" class="btn btn-primary py-2 mr-1">Book now</a> <a href="car-single.php" class="btn btn-secondary py-2 ml-1">Details</a></p>
     					</div>
     				</div>
           
+            
+            
+          
     			</div>
+          <?php
+        }
+      }
+      else
+      {
+        echo"fail";
+      }
+      ?>
+          
+        
         	
     		</div>
-            <?php
-            }
-        }
-        ?>
+        
+        
+          
     		<div class="row mt-5">
           <div class="col text-center">
             <div class="block-27">

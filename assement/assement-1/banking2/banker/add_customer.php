@@ -1,11 +1,9 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-	<meta charset="UTF-8">
-	<title>Add Customer Form</title>
-	<link rel="stylesheet" href="styles.css">
-</head>
-<body>
+
+	<?php
+	
+	 include_once('heder.php');
+	// include_once('model.php');
+	?>
 	<h1>Add Customer</h1>
 	<form action="#" method="post">
 		<label for="name">Name:</label>
@@ -19,6 +17,8 @@
 		
 		<label for="phone">Phone:</label>
 		<input type="tel" id="phone" name="phone" pattern="[0-9]{10}" required>
+		<label for="account">accountno:</label>
+		<input type="tel" id="phone" name="accountno"  required>
 		
 		<label for="account-type">Account Type:</label>
 		<select id="account-type" name="account-type" required>
@@ -31,7 +31,7 @@
 		<label for="initial-deposit">Initial Deposit:</label>
 		<input type="number" id="initial-deposit" name="initial-deposit" min="0" required>
 		
-		<button type="submit">Add Customer</button>
+		<input type="submit" name="Add Customer"class="btn btn-primary ps-123">
 	</form>
 </body>
 </html>

@@ -1,22 +1,6 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-	<meta charset="UTF-8">
-	<title>View Customer</title>
-	<link rel="stylesheet" href="styles.css">
-</head>
-<body>
-	<header>
-		<h1>Bank Management System</h1>
-		<nav>
-			<ul>
-				<li><a href="#">Home</a></li>
-				<li><a href="#">Customers</a></li>
-				<li><a href="#">Transactions</a></li>
-				<li><a href="#">Reports</a></li>
-			</ul>
-		</nav>
-	</header>
+<?php
+include_once('heder.php');
+?>
 	
 	<main>
 		<h2>Customer Information</h2>

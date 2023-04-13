@@ -14,16 +14,19 @@ class control extends model
         switch($path)
         {
             case '/index':
-                $booking_arr=$this->select('booking');
                 include_once('index.php');
                 break;
 
              case'/car2':
-                $booking_arr=$this->select('booking');
+                $cat_arr=$this->select('category');
+
                include_once('car2.php');
                break;
 
              case'/booking':
+                
+
+
                 include_once('booking.php');
                break;  
 
