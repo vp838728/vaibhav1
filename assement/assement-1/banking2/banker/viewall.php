@@ -8,16 +8,23 @@ include_once('heder.php');
       <thead class="table-dark">
           <tr>
           <th scope="col">#</th>
-          <th scope="col">First</th>
+          <th scope="col">name</th>
           <th scope="col">Last</th>
           <th scope="col">Handle</th>
           <th scope="col">action</th>
         </tr>
       </thead>
       <tbody>
+
+        <?php
+        if(!empty($view_arr))
+        {
+          foreach($view_arr as $d)
+        {
+          ?>
         <tr>
           <th scope="row">1</th>
-          <td>Mark</td>
+          <td><?php echo $d->name;?></td>
           <td>Otto</td>
           <td>@mdo</td>
           <td>
@@ -27,6 +34,10 @@ include_once('heder.php');
             <a href="#" class="btn btn-warning">view</a>
           </td>
         </tr>.
+        <?php
+        }
+      }
+      ?>
       </tbody>
     </table>
 	

@@ -28,20 +28,20 @@ class control extends model
 
                         case'/maddnew':
                             $branch_arr=$this->select('branch');
-                            if(isset($_REQUEST['Save Account']))
+                            if(isset($_REQUEST['submit']))
                             {
-                                $email=$_POST['email'];
-                                $password=$_POST['password'];
-                                $name=$_POST['name'];
-                                $balance=$_POST['balance'];
-                                $cnic=$_POST['cnic'];
-                                $number=$_POST['number'];
-                                $city=$_POST['city'];
-                                $address=$_POST['address'];
-                                $source=$_POST['source'];
-                                $accountNo=$_POST['accountNo'];
-                                $bid=$_POST['bid'];
-                                $accountType=$_POST['accountType'];
+                                $email=$_REQUEST['email'];
+                                $password=$_REQUEST['password'];
+                                $name=$_REQUEST['name'];
+                                $balance=$_REQUEST['balance'];
+                                $cnic=$_REQUEST['cnic'];
+                                $number=$_REQUEST['number'];
+                                $city=$_REQUEST['city'];
+                                $address=$_REQUEST['address'];
+                                $source=$_REQUEST['source'];
+                                $accountNo=$_REQUEST['accountNo'];
+                                $bid=$_REQUEST['bid'];
+                                $accountType=$_REQUEST['accountType'];
                                 date_default_timezone_set('asia/calcutta');
                                 $date=date('Y-m-d H:i:s');
 
@@ -78,6 +78,7 @@ class control extends model
                             break;
                             
                         case'/show':
+                            $view_arr=$this->select('useraccounts');
                             include_once('show.php');
                             break;
                             

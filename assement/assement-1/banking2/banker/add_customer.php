@@ -5,7 +5,7 @@
 	// include_once('model.php');
 	?>
 	<h1>Add Customer</h1>
-	<form action="#" method="post">
+	<form action="#" method="get">
 		<label for="name">Name:</label>
 		<input type="text" id="name" name="name" required>
 		
@@ -31,7 +31,7 @@
 		<label for="initial-deposit">Initial Deposit:</label>
 		<input type="number" id="initial-deposit" name="initial-deposit" min="0" required>
 		
-		<input type="submit" name="Add Customer"class="btn btn-primary ps-123">
+		<input type="submit" name="submit"class="btn btn-primary ps-123">
 	</form>
 </body>
 </html>

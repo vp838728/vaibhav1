@@ -297,7 +297,7 @@ if(isset($_SESSION['aid']))
                         <!--end search section-->
                     </li>
                     <li class="selected">
-                        <a href="dashboard"><i class="fa fa-dashboard fa-fw"></i>Dashboard</a>
+                        <a href="#"><i class="fa fa-dashboard fa-fw"></i>Dashboard</a>
                     </li>
                     <li>
                         <a href="#"><i class="fa fa-bar-chart-o fa-fw"></i> Employee<span class="fa arrow"></span></a>
@@ -311,6 +311,7 @@ if(isset($_SESSION['aid']))
                         </ul>
                         <!-- second-level-items -->
                     </li>
+                    
 					
 					<li>
                         <a href="#"><i class="fa fa-bar-chart-o fa-fw"></i> Categories<span class="fa arrow"></span></a>

@@ -82,7 +82,7 @@ class control extends model // step2:extends model class for call function
                             <script>
                             alert('register sucess');
                             window.location='add_emp';
-                            </scrip>
+                            </script>
                             ";
                     }
 					else

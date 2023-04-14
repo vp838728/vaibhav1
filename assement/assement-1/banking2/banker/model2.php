@@ -5,7 +5,7 @@ class model
     
     function __construct()
     {
-        $this->conn = new mysqli('localhost', 'root', '', 'bank2');
+       echo $this->conn = new mysqli('localhost', 'root', '', 'bank2');
     }
     
     function select($tbl)

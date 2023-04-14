@@ -1,3 +1,16 @@
+<?php
+if(iseset($_SESSION['employee_id']))
+{
+
+}else
+{
+    echo"
+    <script>
+    window.location='employee';
+    <script>
+    ";
+}
+?>
 <!DOCTYPE html>
 <html>
 

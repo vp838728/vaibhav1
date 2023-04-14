@@ -20,7 +20,7 @@ include_once('header.php');
                 <div class="panel-body">
                     <div class="row">
                         <div class="col-lg-12">
-                            <form action="" method="get">
+                            <form action="" method="post">
                                 <div class="form-group">
                                     NAME:
                                     <input class="form-control" name="name" placeholder="name">

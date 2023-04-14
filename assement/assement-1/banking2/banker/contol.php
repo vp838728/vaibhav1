@@ -13,16 +13,17 @@ class control extends model
                 include_once('tranction.php');
                 break;
 
-                case'/view':
+                case'\view':
                     include_once('view.php');
                     break;
 
                     case'/viewall':
+                        $view_arr=$this->select('useraccount');
                         include_once('viewall.php');
                         break;
 
                     case'/add_customer':
-                        if(isset($_REQUEST['Add Customer']))
+                        if(isset($_REQUEST['submit']))
                         {
                             $name=$_REQUEST['name'];
                             $email=$_REQUEST['email'];
@@ -66,5 +67,5 @@ class control extends model
         }
     }
 }
-$obj=new control();
+$obj=new control;
 ?>

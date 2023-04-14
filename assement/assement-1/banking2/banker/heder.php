@@ -17,7 +17,7 @@
 			<ul>
 				<li><a href="#">Home</a></li>
 				<li><a href="add_customer.php"> ADD Customers</a></li>
-				<li><a href="#">Transactions</a></li>
+				<li><a href="tranction.php">Transactions</a></li>
 				<li><a href="viewall.php">VIEWALL</a></li>
 			</ul>
 		</nav>

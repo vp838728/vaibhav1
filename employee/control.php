@@ -25,9 +25,42 @@ class control extends model
 			break;
 			
 
-			case'/index':
+			case'/employee':
+				if(isset($_REQUEST['submit']))
+				{
+					$username=$_REQUEST['username'];
+					$pass=$_REQUEST['pass'];
+					$arr=array("username"=>$username,"pass"=>$pass);
+
+					$res=$this->select_where('employee',$arr);
+					$chk=$res->num_rows;
+					if($chk==1)
+					{
+						$fetch=$res->fetch_object();
+						//session create
+
+						$_SESSION['employee_id']=$fetch->employee_id;
+						$_SESSION['username']=$fetch->username;
+						$_SESSION['pass']=$fetch->pass;
+						$_SESSION['name']=$fetch->name;
+
+
+						echo"
+						<script>
+						alert('login sucess');
+						window.location='dashboard';
+						</script>
+						";
+					}else
+					{
+						echo"fail";
+					}
+				}
 		    include_once('index.php');
 			break;
+			case'/employeelogout':
+           unset($_SESSION['employee_id']);
+		   unset($_SESSION['name']);
 			
 			case '/manage_cat':
 			$cat_arr=$this->select('employee');

@@ -101,8 +101,7 @@
         </tr>
         <tr>
           <td colspan="4">
-            <button type="submit" name="saveAccount" class="btn btn-primary btn-sm">Save Account</button>
-            <button type="Reset" class="btn btn-secondary btn-sm">Reset</button></form>
+            <input type="submit" name="submit" class="btn btn-primary btn-sm">
           </td>
         </tr>
       </tbody>

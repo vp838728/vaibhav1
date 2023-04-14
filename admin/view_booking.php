@@ -52,7 +52,7 @@ include_once('header.php');
                                         
                                         <tr class="odd gradeX">
                                             <td><?php echo $data->BOOKING_ID;?></td>
-                                            <td><?php echo $data->USER_ID;?></td>
+                                            <td><?php echo $data->user_id;?></td>
                                             <td><?php echo $data->adv_id;?></td>
                                             <td><?php echo $data->name;?></td>
                                             <td><?php echo $data->email;?></td>
@@ -65,7 +65,7 @@ include_once('header.php');
                                             
                                             <td>
 												<a href="#" class="btn btn-primary">Edit</a>
-												<a href="del?del_BOOKING_ID=<?php echo $data->BOOKING_ID;?>" class="btn btn-danger">Delete</a>
+												<a href="delete?del_BOOKING_ID=<?php echo $data->BOOKING_ID;?>" class="btn btn-danger">Delete</a>
 												<a href="#" class="btn btn-success"><?php echo $data->status;?></a>
 											</td>
                                         </tr>
