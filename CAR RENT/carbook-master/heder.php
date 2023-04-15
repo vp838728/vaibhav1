@@ -45,17 +45,22 @@
           <li class="nav-item"><a href="car2" class="nav-link">Cars</a></li>
 
           <li class="nav-item"><a href="about" class="nav-link">About</a></li>
-          <li class="nav-item"><a href="services" class="nav-link">Services</a></li>
           <li class="nav-item"><a href="pricing" class="nav-link">Pricing</a></li>
           <li class="nav-item"><a href="car" class="nav-link">Cars</a></li>
           <li class="nav-item"><a href="blog" class="nav-link">Blog</a></li>
           <li class="nav-item"><a href="contact" class="nav-link">Contact</a></li>
+          <select class="nav-item" aria-label="Default select example">
+  <option selected>Open this select menu</option>
+  <option value="1">car adv</option>
+  <option value="2">booking</option>
+</select>
           <?php
           if(isset ($_SESSION['user_id']))
           {
             ?>
-          <li class="nav-item"><a href="profile" class="nav-link"><?php echo $_SESSION['unm'];?></a></li><?php echo $_SESSION['unm']?>
+          <li class="nav-item"><a href="profile" class="nav-link"><?php echo $_SESSION['unm'];?></a></li>
           <li class="nav-item"><a href="logout" class="nav-link">Logout</a></li>
+         
 
 
         </ul> 

@@ -4,12 +4,11 @@ if(isset($_SESSION['employee_id']))
 
 }else
 {
-    echo"
+    echo "
     <script>
     window.location='employee';
-    <script>
+    </script>
     ";
-
 }
 ?>
 <!DOCTYPE html>
@@ -252,7 +251,7 @@ if(isset($_SESSION['employee_id']))
                         <li><a href="#"><i class="fa fa-gear fa-fw"></i>Settings</a>
                         </li>
                         <li class="divider"></li>
-                        <li><a href="adminlogout"><i class="fa fa-sign-out fa-fw"></i>Logout</a>
+                        <li><a href="employeelogout"><i class="fa fa-sign-out fa-fw"></i>Logout</a>
                         </li>
                     </ul>
                     <!-- end dropdown-user -->
@@ -277,7 +276,8 @@ if(isset($_SESSION['employee_id']))
                                 <img src="assets/img/user.jpg" alt="">
                             </div>
                             <div class="user-info">
-                                <div><?php echo $_SESSION['username'];?>div>
+                             <div><?php echo $_SESSION['username'];?></div> 
+
                                 <div class="user-text-online">
                                     <span class="user-circle-online btn btn-success btn-circle "></span>&nbsp;Online
                                 </div>
@@ -298,29 +298,18 @@ if(isset($_SESSION['employee_id']))
                         <!--end search section-->
                     </li>
                     <li class="selected">
-                        <a href="index.php"><i class="fa fa-dashboard fa-fw"></i>Dashboard</a>
+                        <a href="#"><i class="fa fa-dashboard fa-fw"></i>Dashboard</a>
                     </li>
-                    <li>
-                        <a href="#"><i class="fa fa-bar-chart-o fa-fw"></i> Employee<span class="fa arrow"></span></a>
-                        <ul class="nav nav-second-level">
-                            <li>
-                                <a href="add_emp.php">Add Employee</a>
-                            </li>
-                            <li>
-                                <a href="manage_emp.php">Manage Employee</a>
-                            </li>
-                        </ul>
-                        <!-- second-level-items -->
-                    </li>
+                    
 					
 					<li>
                         <a href="#"><i class="fa fa-bar-chart-o fa-fw"></i> Categories<span class="fa arrow"></span></a>
                         <ul class="nav nav-second-level">
                             <li>
-                                <a href="add_cat.php">Add Categories</a>
+                                <a href="add_cat">Add Categories</a>
                             </li>
                             <li>
-                                <a href="manage_cat.php">Manage Categories</a>
+                                <a href="manage_cat">Manage Categories</a>
                             </li>
                         </ul>
                         <!-- second-level-items -->
@@ -329,19 +318,19 @@ if(isset($_SESSION['employee_id']))
                         <a href="#"><i class="fa fa-bar-chart-o fa-fw"></i> Location<span class="fa arrow"></span></a>
                         <ul class="nav nav-second-level">
                             <li>
-                                <a href="add_loc.php">Add Location</a>
+                                <a href="add_loc">Add Location</a>
                             </li>
                             <li>
-                                <a href="manage_loc.php">Manage Location</a>
+                                <a href="manage_loc">Manage Location</a>
                             </li>
                         </ul>
                         <!-- second-level-items -->
                     </li>
                      <li>
-                        <a href="manage_user.php"><i class="fa fa-flask fa-fw"></i>Manage User</a>
+                        <a href="manage_user"><i class="fa fa-flask fa-fw"></i>Manage User</a>
                     </li>
-					 <li>
-                        <a href="manage_contact.php"><i class="fa fa-flask fa-fw"></i>Manage Contact</a>
+                    <li>
+                        <a href="manage_contact"><i class="fa fa-flask fa-fw"></i>Manage Contact</a>
                     </li>
                  
                 </ul>

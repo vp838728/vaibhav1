@@ -35,10 +35,6 @@ class control extends model
                 include_once('about.php');
                 break;
 
-            case '/services':
-                include_once('services.php');
-                break;
-
             case '/pricing':
                 include_once('pricing.php');
                 break;
@@ -193,7 +189,6 @@ class control extends model
                             $fetch=$res->fetch_object();
                             // get old file for dekte
                               $old_img=$fetch->file_upload;
-                            $old_img=$fetch->file_upload;
                             if(isset($_REQUEST['save']))
                             {
                                 $name=$_REQUEST['name'];
@@ -208,7 +203,7 @@ class control extends model
                                 if($_FILES['file_upload']['size']>0)
                                 {
                                     $file_upload=$_FILES['file_upload']['name'];
-                                    $path='UPLOAD/USER1'.$file_upload;
+                                    $path='UPLOAD/USER1/'.$file_upload;
                                     $tmp_file=$_FILES['file_upload']['tmp_name'];
                                     move_uploaded_file($tmp_file,$path);
                                     $arr=array("name"=>$name,"unm"=>$unm,"gen"=>$gen,"lag"=>$lag,"cid"=>$cid,"file_upload"=>$file_upload,"updated_at"=>$updated_at);
@@ -216,11 +211,14 @@ class control extends model
                                     if($res)
                                     {
                                         unlink('UPLOAD/USER1/'.$old_img);
-                                        echo"<script>
-                                        alert('Update sucess');
-                                        window.location='profile';
-                                        </script>
-                                        ";
+                                        echo"sucess";
+                                        // echo"<script>
+                                        // alert('Update sucess');
+                                        // window.location='profile';
+                                        // </script>
+                                       // ";
+                                    }else{
+                                        echo "fail";
                                     }
                                 }
                                 else
@@ -231,12 +229,13 @@ class control extends model
                                     $res=$this->update('user1',$arr,$where);
                                     if($res)
                                     {
-                                        echo "
-                                        <script>
+                                        echo"sucesss";
+                                         echo "
+                                         <script>
                                         alert('Update Success');
-                                        window.location='profile';
-                                        </script>
-                                        ";
+                                         window.location='profile';
+                                         </script>
+                                         ";
                                     }
                                 }
                                 

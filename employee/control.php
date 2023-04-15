@@ -4,6 +4,7 @@ class control extends model
 {
 	function __construct()
 	{
+		session_start();
 		model::__construct();
 		$path=$_SERVER['PATH_INFO']; //http://localhost/Project/empolyee/control.php	
 		switch($path)
@@ -29,7 +30,7 @@ class control extends model
 				if(isset($_REQUEST['submit']))
 				{
 					$username=$_REQUEST['username'];
-					$pass=$_REQUEST['pass'];
+					$pass=md5($_REQUEST['pass']);
 					$arr=array("username"=>$username,"pass"=>$pass);
 
 					$res=$this->select_where('employee',$arr);
@@ -59,8 +60,16 @@ class control extends model
 		    include_once('index.php');
 			break;
 			case'/employeelogout':
-           unset($_SESSION['employee_id']);
-		   unset($_SESSION['name']);
+				unset($_SESSION['employee_id']);
+				unset($_SESSION['username']);
+				unset($_SESSION['name']);
+				echo"
+						<script>
+						alert('logout sucess');
+						window.location='employee';
+						</script>
+						";
+				break;
 			
 			case '/manage_cat':
 			$cat_arr=$this->select('employee');

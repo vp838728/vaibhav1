@@ -8,7 +8,7 @@ include_once('header.php');
             <div class="row">
                  <!--  page header -->
                 <div class="col-lg-12">
-                    <h1 class="page-header">Manage Employee</h1>
+                    <h1 class="page-header">Manage Contact</h1>
                 </div>
                  <!-- end  page header -->
             </div>
@@ -17,27 +17,29 @@ include_once('header.php');
                     <!-- Advanced Tables -->
                     <div class="panel panel-default">
                         <div class="panel-heading">
-                            Manage Employee
+                            Manage Contact
                         </div>
                         <div class="panel-body">
                             <div class="table-responsive">
                                 <table class="table table-striped table-bordered table-hover" id="dataTables-example">
                                     <thead>
                                         <tr>
-                                            <th>Rendering engine</th>
-                                            <th>Browser</th>
-                                            <th>Platform(s)</th>
-                                            <th>Engine version</th>
-                                            <th>CSS grade</th>
+                                            <th>Contact ID</th>
+                                            <th> Name</th>
+                                            <th>Action</th>
                                         </tr>
                                     </thead>
                                     <tbody>
                                         <tr class="odd gradeX">
-                                            <td>Trident</td>
-                                            <td>Internet Explorer 4.0</td>
-                                            <td>Win 95+</td>
-                                            <td class="center">4</td>
-                                            <td class="center">X</td>
+                                            <td>1</td>
+                                            <td>Ahmedabad</td>
+                                            <td>
+												<a href="#" class="btn btn-primary">Edit</a>
+												<a href="#" class="btn btn-danger">Delete</a>
+												<a href="#" class="btn btn-success">Status</a>
+											</td>
+                                        
+                                            
                                         </tr>
                                         
                                     </tbody>

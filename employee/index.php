@@ -1,3 +1,13 @@
+<?php
+if(isset($_SESSION['employee_id']))
+{
+	echo "
+		<script>
+		window.location='dashboard';
+		</script>
+		";
+}
+?>
 <!DOCTYPE html>
 <html>
 
@@ -31,7 +41,7 @@
                         <form role="form" method="post">
                             <fieldset>
                                 <div class="form-group">
-                                    <input class="form-control" placeholder="username" name="username" type="text" autofocus>
+                                    <input class="form-control" placeholder="E-mail" name="username" type="text" autofocus>
                                 </div>
                                 <div class="form-group">
                                     <input class="form-control" placeholder="Password" name="pass" type="password" value="">

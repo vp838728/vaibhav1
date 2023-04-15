@@ -1,3 +1,16 @@
+<?php
+if(isset($_SESSION['aid']))
+{
+
+}else
+{
+    echo "
+    <script>
+    window.location='admin';
+    </script>
+    ";
+}
+?>
 <!DOCTYPE html>
 <html>
 <head>

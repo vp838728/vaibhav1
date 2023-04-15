@@ -1,11 +1,12 @@
 <?php
+
 class model
 {
     public $conn = "";
     
     function __construct()
     {
-        $this->conn = new mysqli('localhost', 'root', '', 'carrent');
+        $this->conn = new mysqli('localhost', 'root', '', 'car rent');
     }
     
     function select($tbl)
@@ -105,7 +106,7 @@ class model
 	}
 }
 
-$obj = new model;
+$obj = new model();
 // $result = $obj->select('employee');
 // print_r($result);
 ?>

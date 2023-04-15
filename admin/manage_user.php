@@ -20,17 +20,27 @@ include_once('header.php');
                             Manage User
                         </div>
                         <div class="panel-body">
+                            <form action="">
+                                <input type="search" name="search" class="form-control" value="<?php
+                                if(isset($search))
+                                {
+                                    echo $search;
+                                }
+                                ?>" placeholder="search by name">
+                                <input type="submit" name="submit" class="btn btn-primary">
+                                <form>
                             <div class="table-responsive">
-                                <table class="table table-striped table-bordered table-hover" id="dataTables-example">
+                                <table class="table table-striped table-bordered table-hover" >
                                     <thead>
                                         <tr>
 
-                                            <th>file</th>
                                            <th>user_id</th>
                                             <th>name</th>
                                             <th>unm</th>
                                             <th>gen</th>
                                             <th>lag</th>
+                                            <th>file</th>
+
                                             <th>cid </th>
                                             <th>created_at</th>
                                             <th>updated_at</th>
@@ -52,12 +62,13 @@ include_once('header.php');
                                         ?>
                                         <tr class="odd gradeX">
 
-                                            <td><img src="UPLOAD/USER1/<?PHP echo $data->file_upload;?>"width="50px"alt="imges"></td>
                                             <td><?php echo $data->user_id;?></td>
                                             <td><?php echo $data->name;?></td>
                                             <td><?php echo $data->unm;?></td>
                                             <td><?php echo $data->gen;?></td>
                                             <td><?php echo $data->lag;?></td>
+                                            <td><img src="../CAR RENT/UPLOAD/USER1/<?PHP echo $data->file_upload;?>"width="50px"alt="imges"></td>
+
                                             <td><?php echo $data->cid;?></td>
                                             <td><?php echo $data->created_at;?></td>
                                             <td><?php echo $data->updated_at;?></td>
