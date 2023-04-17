@@ -24,7 +24,35 @@ class control extends model
                break;
 
              case'/booking':
-                
+                if(isset($_REQUEST['submit']))
+                {
+                    $name=$_REQUEST['name'];
+                    $email=$_REQUEST['email'];
+                    $moblie=$_REQUEST['moblie'];
+                    $PICKUPLOCATION=$_REQUEST['PICKUPLOCATION'];
+                    $DESTINATION=$_REQUEST['DESTINATION'];
+                    $STATE=$_REQUEST['STATE'];
+                    $city=$_REQUEST['city'];
+                    
+                    date_default_timezone_set('asia/calcutta');
+                    $updated=date('Y-m-d H:i:s');
+                    $deleated_dt=date('Y-m-d H:i:s');
+                    $arr=array("name"=>$name,"email"=>$email,"moblie"=>$moblie,"PICKUPLOCATION	"=>$PICKUPLOCATION,"DESTINATION"=>$DESTINATION,"STATE"=>$STATE,"city"=>$city,"updated"=>$updated,"deleated_dt"=>$deleated_dt);
+                    $res=$this->insert('booking',$arr);
+                    if($res)
+                    {
+                        echo"
+                        <script>
+                        alert('booking sucess');
+                        window.location='booking.php';
+                        </script>
+                        ";
+                    }
+                    else{
+                        echo"fail";
+                    }
+               
+                }
 
 
                 include_once('booking.php');
@@ -69,7 +97,7 @@ class control extends model
                             <script>
                             alert('contact sucess');
                             window.location='contact';
-                            </script>
+                            </>
                             ";
                     }else
                     {

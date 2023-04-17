@@ -36,54 +36,54 @@
 						<div class="form-header">
 							<h1>Book a car</h1>
 						</div>
-						<form>
+						<form method="post" action="">
 							<div class="row">
 								<div class="col-sm-6">
 									<div class="form-group">
 										<span class="form-label">Name</span>
-										<input class="form-control" type="text" placeholder="Enter your name">
+										<input class="form-control" type="text" name="name"placeholder="Enter your name">
 									</div>
 								</div>
 								<div class="col-sm-6">
 									<div class="form-group">
 										<span class="form-label">Email</span>
-										<input class="form-control" type="email" placeholder="Enter your email">
+										<input class="form-control" type="email"name="email" placeholder="Enter your email">
 									</div>
 								</div>
 							</div>
 							<div class="form-group">
 								<span class="form-label">Phone</span>
-								<input class="form-control" type="tel" placeholder="Enter your phone number">
+								<input class="form-control" type="number" name="moblie" placeholder="Enter your phone number">
 							</div>
 							<div class="form-group">
 								<span class="form-label">Pickup Location</span>
-								<input class="form-control" type="text" placeholder="Enter ZIP/Location">
+								<input class="form-control" type="text" name="PICKUPLOCATION" placeholder="Enter ZIP/Location">
 							</div>
 							<div class="form-group">
 								<span class="form-label">Destination</span>
-								<input class="form-control" type="text" placeholder="Enter ZIP/Location">
+								<input class="form-control" type="text" name="DESTINATION" placeholder="Enter ZIP/Location">
 							</div>
                             <div class="row">
 								<div class="col-sm-6">
 									<div class="form-group">
 										<span class="form-label">STATE</span>
-										<input class="form-control" type="text" placeholder="Enter your STATE">
+										<input class="form-control" type="text"name="STATE" placeholder="Enter your STATE">
 									</div>
 								</div>
 								<div class="col-sm-6">
 									<div class="form-group">
 										<span class="form-label">CITY</span>
-										<input class="form-control" type="CITY" placeholder="Enter your CITY">
+										<input class="form-control" type="text" name="city" placeholder="Enter your CITY">
 									</div>
 								</div>
 							</div>
 							<div class="row">
 								<div class="col-sm-12">
-									<div class="form-group">
+									<!-- <div class="form-group">
 										<span class="form-label">Pickup Date</span>
 										<input class="form-control" type="date" required>
 									</div>
-								</div>
+								</div> -->
 
 								<!-- <div class="col-sm-7">
 									<div class="row">
@@ -140,7 +140,8 @@
 								</div> -->
 							</div>
 							<div class="form-btn">
-								<button class="submit-btn">Book Now</button>
+								<input type="submit" name="submit" class="submit-btn">
+								<!-- <button class="submit-btn">Book Now</button> -->
 							</div>
 						</form>
 					</div>

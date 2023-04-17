@@ -31,7 +31,8 @@ include_once('header.php');
                                             <th>name</th>
                                             <th>email</th>
                                             <th>moblie</th>
-                                            <th>ADDRESS</th>
+                                            <th>PICKUPLOCATION</th>
+                                            <th>DESTINATION</th>
                                             <th>city</th>
                                             <th>STATE</th>
                                             <th>updated</th>
@@ -57,7 +58,8 @@ include_once('header.php');
                                             <td><?php echo $data->name;?></td>
                                             <td><?php echo $data->email;?></td>
                                             <td><?php echo $data->moblie;?></td>
-                                            <td><?php echo $data->ADDRESS;?></td>
+                                            <td><?php echo $data->PICKUPLOCATION;?></td>
+                                            <td><?php echo $data->$DESTINATION;?></td>
                                            <td><?php echo $data->city;?></td>
                                             <td><?php echo $data->STATE;?></td>
                                             <td><?php echo $data->updated;?></td>
