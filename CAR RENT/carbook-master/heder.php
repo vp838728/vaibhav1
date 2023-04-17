@@ -39,7 +39,7 @@
         <span class="oi oi-menu"></span> Menu
       </button>
 
-      <div class="collapse navbar-collapse" id="ftco-nav">
+      <div class="collapse navbar-collapse" id="ftco-nav" class="dropdown-menu"aria-labelledby="navbarDropdown">
         <ul class="navbar-nav ml-auto">
           <li class="nav-item active"><a href="index" class="nav-link">Home</a></li>
           <li class="nav-item"><a href="car2" class="nav-link">Cars</a></li>
@@ -49,11 +49,17 @@
           <li class="nav-item"><a href="car" class="nav-link">Cars</a></li>
           <li class="nav-item"><a href="blog" class="nav-link">Blog</a></li>
           <li class="nav-item"><a href="contact" class="nav-link">Contact</a></li>
-          <select class="nav-item" aria-label="Default select example">
-  <option selected>Open this select menu</option>
-  <option value="1">car adv</option>
-  <option value="2">booking</option>
+          
+          <select class="form-select" aria-label="Default select example">
+  <option ></option>
+  <option value="1">One</option>
+  <option value="2">Two</option>
+  <option value="3">Three</option>
 </select>
+        
+        </li>
+        
+       
           <?php
           if(isset ($_SESSION['user_id']))
           {
