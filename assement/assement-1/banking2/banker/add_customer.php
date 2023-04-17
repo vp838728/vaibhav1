@@ -1,6 +1,5 @@
 
 	<?php
-	
 	 include_once('heder.php');
 	// include_once('model.php');
 	?>
@@ -31,7 +30,7 @@
 		<label for="initial-deposit">Initial Deposit:</label>
 		<input type="number" id="initial-deposit" name="initial-deposit" min="0" required>
 		
-		<input type="submit" name="submit"class="btn btn-primary ps-123">
+		<input type="submit" name="submit"class="btn btn-primary">
 	</form>
 </body>
 </html>

@@ -140,7 +140,7 @@ class control extends model
 				if(isset($_REQUEST['del_location_id']))
 				{
 					$loction_id=$_REQUEST['del_loction_id'];
-					$where=array("location_id"=$loction_id);
+					$where=array("location_id"=>$loction_id);
 					$res=$this->delete_where('loaction',$where);
 					if($res)
 					{
@@ -159,7 +159,7 @@ class control extends model
 					if(isset($_REQUEST['status_user_id']))
 					{
 						$user_id=$_REQUEST['status_user_id'];
-						$where=array("user_id"=$user_id);
+						$where=array("user_id"=>$user_id);
 						$res=$this->select_where('user1',$where);
 						$fetch=$res->fetch_object();
 						if($fetch->status=="block")

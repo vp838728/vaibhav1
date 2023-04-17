@@ -13,12 +13,11 @@ class control extends model
                 include_once('tranction.php');
                 break;
 
-                case'\view':
+                case'/view':
                     include_once('view.php');
                     break;
 
                     case'/viewall':
-                        $view_arr=$this->select('useraccount');
                         include_once('viewall.php');
                         break;
 
@@ -44,7 +43,7 @@ class control extends model
                                 echo"
                                 <script>
                                 alert('register sucess');
-                                window.location='view.php';
+                                window.location='add_customer.php';
                                 <script>
                                 ";
                             }else
@@ -67,5 +66,5 @@ class control extends model
         }
     }
 }
-$obj=new control;
+$obj=new control();
 ?>

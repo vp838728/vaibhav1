@@ -32,7 +32,7 @@ include_once('header.php');
                                 </div>
                                 <div class="form-group">
                                     email:
-                                    <input type="email" class="form-control" name="email" placeholder="Enter email">
+                                    <input type="text" class="form-control" name="email" placeholder="Enter email">
                                 </div>
 
                                 <div class="form-group">
