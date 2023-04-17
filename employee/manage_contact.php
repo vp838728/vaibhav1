@@ -24,23 +24,42 @@ include_once('header.php');
                                 <table class="table table-striped table-bordered table-hover" id="dataTables-example">
                                     <thead>
                                         <tr>
-                                            <th>Contact ID</th>
-                                            <th> Name</th>
+                                            <th>contact_id</th>
+                                            <th> name</th>
+                                            <th>email</th>
+                                            <th>subject</th>
+                                            <th>msg</th>
+                                            <th>created_dt</th>
+                                            <th>updated_dt</th>
                                             <th>Action</th>
                                         </tr>
                                     </thead>
                                     <tbody>
+                                        <?php
+                                        if(!empty ($contact_arr))
+                                        {
+                                            foreach($contact_arr as $data)
+                                            {
+                                                ?>
                                         <tr class="odd gradeX">
-                                            <td>1</td>
-                                            <td>Ahmedabad</td>
+                                            <td><?php echo $data->contact_id;?></td>
+                                            <td><?php echo $data->name;?></td>
+                                            <td><?php echo $data->email;?></td>
+                                            <td><?php echo $data->subject;?></td>
+                                            <td><?php echo $data->created_dt;?></td>
+                                            <td><?php echo $data->updated_dt;?></td>
                                             <td>
 												<a href="#" class="btn btn-primary">Edit</a>
-												<a href="#" class="btn btn-danger">Delete</a>
+												<a href="delete?del_contact_id=<?php echo $data->contact_id;?>" class="btn btn-danger">Delete</a>
 												<a href="#" class="btn btn-success">Status</a>
 											</td>
                                         
                                             
                                         </tr>
+                                        <?php
+                                            }
+                                        }
+                                        ?>
                                         
                                     </tbody>
                                 </table>

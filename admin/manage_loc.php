@@ -28,11 +28,10 @@ include_once('header.php');
                                             <th>name</th>
                                             <th>created_dt</th>
                                             <th>update_dt</th>
-<<<<<<< HEAD
-=======
+
 
                                             <th>Action</th>
->>>>>>> f44eed26f43cf61b83fa00b44724580cd18b70ba
+
                                         </tr>
                                     </thead>
                                     
@@ -43,28 +42,17 @@ include_once('header.php');
                                         {
                                             foreach($loc_arr as $data)
                                             {
-<<<<<<< HEAD
-                                                ?>
-=======
                                         ?>
->>>>>>> f44eed26f43cf61b83fa00b44724580cd18b70ba
                                         <tr class="odd gradeX">
                                             <td><?php echo $data->location_id;?></td>
                                             <td><?php echo $data->name;?></td>
                                             <td><?php echo $data->created_dt;?></td>
                                             <td><?php echo $data->update_dt;?></td>
-<<<<<<< HEAD
-                                            <td>
-												<a href="#" class="btn btn-primary">Edit</a>
-												<a href="delete?del_location_id=<?php echo $data->location_id;?>" class="btn btn-danger">Delete</a>
-												<a href="#" class="btn btn-success">Status</a>
-=======
                                             
                                             <td>
 												<a href="#" class="btn btn-primary">Edit</a>
 												<a href="#" class="btn btn-danger">Delete</a>
 												 <!-- <a href="#" class="btn btn-success"><?php echo $data->status;?></a> --> 
->>>>>>> f44eed26f43cf61b83fa00b44724580cd18b70ba
 											</td>
                                         </tr>
                                         <?php

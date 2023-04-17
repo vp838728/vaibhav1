@@ -99,6 +99,106 @@ class control extends model
 			$caradv_arr=$this->select('caradv');
 			include_once('manageCar_ Adv.php');
 			break;
+			case'/delete':
+				if(isset($_REQUEST['del_contact_id']))
+				{
+					$contact_id=$_REQUEST['del_contact_id'];
+					$where=array("contact_id"=>$contact_id);
+					$res=$this->delete_where('contact',$where);
+					if($res)
+					{
+						 echo"
+						 <script>
+						 alert('delete sucess');
+						 window.location='manage_contact';
+						 <script>
+						 ";
+					}else
+					{
+						echo"fail";
+					}
+				}
+				
+				if(isset($_REQUEST['del_user_id']))
+				{
+                   $user_id=$_REQUEST['del_user_id'];
+				   $where=array("user_id"=>$user_id);
+				   $res=$this->delete_where('user1',$where);
+				   if($res)
+				   {
+					echo "
+					<script>
+					alert('delete sucess)
+					window.location='manage_user'
+					<script>
+					";
+				   }else{
+					echo"fail";
+				   }
+				}
+
+				if(isset($_REQUEST['del_location_id']))
+				{
+					$loction_id=$_REQUEST['del_loction_id'];
+					$where=array("location_id"=$loction_id);
+					$res=$this->delete_where('loaction',$where);
+					if($res)
+					{
+						echo "
+						<script>
+						alert('delete sucess');
+						window.loction='manage_loc'
+						";
+					}else{
+						echo"fail";
+					}
+				}
+				break;
+
+				case'/status':
+					if(isset($_REQUEST['status_user_id']))
+					{
+						$user_id=$_REQUEST['status_user_id'];
+						$where=array("user_id"=$user_id);
+						$res=$this->select_where('user1',$where);
+						$fetch=$res->fetch_object();
+						if($fetch->status=="block")
+						{
+							$arr=array("status"=>"unblock");
+							$res=$this->update('user1',$arr,$where);
+							if($res)
+							{
+								unset($_SESSION['user1']);
+								unset($_SESSION['unm']);
+								unset($_SESSION['name']);
+
+								echo"
+								<script>
+								alert('customer block sucesss');
+								window.location='manage_user';
+								<script>
+								";
+							}
+						}else{
+							$arr=array("status"=>"block");
+							$res=$this->update('user1',$arr,$where);
+							if($res)
+							{
+								
+								unset($_SESSION['user1']);
+								unset($_SESSION['unm']);
+								unset($_SESSION['name']);
+
+								echo"
+								<script>
+								alert('customer block success');
+								window.location='manage_user';
+								<script>
+								";
+							}
+						}
+					}
+					break;
 
 			default:
 			echo "<h1>Page Not Found</h1>";

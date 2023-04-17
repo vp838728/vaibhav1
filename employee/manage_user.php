@@ -24,25 +24,47 @@ include_once('header.php');
                                 <table class="table table-striped table-bordered table-hover" id="dataTables-example">
                                     <thead>
                                         <tr>
-                                            <th>User ID</th>
-                                            <th>User Name</th>
+                                            <th>user_id</th>
+                                            <th>name</th>
+                                            <th>unm</th>
+                                            <th>gen</th>
+                                            <th>lag</th>
+                                            <th>file</th>
+                                            <th>cid</th>
+                                            <th>created_dt</th>
                                             <th>Action</th>
                                         </tr>
                                     </thead>
                                     <tbody>
+                                        <?php
+                                        if(!empty ($user_arr))
+                                        {
+                                            foreach($user_arr as $data)
+                                            {
+                                                ?>
                                         <tr class="odd gradeX">
-                                            <td>1</td>
-                                            <td>Raj</td>
+                                            <td><?php echo $data->user_id;?> </td>
+                                            <td><?php echo $data->name;?></td>
+                                            <td><?php echo $data->unm;?></td>
+                                            <td><?php echo $data->gen;?></td>
+                                            <td><img src="../CAR RENT/UPLOAD/USER1/<?PHP echo $data->file-upload;?>" width="50px" alt="imges"></td>
+                                             <td><?php echo $data->cid;?></td>
+                                             <td><?php echo $data->created_at;?></td>
+                                             <td><?php echo $data->updated_at;?></td>
                                             <td>
 												<a href="#" class="btn btn-primary">Edit</a>
-												<a href="#" class="btn btn-danger">Delete</a>
-												<a href="#" class="btn btn-success">Status</a>
+												<a href="delete?del_user_id=<?php echo $data->user_id;?>" class="btn btn-danger">Delete</a>
+												<a href="status?status_user_id=<?php echo $data->user_id;?>" class="btn btn-success">Status</a>
 											</td>
                                         
                                             
                                         </tr>
-                                        
+                                        <?php
+                                            }
+                                        }
+                                        ?>
                                     </tbody>
+
                                 </table>
                             </div>
                             

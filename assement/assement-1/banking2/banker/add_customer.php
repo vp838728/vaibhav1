@@ -5,7 +5,7 @@
 	// include_once('model.php');
 	?>
 	<h1>Add Customer</h1>
-	<form action="#" method="get">
+	<form action="#" method="post">
 		<label for="name">Name:</label>
 		<input type="text" id="name" name="name" required>
 		
