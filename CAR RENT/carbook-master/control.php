@@ -24,6 +24,7 @@ class control extends model
                break;
 
              case'/booking':
+
                 if(isset($_REQUEST['submit']))
                 {
                     $name=$_REQUEST['name'];

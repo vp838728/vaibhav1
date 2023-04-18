@@ -45,16 +45,16 @@ include_once('heder.php');
     					</div>
     				</div>
           
-            
+          
           
     			</div>
+          
+        
+          
           <?php
          }
         
         ?>
-        
-          
-        
         	
     		</div>
         
