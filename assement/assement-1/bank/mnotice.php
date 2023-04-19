@@ -23,8 +23,8 @@
       <li class="nav-item ">
         <a class="nav-link active" href="mindex.php">Home <span class="sr-only">(current)</span></a>
       </li>
-      <li class="nav-item ">  <a class="nav-link" href="maccounts.php">Accounts</a></li>
-      <li class="nav-item ">  <a class="nav-link" href="maddnew.php">Add New Account</a></li>
+      <li class="nav-item ">  <a class="nav-link" href="maccounts">Accounts</a></li>
+      <li class="nav-item ">  <a class="nav-link" href="maddnew">Add New Account</a></li>
       <li class="nav-item ">  <a class="nav-link" href="mfeedback.php">Feedback</a></li>
       <!-- <li class="nav-item ">  <a class="nav-link" href="transfer.php">Funds Transfer</a></li> -->
       <!-- <li class="nav-item ">  <a class="nav-link" href="profile.php">Profile</a></li> -->

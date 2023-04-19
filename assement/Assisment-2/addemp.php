@@ -52,7 +52,7 @@
 </form>
     <div class="panel panel-default">
                         <div class="panel-heading">
-                            Add Book
+                          <h2 class="text-center">  Add EMPLOYEE </h2>
                         </div>
                         <div class="panel-body">
                             <div class="row">
@@ -62,44 +62,47 @@
                                        
 
                                        <div class="form-group">
-                                           <label>NAME:</label>
-                                           <input type="text" name="name" class="form-control" placeholder="Book Id">
+                                           <label>FIRST NAME::</label>
+                                           <input type="text" name="name" class="form-control" placeholder="first name">
+                                       </div>
+                                       <div class="form-group">
+                                           <label>LAST NAME::</label>
+                                           <input type="text" name="lname" class="form-control" placeholder="last name">
                                        </div>
                                        <div class="form-group">
                                            <label>EMAIL:</label>
-                                           <input type="text" name="email" class="form-control" placeholder="Category">
-                                       </div>
-
-
-                                       <div class="form-group">
-                                           <label>ADDRESS:</label>
-                                           <input type="text" name="address" class="form-control" placeholder="Book Name">
-                                       </div>
-
-                                       <div class="form-group">
-                                           <label>PHONE</label>
-                                           <input type="number" name="phone" class="form-control" placeholder="enter phone">
-                                       </div>
-
-                                     <div class="form-group">
-                                          <label for="account-type">Account Type:</label>
-		                                   <select id="accounttype" name="accounttype" required>
-			                                <option value="">Select Account Type</option>
-			                                <option value="Savings Account">Savings Account</option>
-			                             <option value="Checking Account">Checking Account</option>
-			                              <option value="Credit Card Account">Credit Card Account</option>
-		                                   </select>
-                                      </div>
-
-                                       <div class="form-group">
-                                           <label>DEPOSIT:</label>
-                                           <input type="text" name="initialdeposit" class="from-contol" placeholder="price">
+                                           <input type="text" name="email" class="form-control" placeholder="email">
                                        </div>
                                        
+                                    
+
+                                    <div class="form-group">
+                                        <label>PHONE</label>
+                                        <input type="number" name="phone" class="form-control" placeholder="enter phone">
+                                    </div>
+                                    
                                        <div class="form-group">
-                                           <label>ACCOUNT NO:</label>
-                                           <input type="text" name="accountno" class="from-control" placeholder="price">
-                                       </div>
+                                            <label>Address:</label>
+                                            <textarea class="form-control" rows="3"name="Address"></textarea>
+                                        </div>
+
+                                     
+                                      <div class="form-group">
+                                              <label>  gen:</label>
+                                               <input type="radio" name="gen"  value="male">Male
+                                            <input type="radio" name="gen"  value="female">female
+                                      </div>
+                                      
+                                    <div class="form-group">
+                                        <label>PASSWORD</label>
+                                        <input type="number" name="password" class="form-control" placeholder="enter phone">
+                                    </div>
+                                    
+                                    <div class="form-group">
+                                        <label>CPASSWORD</label>
+                                        <input type="number" name="cpassword" class="form-control" placeholder="enter phone">
+                                    </div>
+
                                        
                                        <input type="submit" name="submit" class="btn btn-primary" value="Submit">
                                       

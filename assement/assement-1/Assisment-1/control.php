@@ -23,6 +23,7 @@ class control extends model
 						break;
 
 				case '/delete_book':
+					
 							include_once('delete_book.php');
 							break;
 						
@@ -31,12 +32,14 @@ class control extends model
 							break;
 
 				case '/view':
+					$user_arr=$this->select('useraccount');
+
 
 					
-				  $where=array("user_id "=>$_SESSION['user_id']);
+				//   $where=array("user_id "=>$user_id);
 
-					 $res=$this->select_where('useraccount',$where);
-					 $fetch=$res->fetch_object();
+				// 	 $res=$this->select_where('useraccount',$where);
+				// 	 $fetch=$res->fetch_object();
 					     include_once('view.php');
 								break;
 
@@ -75,7 +78,7 @@ class control extends model
 							<script>
 							alert('register sucess');
 							window.location='addcustomer';
-							</script>
+							</>
 							";
 						}else
 						{
@@ -85,6 +88,56 @@ class control extends model
 				
 						include_once('addcustomer.php');
 						break;
+						case'/delete':
+							if(isset($_REQUEST['del_user_id']))
+					{
+						$user_id=$_REQUEST['del_user_id'];
+						$where=array("user_id"=>$user_id);
+						$res=$this->delete_where('useraccount',$where);
+						if($res)
+						{
+							echo"
+							<script>
+							alert('delete sucess');
+							window.location='edit_book';
+							</script>
+							";
+						}else
+						{
+							echo"fail";
+						}
+					}
+					break;
+
+					case'/tranction':
+						if(isset($_REQUEST['submit']))
+						{
+							$accountno=$_REQUEST['accountno'];
+							$amount=$_REQUEST['amount'];
+							$type=$_REQUEST['type'];
+							$user_id=$_REQUEST['user_id'];
+
+							date_default_timezone_set('asia/calcutta');
+							$create_dt=date('Y-m-d H:i:s');
+
+							$arr=array("accountno"=>$accountno,"amount"=>$amount,"type"=>$type,"create_dt"=>$create_dt,"user_id"=>$user_id);
+							$res=$this->insert('tranction',$arr);
+							if($res)
+							{
+								echo"
+								<script>
+								alert('tranction sucess');
+								window.location='tranction.php';
+								</script>
+								";
+							}else
+							{
+								echo"fail";
+							}
+						}
+						include_once('tranction.php');
+						 break;
+
 					
 							default:
 			echo "<h1>Page Not Found</h1>";

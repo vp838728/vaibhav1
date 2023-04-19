@@ -80,66 +80,61 @@
                             </div>
 
         </div>
-            <div class="row">
-                <div class="col-md-12">
-                    <!-- Advanced Tables -->
+              <!-- /. ROW  -->
+              <div class="row">
+                <div class="col-md-6">
+                  <!--   Kitchen Sink -->
                     <div class="panel panel-default">
                         <div class="panel-heading">
-                             Advanced Tables
+                            Kitchen Sink
                         </div>
                         <div class="panel-body">
                             <div class="table-responsive">
-                                <table class="table table-striped table-bordered table-hover" id="dataTables-example">
-                                    <thead>
-                                        <tr>
-                                            <th>user id</th>
-                                            <th>NAME</th>
-                                            <th>EMAIL:</th>
-                                            <th>ACCOUNT-TYPE:</th>
-                                            <th>ADRRESS:</th>
-                                            <th>ACTION</th>
-                                            
-                                        </tr>
-                                    </thead>
-                                    <tbody>
-                                        <?php
-                                        {
-                                        if(!empty($user_arr))
-                                        foreach($user_arr as $data)
-                                        {
-                                            ?>
-                                    <tr class="odd gradeX">
-                                           <td><?php echo $data->user_id?></td>
-                                            <td><?php echo $data->name?></td>
-                                            <td><?php echo $data->email?></td>
-                                            <td><?php echo $data->accounttype?></td>
-                                            <td><?php echo $data->address?></td>
-                                            <td><?php echo $data->updated;?></td>
-                                            
-                                            <td>
-												<a href="#" class="btn btn-primary">Edit</a>
-												<a href="#" class="btn btn-danger">Delete</a>
-												<a href="view" class="btn btn-success">view</a>
-											</td>
-                                        </tr>
-                                        <?php
-                                        }
-                                    }
-                                    ?>
-                                    </tbody>
-                                </table>
+                                <table class="table table-striped table-bordered table-hover">
+                                <tbody>
+        <?php
+        {
+        if(!empty($user_arr))
+        foreach($user_arr as $data)
+        {
+          ?>
+        <tr>
+          <td>Name</td>
+          <td><?php echo $data->name;?>
+          <td>Account No</td>
+          
+        </tr><tr>
+          <td>Branch Name</td>
+          
+          <td>Brach Code</td>
+          
+        </tr><tr>
+          <td>Current Balance</td>
+          
+          <td>Account Type</td>
+          
+        </tr><tr>
+          <td>Cnic</td>
+          
+          <td>City</td>
+          
+        </tr><tr>
+          <td>Contact Number</td>
+          
+          <td>Address</td>
+          
+        </tr>
+        <?php
+        }
+      }
+      ?>
+      </tbody>
+    </table>
                             </div>
-                            
                         </div>
                     </div>
-                    <!--End Advanced Tables -->
+                     <!-- End  Kitchen Sink -->
                 </div>
-            
-                <!-- /. ROW  -->
-            </div>
-                <!-- /. ROW  -->
-    </div>
-    </div>
      <!-- CONTENT-WRAPPER SECTION END-->
     <section class="footer-section">
         <div class="container">

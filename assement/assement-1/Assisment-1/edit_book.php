@@ -80,40 +80,66 @@
                             </div>
 
         </div>
-              <!-- /. ROW  -->
-              <div class="row">
-                <div class="col-md-6">
-                  <!--   Kitchen Sink -->
+            <div class="row">
+                <div class="col-md-12">
+                    <!-- Advanced Tables -->
                     <div class="panel panel-default">
                         <div class="panel-heading">
-                            Kitchen Sink
+                             Advanced Tables
                         </div>
                         <div class="panel-body">
                             <div class="table-responsive">
-                                <table class="table table-striped table-bordered table-hover">
+                                <table class="table table-striped table-bordered table-hover" id="dataTables-example">
                                     <thead>
                                         <tr>
-                                            <th>USER_ID</th>
-                                            <th>First Name</th>
-                                            <th>Last Name</th>
-                                            <th>Username</th>
+                                            <th>user_ id</th>
+                                            <th>NAME</th>
+                                            <th>EMAIL:</th>
+                                            <th>ACCOUNT-TYPE:</th>
+                                            <th>ADRRESS:</th>
+                                            <th>ACTION</th>
+                                            
                                         </tr>
                                     </thead>
-                                    <tbody> 
-                                        <tr>
-                                            <td>NAME:<?php echo $fetch->name?></td>
-                                            <td>Mark</td>
-                                            <td>Otto</td>
-                                            <td>@mdo</td>
+                                    <tbody>
+                                        <?php
+                                        {
+                                        if(!empty($user_arr))
+                                        foreach($user_arr as $data)
+                                        {
+                                            ?>
+                                    <tr class="odd gradeX">
+                                           <td><?php echo $data->user_id?></td>
+                                            <td><?php echo $data->name?></td>
+                                            <td><?php echo $data->email?></td>
+                                            <td><?php echo $data->accounttype?></td>
+                                            <td><?php echo $data->address?></td>
+                                            <td><?php echo $data->updated;?></td>
+                                            
+                                            <td>
+												<a href="#" class="btn btn-primary">Edit</a>
+												<a href="delete?del_user_id=<?php echo $data->user_id?>" class="btn btn-danger">Delete</a>
+												<a href="view?view_user_id=<?php echo $data->user_id?>" class="btn btn-success">view</a>
+											</td>
                                         </tr>
-                                        
+                                        <?php
+                                        }
+                                    }
+                                    ?>
                                     </tbody>
                                 </table>
                             </div>
+                            
                         </div>
                     </div>
-                     <!-- End  Kitchen Sink -->
+                    <!--End Advanced Tables -->
                 </div>
+            
+                <!-- /. ROW  -->
+            </div>
+                <!-- /. ROW  -->
+    </div>
+    </div>
      <!-- CONTENT-WRAPPER SECTION END-->
     <section class="footer-section">
         <div class="container">

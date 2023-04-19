@@ -67,14 +67,14 @@
             <div class="row">
                 <div class="col-md-12">
                 </div>
-					<p>1.Add Book</p>
-					<p>2.Delete Book</p>
-					<p>3.Search Book</p>
-					<p>4.View Book List</p>
-					<p>5.Edit Book List</p>
+					<p>1.Add CUSTOMER ACOOUNT</p>
+					<p>2.Delete ACCOUNT</p>
+					<p>3.Search ACCOUNT</p>
+					<p>4.View CUTOMER</p>
+					<p>5.VIEW ALL ACOUNT</p>
 					<p>6.Change Password</p>
-					<p>7.Close</p>
-                  <p>  <a href="view">view</p> 
+                    <p>7.tranction</p>
+					<p>8.Close</p>
 
             </div>
         </div>
@@ -101,7 +101,7 @@
         {
             echo"<script>
             alert('add Book');
-            window.location='addcustomer';
+            window.location='addemp';
             </script>" ;
         }
        
@@ -130,7 +130,7 @@
         {
             echo"<script>
             alert('Edit your book');
-            window.location='edit_book';
+            window.location='view_emp';
             </script>";
         }
        else if($var=="6")
@@ -140,6 +140,14 @@
             window.location='change_pass';
             </script>";
         }
+        
+       else if($var=="7")
+       {
+           echo"<script>
+           alert('enter sucess in tranction ');
+           window.location='tranction';
+           </script>";
+       }
        /*else($var=="7")
         {
             echo

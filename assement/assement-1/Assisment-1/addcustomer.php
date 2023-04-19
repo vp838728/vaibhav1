@@ -62,19 +62,28 @@
                                        
 
                                        <div class="form-group">
-                                           <label>ACCOUTT NO:</label>
-                                           <input type="text" name="amount" class="form-control" placeholder="amount">
+                                           <label>NAME:</label>
+                                           <input type="text" name="name" class="form-control" placeholder="Book Id">
                                        </div>
                                        <div class="form-group">
-                                           <label>AMOUNT:</label>
-                                           <input type="text" name="amount" class="form-control" placeholder="amount">
+                                           <label>EMAIL:</label>
+                                           <input type="text" name="email" class="form-control" placeholder="Category">
                                        </div>
 
 
+                                       <div class="form-group">
+                                           <label>ADDRESS:</label>
+                                           <input type="text" name="address" class="form-control" placeholder="Book Name">
+                                       </div>
+
+                                       <div class="form-group">
+                                           <label>PHONE</label>
+                                           <input type="number" name="phone" class="form-control" placeholder="enter phone">
+                                       </div>
 
                                      <div class="form-group">
                                           <label for="account-type">Account Type:</label>
-		                                   <select id="accounttype" name="accounttype" required>
+		                                   <select id="accounttype" name="accounttype"  class="form-control" required>
 			                                <option value="">Select Account Type</option>
 			                                <option value="Savings Account">Savings Account</option>
 			                             <option value="Checking Account">Checking Account</option>
@@ -82,6 +91,15 @@
 		                                   </select>
                                       </div>
 
+                                       <div class="form-group">
+                                           <label>DEPOSIT:</label>
+                                           <input type="text" name="initialdeposit" class="form-control" placeholder="price">
+                                       </div>
+                                       
+                                       <div class="form-group">
+                                           <label>ACCOUNT NO:</label>
+                                           <input type="text" name="accountno" class="form-control" placeholder="price">
+                                       </div>
                                        
                                        <input type="submit" name="submit" class="btn btn-primary" value="Submit">
                                       
