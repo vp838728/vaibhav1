@@ -21,10 +21,10 @@
   <div class="collapse navbar-collapse" id="navbarSupportedContent">
     <ul class="navbar-nav mr-auto">
       <li class="nav-item ">
-        <a class="nav-link " href="mindex.php">Home <span class="sr-only">(current)</span></a>
+        <a class="nav-link " href="mindex">Home <span class="sr-only">(current)</span></a>
       </li>
-      <li class="nav-item active">  <a class="nav-link" href="maccounts.php">Accounts</a></li>
-      <li class="nav-item ">  <a class="nav-link" href="maddnew.php">Add New Account</a></li>
+      <li class="nav-item active">  <a class="nav-link" href="maccounts">Accounts</a></li>
+      <li class="nav-item ">  <a class="nav-link" href="maddnew">Add New Account</a></li>
       <li class="nav-item ">  <a class="nav-link" href="mfeedback.php">Feedback</a></li>
       <!-- <li class="nav-item ">  <a class="nav-link" href="transfer.php">Funds Transfer</a></li> -->
       <!-- <li class="nav-item ">  <a class="nav-link" href="profile.php">Profile</a></li> -->

@@ -36,7 +36,7 @@ class control extends model
                             $updated=date('Y-m-d H:i:s');
                             $delated=date('Y-m-d H:i:s');
                             $arr=array("name"=>$name,"email"=>$email,"address"=>$address,"phone"=>$phone,"accounttype"=>$accounttype,"initialdeposit"=>$initialdeposit,"accountno"=>$accountno,"updated"=>$updated,"delated"=>$delated);
-                            $res=$this->insert('useraccount',$arr);
+                            $res=$this->insert('tranction',$arr);
 
                             if($res)
                             {

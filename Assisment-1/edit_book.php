@@ -92,7 +92,7 @@
                                 <table class="table table-striped table-bordered table-hover" id="dataTables-example">
                                     <thead>
                                         <tr>
-                                            <th>user id</th>
+                                            <th>user_ id</th>
                                             <th>NAME</th>
                                             <th>EMAIL:</th>
                                             <th>ACCOUNT-TYPE:</th>
@@ -118,8 +118,8 @@
                                             
                                             <td>
 												<a href="#" class="btn btn-primary">Edit</a>
-												<a href="#" class="btn btn-danger">Delete</a>
-												<a href="view" class="btn btn-success">view</a>
+												<a href="delete?del_user_id=<?php echo $data->user_id?>" class="btn btn-danger">Delete</a>
+												<a href="view?view_user_id=<?php echo $data->user_id?>" class="btn btn-success">view</a>
 											</td>
                                         </tr>
                                         <?php

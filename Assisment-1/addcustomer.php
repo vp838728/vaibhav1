@@ -83,7 +83,7 @@
 
                                      <div class="form-group">
                                           <label for="account-type">Account Type:</label>
-		                                   <select id="accounttype" name="accounttype" required>
+		                                   <select id="accounttype" name="accounttype"  class="form-control" required>
 			                                <option value="">Select Account Type</option>
 			                                <option value="Savings Account">Savings Account</option>
 			                             <option value="Checking Account">Checking Account</option>
@@ -93,12 +93,12 @@
 
                                        <div class="form-group">
                                            <label>DEPOSIT:</label>
-                                           <input type="text" name="initialdeposit" class="from-contol" placeholder="price">
+                                           <input type="text" name="initialdeposit" class="form-control" placeholder="price">
                                        </div>
                                        
                                        <div class="form-group">
                                            <label>ACCOUNT NO:</label>
-                                           <input type="text" name="accountno" class="from-control" placeholder="price">
+                                           <input type="text" name="accountno" class="form-control" placeholder="price">
                                        </div>
                                        
                                        <input type="submit" name="submit" class="btn btn-primary" value="Submit">

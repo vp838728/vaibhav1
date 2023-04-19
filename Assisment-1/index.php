@@ -73,8 +73,8 @@
 					<p>4.View Book List</p>
 					<p>5.Edit Book List</p>
 					<p>6.Change Password</p>
-					<p>7.Close</p>
-                  <p>  <a href="view">view</p> 
+                    <p>7.tranction</p>
+					<p>8.Close</p>
 
             </div>
         </div>
@@ -140,6 +140,14 @@
             window.location='change_pass';
             </script>";
         }
+        
+       else if($var=="7")
+       {
+           echo"<script>
+           alert('enter sucess in tranction ');
+           window.location='tranction';
+           </script>";
+       }
        /*else($var=="7")
         {
             echo

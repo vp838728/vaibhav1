@@ -52,7 +52,7 @@
 </form>
     <div class="panel panel-default">
                         <div class="panel-heading">
-                            Add Book
+                            <h2 class="text-center">Tranction</h2>
                         </div>
                         <div class="panel-body">
                             <div class="row">
@@ -63,7 +63,7 @@
 
                                        <div class="form-group">
                                            <label>ACCOUTT NO:</label>
-                                           <input type="text" name="amount" class="form-control" placeholder="amount">
+                                           <input type="text" name="accountno" class="form-control" placeholder="amount">
                                        </div>
                                        <div class="form-group">
                                            <label>AMOUNT:</label>
@@ -74,11 +74,10 @@
 
                                      <div class="form-group">
                                           <label for="account-type">Account Type:</label>
-		                                   <select id="accounttype" name="accounttype" required>
+		                                   <select id="accounttype" class="form-control" name="type" required>
 			                                <option value="">Select Account Type</option>
-			                                <option value="Savings Account">Savings Account</option>
-			                             <option value="Checking Account">Checking Account</option>
-			                              <option value="Credit Card Account">Credit Card Account</option>
+			                             <option value="Checking Account">Deposit</option>
+			                              <option value="Credit Card Account">Withdraw</option>
 		                                   </select>
                                       </div>
 

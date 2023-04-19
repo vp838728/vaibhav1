@@ -91,24 +91,45 @@
                         <div class="panel-body">
                             <div class="table-responsive">
                                 <table class="table table-striped table-bordered table-hover">
-                                    <thead>
-                                        <tr>
-                                            <th>USER_ID</th>
-                                            <th>First Name</th>
-                                            <th>Last Name</th>
-                                            <th>Username</th>
-                                        </tr>
-                                    </thead>
-                                    <tbody> 
-                                        <tr>
-                                            <td>NAME:<?php echo $fetch->name?></td>
-                                            <td>Mark</td>
-                                            <td>Otto</td>
-                                            <td>@mdo</td>
-                                        </tr>
-                                        
-                                    </tbody>
-                                </table>
+                                <tbody>
+        <?php
+        {
+        if(!empty($user_arr))
+        foreach($user_arr as $data)
+        {
+          ?>
+        <tr>
+          <td>Name</td>
+          <td><?php echo $data->name;?>
+          <td>Account No</td>
+          
+        </tr><tr>
+          <td>Branch Name</td>
+          
+          <td>Brach Code</td>
+          
+        </tr><tr>
+          <td>Current Balance</td>
+          
+          <td>Account Type</td>
+          
+        </tr><tr>
+          <td>Cnic</td>
+          
+          <td>City</td>
+          
+        </tr><tr>
+          <td>Contact Number</td>
+          
+          <td>Address</td>
+          
+        </tr>
+        <?php
+        }
+      }
+      ?>
+      </tbody>
+    </table>
                             </div>
                         </div>
                     </div>
