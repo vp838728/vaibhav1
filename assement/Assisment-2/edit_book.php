@@ -100,6 +100,11 @@
                                             <th>Address</th>
                                             <th>gen</th>
                                             
+                                            <th>user_ id</th>
+                                            <th>NAME</th>
+                                            <th>EMAIL:</th>
+                                            <th>ACCOUNT-TYPE:</th>
+                                            <th>ADRRESS:</th>
                                             <th>ACTION</th>
                                             
                                         </tr>
@@ -126,6 +131,9 @@
 												<a href="#" class="btn btn-primary">Edit</a>
 												<a href="" class="btn btn-danger">Delete</a>
 												<a href="#" class="btn btn-success">view</a>
+
+												<a href="delete?del_user_id=<?php echo $data->user_id?>" class="btn btn-danger">Delete</a>
+												<a href="view?view_user_id=<?php echo $data->user_id?>" class="btn btn-success">view</a>
 											</td>
                                         </tr>
                                         <?php
