@@ -55,7 +55,7 @@
          <div class="container">
         <div class="row pad-botm">
             <div class="col-md-12">
-                <h4 class="header-line">BANK MANGEMNET SYSTEM</h4><br/>
+                <h4 class="header-line">Employee Management System</h4><br/>
                 
              </div>
 

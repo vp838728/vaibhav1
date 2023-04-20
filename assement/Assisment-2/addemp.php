@@ -63,48 +63,48 @@
 
                                        <div class="form-group">
                                            <label>FIRST NAME::</label>
-                                           <input type="text" name="name" class="form-control" placeholder="first name">
+                                           <input type="text" name="name" class="form-control" placeholder="first name"required>
                                        </div>
                                        <div class="form-group">
                                            <label>LAST NAME::</label>
-                                           <input type="text" name="lname" class="form-control" placeholder="last name">
+                                           <input type="text" name="lname" class="form-control" placeholder="last name"required>
                                        </div>
                                        <div class="form-group">
                                            <label>EMAIL:</label>
-                                           <input type="text" name="email" class="form-control" placeholder="email">
+                                           <input type="text" name="email" class="form-control" placeholder="email"required>
                                        </div>
                                        
                                     
 
                                     <div class="form-group">
                                         <label>PHONE</label>
-                                        <input type="number" name="phone" class="form-control" placeholder="enter phone">
+                                        <input type="number" name="phone" class="form-control" placeholder="enter phone"required>
                                     </div>
                                     
                                        <div class="form-group">
                                             <label>Address:</label>
-                                            <textarea class="form-control" rows="3"name="Address"></textarea>
+                                            <textarea class="form-control" rows="3"name="Address"required></textarea>
                                         </div>
 
                                      
                                       <div class="form-group">
                                               <label>  gen:</label>
-                                               <input type="radio" name="gen"  value="male">Male
-                                            <input type="radio" name="gen"  value="female">female
+                                               <input type="radio" name="gen"  value="male"required>Male
+                                            <input type="radio" name="gen"  value="female"required>female
                                       </div>
                                       
                                     <div class="form-group">
                                         <label>PASSWORD</label>
-                                        <input type="number" name="password" class="form-control" placeholder="enter phone">
+                                        <input type="number" name="password" class="form-control" placeholder="enter phone"required>
                                     </div>
                                     
                                     <div class="form-group">
                                         <label>CPASSWORD</label>
-                                        <input type="number" name="cpassword" class="form-control" placeholder="enter phone">
+                                        <input type="number" name="cpassword" class="form-control" placeholder="enter phone"required>
                                     </div>
 
                                        
-                                       <input type="submit" name="submit" class="btn btn-primary" value="Submit">
+                                       <input type="submit" name="submit" class="btn btn-primary" value="Submit"required>
                                       
                                    </form>
 

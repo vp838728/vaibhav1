@@ -116,7 +116,7 @@
                                     </div>
 
                                        
-                                       <input type="submit" name="submit" class="btn btn-primary" value="submit">
+                                       <input type="submit" name="submit" class="btn btn-primary" value="save">
                                       
                                    </form>
 

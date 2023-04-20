@@ -30,7 +30,7 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <a class="navbar-brand" href="index.html">
+                <a class="navbar-brand" href="#">
 
                     <img src="assets/img/logo.png" />
                 </a>
@@ -49,19 +49,19 @@
                 <div class="col-md-12">
                     <div class="navbar-collapse collapse ">
                         <ul id="menu-top" class="nav navbar-nav navbar-right">
-                            <li><a href="index.html" >DASHBOARD</a></li>
+                            <li><a href="#" >DASHBOARD</a></li>
                             
-                            <li><a href="form.html">FORMS</a></li>
+                            <li><a href="#">FORMS</a></li>
                            <li>
                                 <a href="#" class="dropdown-toggle" id="ddlmenuItem" data-toggle="dropdown">UI ELEMENTS <i class="fa fa-angle-down"></i></a>
                                 <ul class="dropdown-menu" role="menu" aria-labelledby="ddlmenuItem">
-                                    <li role="presentation"><a role="menuitem" tabindex="-1" href="ui.html">UI ELEMENTS</a></li>
+                                    <li role="presentation"><a role="menuitem" tabindex="-1" href="#">UI ELEMENTS</a></li>
                                      <li role="presentation"><a role="menuitem" tabindex="-1" href="#">EXAMPLE LINK</a></li>
                                 </ul>
                             </li>
-                            <li><a href="tab.html" > TABS & PANELS</a></li>
-                             <li><a href="table.html" class="menu-top-active" >TABLES</a></li>
-                            <li><a href="blank.html" >BLANK PAGE</a></li>
+                            <li><a href="#" > TABS & PANELS</a></li>
+                             <li><a href="#" class="menu-top-active" >TABLES</a></li>
+                            <li><a href="#" >BLANK PAGE</a></li>
 
                         </ul>
                     </div>
