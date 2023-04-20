@@ -41,7 +41,7 @@ class model
 		$i=0;
 		foreach($arr as $w)
 		{
-		   echo	$sel.=" and $col_arr[$i]='$value_arr[$i]'";
+		   	$sel.=" and $col_arr[$i]='$value_arr[$i]'";
 			$i++;	
 		}
 		$run=$this->conn->query($sel);	 // run query database

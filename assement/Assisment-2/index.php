@@ -67,14 +67,8 @@
             <div class="row">
                 <div class="col-md-12">
                 </div>
-					<p>1.Add CUSTOMER ACOOUNT</p>
-					<p>2.Delete ACCOUNT</p>
-					<p>3.Search ACCOUNT</p>
-					<p>4.View CUTOMER</p>
-					<p>5.VIEW ALL ACOUNT</p>
-					<p>6.Change Password</p>
-                    <p>7.tranction</p>
-					<p>8.Close</p>
+					<p>1.Add employee ACOOUNT</p>
+					<p>2View employee account</p>
 
             </div>
         </div>
@@ -100,62 +94,24 @@
         if($var=="1")
         {
             echo"<script>
-            alert('add Book');
+            alert('add emp');
             window.location='addemp';
             </script>" ;
         }
        
+        
+         
+        
         else if($var=="2")
         {
             echo"<script>
-            alert('Delete Book');
-            window.location='delete_book';
-            </script>" ;
-        }
-         else if($var=="3")
-        {
-            echo"<script>
-            alert('Search Book');
-            window.location='search_book';
-            </script>";
-        }
-        else if($var=="4")
-        {
-            echo"<script>
-            alert('view customer');
-            window.location='view';
-            </script>";
-        }
-        else if($var=="5")
-        {
-            echo"<script>
-            alert('Edit your book');
+            alert('view employee');
             window.location='view_emp';
             </script>";
         }
-       else if($var=="6")
-        {
-            echo"<script>
-            alert('Change Your password ');
-            window.location='change_pass';
-            </script>";
-        }
+       
         
-       else if($var=="7")
-       {
-           echo"<script>
-           alert('enter sucess in tranction ');
-           window.location='tranction';
-           </script>";
-       }
-       /*else($var=="7")
-        {
-            echo
-            "<script>
-            alert('close');
-            window.location='index';
-            </script>";
-        }*/
+       
     }
         
 

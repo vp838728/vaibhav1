@@ -125,8 +125,7 @@
                                             
                                             <td>
 												<a href="edit?edit_emp_id=<?php echo $data->emp_id?>" class="btn btn-primary">Edit</a>
-												<a href="#" class="btn btn-danger">Delete</a>
-												<a href="#" class="btn btn-success">view</a>
+												<a href="delete?del_emp_id=<?php echo $data->emp_id?>" class="btn btn-danger">Delete</a>
 											</td>
                                         </tr>
                                         <?php

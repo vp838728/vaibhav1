@@ -17,31 +17,9 @@ class control extends model
 					include_once('index.php');
 					break;
 
-				case '/add_book':
-					
-						include_once('add_book.php');
-						break;
 
-				case '/delete_book':
-					
-							include_once('delete_book.php');
-							break;
 						
-				case '/serach_book':
-							include_once('serach_book.php');
-							break;
 
-				case '/view':
-					$user_arr=$this->select('useraccount');
-
-
-					
-				//   $where=array("user_id "=>$user_id);
-
-				// 	 $res=$this->select_where('useraccount',$where);
-				// 	 $fetch=$res->fetch_object();
-					     include_once('view.php');
-								break;
 
 				case '/view_emp':
 
@@ -98,39 +76,62 @@ class control extends model
 								$res=$this->select_where('employee1',$where);
 								$fetch=$res->fetch_object();
 								if(isset($_REQUEST['submit']))
-						{
-									
-						          $name=$_REQUEST['name'];
-					    	     $lname=$_REQUEST['lname'];
-						          $email=$_REQUEST['email'];
-						          $phone=$_REQUEST['phone'];
-                                 $Address=$_REQUEST['Address'];
+								{
+									$name=$_REQUEST['name'];
+						           $lname=$_REQUEST['lname'];
+						           $email=$_REQUEST['email'];
+						           $phone=$_REQUEST['phone'];
+                                   $Address=$_REQUEST['Address'];
 						          $gen=$_REQUEST['gen'];
-						          $password=$_REQUEST['password'];
+						         $password=$_REQUEST['password'];
 						          $cpassword=$_REQUEST['cpassword'];
 					
 
-						     date_default_timezone_set('asia/calcutta');
-						      $updated=date('Y-m-d H:i:s');
-						      $arr=array("name"=>$name,"lname"=>$lname,"email"=>$email,"phone"=>$phone,"Address"=>$Address,"gen"=>$gen,"password"=>$password,"cpassword"=>$cpassword,"updated"=>$updated);
-						        $res=$this->update('employee1',$arr,$where);
+						         date_default_timezone_set('asia/calcutta');
+						           $updated=date('Y-m-d H:i:s');
+						         $arr=array("name"=>$name,"lname"=>$lname,"email"=>$email,"phone"=>$phone,"Address"=>$Address,"gen"=>$gen,"password"=>$password,"cpassword"=>$cpassword,"updated"=>$updated);
+						          $res=$this->update('employee1',$arr,$where);
 
-						       if($res)
-						       {
-							echo"
-							<script>
-							alert('update sucess');
-							window.location='view_emp';
-							</script>
-							";
-						   }else
-						   {
-							echo"fail";
-						   }
-						}
-					}
+								  if($res)
+								  {
+									echo "<script>
+									alert('update sucess');
+									window.location='view_emp';
+									</script>
+									";
+								  }else
+								  {
+									echo"fail";
+								  }
+
+
+								}
+							}
+
+					
 							include_once('edit.php');
 							break;
+
+							case'/delete':
+								if(isset($_REQUEST['del_emp_id']))
+								{
+									$emp_id=$_REQUEST['del_emp_id'];
+									$where=array("emp_id"=>$emp_id);
+									$res=$this->delete_where('employee1',$where);
+
+									if($res)
+									{
+										echo"
+										<script>
+										alert('delete sucess');
+										window.location='view_emp';
+										</script>
+										";
+									}else
+									{
+										echo"fail";
+									}
+								}
 						
 
 

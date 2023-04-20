@@ -71,37 +71,38 @@
                                        </div>
                                        <div class="form-group">
                                            <label>EMAIL:</label>
-                                           <input type="text" name="email" class="form-control"value="<?php echo $fetch->email?> placeholder="email">
+                                           <input type="text" name="email" class="form-control"value="<?php echo $fetch->email?>" placeholder="email">
                                        </div>
                                        
                                     
 
                                     <div class="form-group">
                                         <label>PHONE</label>
-                                        <input type="number" name="phone" class="form-control"value="<?php echo $fetch->phone?> placeholder="enter phone">
+                                        <input type="number" name="phone" class="form-control"value="<?php echo $fetch->phone?>"placeholder="enter phone">
                                     </div>
                                     
                                        <div class="form-group">
                                             <label>Address:</label>
-                                            <textarea class="form-control" rows="3"name="Address" value="<?php echo $fetch->Address?>"></textarea>
+                                            <textarea class="form-control" rows="3" name="Address" placeholder="enter your adress"><?php echo $fetch->Address?></textarea>
                                         </div>
 
                                      
                                       <div class="form-group">
                                         <?php
-                                        $gen=$fetch->gen
+                                        $gen=$fetch->gen;
                                         ?>
                                               <label>  gen:</label>
                                                <input type="radio" name="gen"  value="male"<?php
                                                if($gen=="male")
                                                {
-                                                echo"checked"
+                                                echo"checked";
                                                }?>>Male
                                             <input type="radio" name="gen"  value="female"<?php
                                             if($gen=="female")
                                             {
-                                                echo"checked"
-                                            }?>>female
+                                                echo"checked";
+                                            }
+                                            ?>>female
                                       </div>
                                       
                                     <div class="form-group">
@@ -115,7 +116,7 @@
                                     </div>
 
                                        
-                                       <input type="submit" name="submit" class="btn btn-primary" value="Submit">
+                                       <input type="submit" name="submit" class="btn btn-primary" value="submit">
                                       
                                    </form>
 

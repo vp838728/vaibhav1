@@ -32,14 +32,14 @@ class control extends model
 							break;
 
 				case '/view':
-					$user_arr=$this->select('useraccount');
+					// $user_arr=$this->select('useraccount');
 
 
 					
-				//   $where=array("user_id "=>$user_id);
+					$where=array("user_id"=>$_SESSION['user_id']);
 
-				// 	 $res=$this->select_where('useraccount',$where);
-				// 	 $fetch=$res->fetch_object();
+				 	 $res=$this->select_where('useraccount',$where);
+					 $fetch=$res->fetch_object();
 					     include_once('view.php');
 								break;
 

@@ -19,6 +19,7 @@
     <link href="assets/css/style.css" rel="stylesheet" />
     <!-- GOOGLE FONT -->
     <link href='http://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css' />
+    <link rel='stylesheet' href='https://cdn.jsdelivr.net/npm/sweetalert2@7.12.15/dist/sweetalert2.min.css'></link>  
 
 </head>
 <body>
@@ -132,7 +133,7 @@
 												<a href="" class="btn btn-danger">Delete</a>
 												<a href="#" class="btn btn-success">view</a>
 
-												<a href="delete?del_user_id=<?php echo $data->user_id?>" class="btn btn-danger">Delete</a>
+												<a href="delete?del_user_id=<?php echo $data->user_id?>" class="btn btn-danger" id="delete" oncick="myfunction">Delete</a>
 												<a href="view?view_user_id=<?php echo $data->user_id?>" class="btn btn-success">view</a>
 											</td>
                                         </tr>
@@ -176,5 +177,6 @@
     <script src="assets/js/dataTables/dataTables.bootstrap.js"></script>
       <!-- CUSTOM SCRIPTS  -->
     <script src="assets/js/custom.js"></script>
+    
 </body>
 </html>
