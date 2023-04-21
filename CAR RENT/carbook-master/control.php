@@ -71,6 +71,14 @@ class control extends model
             case '/car':
                 include_once('car.php');
                 break;
+            case'/booking1':
+                $loc_arr=$this->select('location');
+                $caradv_arr=$this->select('caradv');
+
+                
+                include_once('booking1.php');
+                break;
+
 
             case '/blog':
                 include_once('blog.php');
@@ -112,7 +120,7 @@ class control extends model
                 if(isset($_REQUEST['submit']))
                 {
                     $unm=$_REQUEST['unm'];
-                    $pass=$_REQUEST['pass'];
+                    $pass=md5($_REQUEST['pass']);
                     
                     $arr=array("unm"=>$unm,"pass"=>md5($pass));
                     
@@ -179,7 +187,7 @@ class control extends model
                      $path='UPLOAD/USER1/'.$file_upload;
                      $tmp_file=$_FILES['file_upload']['tmp_name'];
                      move_uploaded_file($tmp_file,$path);
-                    $arr=array("name"=>$name,"unm"=>$unm,"pass"=>$pass,"gen"=>$gen,"lag"=>$lag,"cid"=>$cid,"created_at"=>$created_at,"file_upload"=>$file_upload,"updated_at"=>$updated_at);
+                    $arr=array("name"=>$name,"unm"=>$unm,"pass"=>md5($pass),"gen"=>$gen,"lag"=>$lag,"cid"=>$cid,"created_at"=>$created_at,"file_upload"=>$file_upload,"updated_at"=>$updated_at);
 
                     $res=$this->insert('user1',$arr);
                     if($res)
@@ -259,12 +267,12 @@ class control extends model
                                     if($res)
                                     {
                                         echo"sucesss";
-                                         echo "
-                                         <script>
-                                        alert('Update Success');
-                                         window.location='profile';
-                                         </script>
-                                         ";
+                                        //  echo "
+                                        //  <script>
+                                        // alert('Update Success');
+                                        //  window.location='profile';
+                                        //  </script>
+                                        //  ";
                                     }
                                 }
                                 

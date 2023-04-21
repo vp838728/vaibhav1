@@ -51,12 +51,17 @@
 	          <li class="nav-item"><a href="car" class="nav-link">Cars</a></li>
 	          <li class="nav-item"><a href="blog" class="nav-link">Blog</a></li>
 	          <li class="nav-item"><a href="contact" class="nav-link">Contact</a></li>
-            <select class="form-select" aria-label="Default select example">
-  <option selected>Open this select menu</option>
-  <option value="1">One</option>
-  <option value="2">Two</option>
-  <option value="3">Three</option>
-</select>
+            <div class="dropdown">
+  <button type="button" class="btn btn-primary dropdown-toggle"class="nav-item"class="nav-link" data-bs-toggle="dropdown">
+    Dropdown button
+  </button>
+  <ul class="dropdown-menu">
+  <li><a class="dropdown-item"  href="booking1">booking1</a></li>
+
+    <li><a class="dropdown-item" href="#">Link 2</a></li>
+    <li><a class="dropdown-item" href="#">Link 3</a></li>
+  </ul>
+</div>
 
             <?php
             if(isset($_SESSION['user_id']))

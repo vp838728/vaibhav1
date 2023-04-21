@@ -98,6 +98,16 @@ class model
 		$run=$this->conn->query($upd);	 // run query database
 		return $run;
 	}
+	function select_search($tbl,$col,$search)
+    {
+        $sel="select * from $tbl where $col like '$search%'"; // query
+        $run=$this->conn->query($sel);   // run query database
+        while($fetch=$run->fetch_object())
+        {
+            $arr[]=$fetch;
+        }
+        return $arr;
+    }
 
 
 }
