@@ -79,6 +79,55 @@ class control extends model
                 include_once('booking1.php');
                 break;
 
+                
+            case '/addcaradv':
+                $loc_arr=$this->select('location');
+                $cat_arr=$this->select('category');
+                if(isset($_REQUEST['submit']))
+                {
+                    $owner_name=$_REQUEST['owner_name'];
+                    $car_name=$_REQUEST['car_name'];
+                    $vehical_number=$_REQUEST['vehical_number'];
+                    $mobile=$_REQUEST['mobile'];
+                    $charge=$_REQUEST['charge'];
+                    $driver=$_REQUEST['driver'];
+                    $address=$_REQUEST['address'];
+                    $deposite=$_REQUEST['deposite'];
+                    $terms_condition=$_REQUEST['terms_condition'];
+                    $location_id=$_REQUEST['location_id'];
+                    $category_id=$_REQUEST['category_id'];
+
+                    date_default_timezone_set('asia/calcutta');
+                    $updated=date('Y-m-d H:i:s');
+                    $deleted=date('Y-m-d H:i:s');
+
+                    $file=$_FILES['file']['name'];
+                    $path='UPLOAD/CARADV/'.$file;
+                    $tmp_file=$_FILES['file']['tmp_name'];
+                    move_uploaded_file($tmp_file,$path);
+
+                    $arr=array("owner_name"=>$owner_name,"car_name"=>$car_name,"vehical_number"=>$vehical_number,"mobile"=>$mobile,"charge"=>$charge,"driver"=>$driver,"address"=>$address,"deposite"=>$deposite,"terms_condition"=>$terms_condition,"location_id"=>$location_id,"category_id"=>$category_id,"file"=>$file,"updated"=>$updated,"deleted"=>$deleted);
+                    $res=$this->insert('caradv',$arr);
+                    if($res)
+                    {
+                        echo"
+                         <script>
+                         alert('car adv sucessful');
+                         window.location='addcaradv';
+                        </script>
+                        ";
+                    }else
+                    {
+                        echo"fail";
+                    }
+
+
+
+                }
+
+                include_once('addcaradv.php');
+                break;
+
 
             case '/blog':
                 include_once('blog.php');
@@ -158,7 +207,7 @@ class control extends model
                     unset($_SESSION['user_id']);
                     unset($_SESSION['unm']);
                     unset($_SESSION['pass']);
-                    unset($_SESSION ['name']);
+                    unset($_SESSION['name']);
                     echo"
                     <script>
                     alert('logut sucess');
@@ -248,12 +297,12 @@ class control extends model
                                     if($res)
                                     {
                                         unlink('UPLOAD/USER1/'.$old_img);
-                                        echo"sucess";
-                                        // echo"<script>
-                                        // alert('Update sucess');
-                                        // window.location='profile';
-                                        // </script>
-                                       // ";
+                                        // echo"sucess";
+                                        echo"<script>
+                                         alert('Update sucess');
+                                         window.location='profile';
+                                         </script>
+                                        ";
                                     }else{
                                         echo "fail";
                                     }
@@ -266,13 +315,13 @@ class control extends model
                                     $res=$this->update('user1',$arr,$where);
                                     if($res)
                                     {
-                                        echo"sucesss";
-                                        //  echo "
-                                        //  <script>
-                                        // alert('Update Success');
-                                        //  window.location='profile';
-                                        //  </script>
-                                        //  ";
+                                        // echo"sucesss";
+                                        echo "
+                                         <script>
+                                         alert('Update Success');
+                                         window.location='profile';
+                                          </script>
+                                         ";
                                     }
                                 }
                                 

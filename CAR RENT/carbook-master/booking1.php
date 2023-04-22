@@ -62,13 +62,16 @@ include_once('heder.php');
         ?>	
                     
         <table width="100%">
+            
+
             <tr>
-                <td rowspan="5" width="500px"><img src="upload/car/<?php echo $d->file?>" width="500px" height="200px"></td>
-                <td>Car Name : <?php echo $c->car_name?></td>
-                <td rowspan="5"><a href="bookingform?book_id=<?php echo $d->adv_id;?>" class="btn btn-warning">Book</a></td>
+            <td rowspan="5"width="500px" height="200px"><img src="UPLOAD/CARADV/<?PHP echo $d->file;?>"width="500px"height="200px"alt="imges"></td>
+
+                <td>Car Name : <?php echo $d->car_name?></td>
+                <td rowspan="5"><a href="booking?BOOKING_ID =<?php echo $d->adv_id;?>" class="btn btn-warning">Book</a></td>
             </tr>
             <tr>
-                <td >Vehicle Number : <?php echo $d->vehicle_number?></td>
+                <td >Vehicle Number : <?php echo $d->vehical_number?></td>
             </tr>
             <tr>
                 <td>Address : <?php echo $d->address?></td>
@@ -76,7 +79,7 @@ include_once('heder.php');
             <tr>
                 <td>Deposite : <?php echo $d->deposite?></td>
             </tr>
-            <tr >
+            <tr>
                 <td>Charge(per km) : <?php echo $d->charge?></td>
             </tr>
             <tr>

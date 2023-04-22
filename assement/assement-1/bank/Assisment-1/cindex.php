@@ -30,6 +30,7 @@
                 <a class="navbar-brand" href="index.html">
 
                     <img src="assets/img/img2.jpg"/>
+                    <img src="assets/img/bank-logo.html"/>
                 </a>
 
             </div>

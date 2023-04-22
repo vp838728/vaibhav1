@@ -100,6 +100,10 @@
                                            <label>ACCOUNT NO:</label>
                                            <input type="text" name="accountno" class="form-control" placeholder="price">
                                        </div>
+                                       <div class="form-group">
+                                           <label>BALNCE:</label>
+                                           <input type="text" name="balnce" class="form-control" placeholder="price">
+                                       </div>
                                        
                                        <input type="submit" name="submit" class="btn btn-primary" value="Submit">
                                       

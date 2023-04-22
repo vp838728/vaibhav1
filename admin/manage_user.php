@@ -67,8 +67,8 @@ include_once('header.php');
                                             <td><?php echo $data->unm;?></td>
                                             <td><?php echo $data->gen;?></td>
                                             <td><?php echo $data->lag;?></td>
-                                            <td><img src="../CAR RENT/UPLOAD/USER1/<?PHP echo $data->file_upload;?>"width="50px"alt="imges"></td>
-                                            
+                                            <td><img src="../CAR RENT/carbook-master/UPLOAD/USER1/<?PHP echo $data->file_upload;?>"width="50px"alt="imges"></td>
+
 
                                             <td><?php echo $data->cid;?></td>
                                             <td><?php echo $data->created_at;?></td>

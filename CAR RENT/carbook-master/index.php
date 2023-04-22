@@ -51,17 +51,7 @@
 	          <li class="nav-item"><a href="car" class="nav-link">Cars</a></li>
 	          <li class="nav-item"><a href="blog" class="nav-link">Blog</a></li>
 	          <li class="nav-item"><a href="contact" class="nav-link">Contact</a></li>
-            <div class="dropdown">
-  <button type="button" class="btn btn-primary dropdown-toggle"class="nav-item"class="nav-link" data-bs-toggle="dropdown">
-    Dropdown button
-  </button>
-  <ul class="dropdown-menu">
-  <li><a class="dropdown-item"  href="booking1">booking1</a></li>
-
-    <li><a class="dropdown-item" href="#">Link 2</a></li>
-    <li><a class="dropdown-item" href="#">Link 3</a></li>
-  </ul>
-</div>
+      
 
             <?php
             if(isset($_SESSION['user_id']))
@@ -69,6 +59,8 @@
               ?>
            <li class="nav-item"><a href="profile" class="nav-link"><?php echo $_SESSION['unm'];?></a></li> 
            <li class="nav-item"><a href="logout" class="nav-link">Logout</a></li>
+           
+            
 
             
 
@@ -89,7 +81,15 @@
       <?php
       }
       ?>
-        
+        		<div class="dropdown">
+  <button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown">Dropdown Example
+  <span class="caret"></span></button>
+  <ul class="dropdown-menu">
+    <li><a href="booking1">booking</a></li>
+    <li><a href="addcaradv">caradv</a></li>
+    <li><a href="#">JavaScript</a></li>
+  </ul>
+</div>
             
             
             

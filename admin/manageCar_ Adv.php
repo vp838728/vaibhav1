@@ -29,15 +29,12 @@ include_once('header.php');
                                             <th>location_id</th>
                                             <th>owner_name</th>
                                             <th>car_name</th>
-                                            <th>vehical_number</th>
                                             <th>mobile</th>
                                             <th>address</th>
-                                            <th>deposite</th>
                                             <th>driver</th>
-                                            <th>charge</th>
-                                            <th>terms_conditon</th>
                                             <th>updated</th>
                                             <th>deleated</th>
+                                            <th>file</th>
                                             <th>action</th>
                                         
                                         </tr>
@@ -57,15 +54,13 @@ include_once('header.php');
                                             <td><?php echo $data->location_id;?></td>
                                             <td><?php echo $data->owner_name;?></td>
                                             <td><?php echo $data->car_name?></td>
-                                            <td><?php echo $data->vehical_number?>
                                             <td><?php echo $data->mobile?></td>
                                             <td><?php echo $data->address;?></td>
-                                            <td><?php echo $data->deposite?></td>
                                             <td><?php echo $data->driver;?></td>
-                                            <td><?php echo $data->charge;?></td>
-                                            <td><?php echo $data->terms_conditon?></td> -->
+                                            <td><img src="../CAR RENT/carbook-master/UPLOAD/CARADV/<?PHP echo $data->file;?>"width="50px"alt="imges"></td>
+
                                             <td><?php echo $data->updated;?></td>
-                                            <td><?php echo $data->deleated;?></td>
+                                            <td><?php echo $data->deleted;?></td>
                                             
                                             <td>
 												<a href="#" class="btn btn-primary">Edit</a>

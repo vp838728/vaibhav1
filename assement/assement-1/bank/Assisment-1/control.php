@@ -61,6 +61,8 @@ class control extends model
 					break;
 
 				case '/view.balance':
+					$user_arr=$this->select('useraccount');
+
 					include_once('view.balance.php');
 					break;
 					
@@ -134,11 +136,12 @@ class control extends model
 						$accounttype=$_REQUEST['accounttype'];
 						$initialdeposit=$_REQUEST['initialdeposit'];
 						$accountno=$_REQUEST['accountno'];
+						$balnce=$_REQUEST['balnce'];
 
 						date_default_timezone_set('asia/calcutta');
 						$updated=date('Y-m-d H:i:s');
 						$delated=date('Y-m-d H:i:s');
-						$arr=array("name"=>$name,"email"=>$email,"address"=>$address,"phone"=>$phone,"accounttype"=>$accounttype,"initialdeposit"=>$initialdeposit,"accountno"=>$accountno,"updated"=>$updated,"delated"=>$delated);
+						$arr=array("name"=>$name,"email"=>$email,"address"=>$address,"phone"=>$phone,"accounttype"=>$accounttype,"initialdeposit"=>$initialdeposit,"accountno"=>$accountno,"balnce"=>$balnce,"updated"=>$updated,"delated"=>$delated);
 						$res=$this->insert('useraccount',$arr);
 
 						if($res)

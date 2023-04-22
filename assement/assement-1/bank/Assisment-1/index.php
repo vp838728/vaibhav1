@@ -27,9 +27,11 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <a class="navbar-brand" href="index.html">
+                <a class="navbar-brand" href="#">
 
                     <img src="assets/img/img2.jpg"/>
+                    <img src="assets/img/bank-logo"/>
+
                 </a>
 
             </div>
