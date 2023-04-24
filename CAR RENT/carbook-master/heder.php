@@ -59,7 +59,7 @@
           if(isset ($_SESSION['user_id']))
           {
             ?>
-          <li class="nav-item"><a href="profile" class="nav-link"><?php echo $_SESSION['user_id']?></a></li>
+          <li class="nav-item"><a href="profile" class="nav-link"><?php echo $_SESSION['unm']?></a></li>
           <li class="nav-item"><a href="logout" class="nav-link">Logout</a></li>
          
 

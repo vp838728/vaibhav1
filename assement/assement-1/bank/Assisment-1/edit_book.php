@@ -98,6 +98,7 @@
                                             <th>ACCOUNT-TYPE:</th>
                                             <th>ADRRESS:</th>
                                             <th>ACTION</th>
+                                            <th>balnce</th>
                                             
                                         </tr>
                                     </thead>
@@ -114,6 +115,7 @@
                                             <td><?php echo $data->email?></td>
                                             <td><?php echo $data->accounttype?></td>
                                             <td><?php echo $data->address?></td>
+                                            <td><?php echo $data->balnce?></td>
                                             <td><?php echo $data->updated;?></td>
                                             
                                             <td>

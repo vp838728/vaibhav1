@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -54,6 +55,10 @@
 							<div class="form-group">
 								<span class="form-label">Phone</span>
 								<input class="form-control" type="number" name="moblie" placeholder="Enter your phone number">
+							</div>
+							<div class="form-group">
+								<span class="form-label">adv_id</span>
+								<input class="form-control" type="text" name="adv_id"value="<?php echo $_REQUEST['BOOKING_ID'];?>" placeholder="Enter your phone number">
 							</div>
 							<div class="form-group">
 								<span class="form-label">Pickup Location</span>

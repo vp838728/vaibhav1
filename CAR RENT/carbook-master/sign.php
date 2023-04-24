@@ -1,6 +1,7 @@
 <?php
 if(isset($_SESSION['user_id']))
 {
+
 	echo "
 		<script>
 		window.location='index';
@@ -28,35 +29,8 @@ include_once('heder.php')
 <section class="ftco-section contact-section">
     <div class="container">
         <div class="row d-flex mb-5 contact-info">
-            <div class="col-md-4">
-                <div class="row mb-5">
-                    <div class="col-md-12">
-                        <div class="border w-100 p-4 rounded mb-2 d-flex">
-                            <div class="icon mr-3">
-                                <span class="icon-map-o"></span>
-                            </div>
-                            <p><span>Address:</span> 198 West 21th Street, Suite 721 New York NY 10016</p>
-                        </div>
-                    </div>
-                    <div class="col-md-12">
-                        <div class="border w-100 p-4 rounded mb-2 d-flex">
-                            <div class="icon mr-3">
-                                <span class="icon-mobile-phone"></span>
-                            </div>
-                            <p><span>Phone:</span> <a href="tel://1234567920">+ 1235 2355 98</a></p>
-                        </div>
-                    </div>
-                    <div class="col-md-12">
-                        <div class="border w-100 p-4 rounded mb-2 d-flex">
-                            <div class="icon mr-3">
-                                <span class="icon-envelope-o"></span>
-                            </div>
-                            <p><span>Email:</span> <a href="mailto:info@yoursite.com">info@yoursite.com</a></p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-8 block-9 mb-md-5">
+
+            <div class="col-md-12 block-9 mb-md-5">
                 <div class="contact-from-top">
                     <h3 class="text-center">sign up</h3>
                     <form action="" method="post" enctype="multipart/form-data" class="bg-light p-5 contact-form">
@@ -76,41 +50,37 @@ include_once('heder.php')
                         </div>
                         <div class="form-group">
                             lag:
-                            <input type="checkbox" name="lag[]" value="HINDI">HINDI
-                            <input type="checkbox" name="lag[]" value="ENGLISH">ENGLISH
-                            <input type="checkbox" name="lag[]" value="Gujarati">Gujarati
+                            <input type="checkbox" name="lag[]" value="HINDI"required>HINDI
+                            <input type="checkbox" name="lag[]" value="ENGLISH"required>ENGLISH
+                            <input type="checkbox" name="lag[]" value="Gujarati"required>Gujarati
                         </div>
-                        
-                        
+
+
                         <div class="form-group">
-                            <input type="file" name="file_upload"  class="form-control" require="">
-                         </div>
-                         <div class="from-group">
+                            <input type="file" name="file_upload" class="form-control" require="">
+                        </div>
+                        <div class="from-group">
                             <select name="cid" class="form-control" require="">
                                 <option>------SELECT COUNTRY-----</option>
                                 <?php
                                 foreach ($countries_arr as $c)
                                  {
                                     ?>
-                                  <option value="<?php echo $c->cid;?>"><?php echo $c->Name;?></option>
-                                  <?php
+                                <option value="<?php echo $c->cid;?>">
+                                    <?php echo $c->Name;?>
+                                </option>
+                                <?php
                                  }
                                  ?>
-                                 </select>
-                                    
-                                
-</select>
-                           </div>
-                           <div class="form-group">
-                           <input type="submit" class="btn btn-warning py-3 px-5" name="submit" value="submit">
-</div>
-                        <!-- <div class="form-group">
-                            <textarea name="" id="" cols="30" rows="7" class="form-control"
-                                placeholder="Message"></textarea>
-                        </div> -->
-                        <!-- <div class="form-group">
-                            <input type="submit" value="Send Message" class="btn btn-primary py-3 px-5">
-                        </div> -->
+                            </select>
+
+
+                            </select>
+                        </div>
+                                </br>
+                        <div class="form-group">
+                            <input type="submit" class="btn btn-warning py-3 px-5 " name="submit" value="submit">
+                        </div>
                     </form>
 
                 </div>

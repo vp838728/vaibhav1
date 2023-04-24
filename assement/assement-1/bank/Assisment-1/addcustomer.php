@@ -60,6 +60,15 @@
                                 <form action="" method="post">
                                        
                                        
+                                <div class="form-group">
+                                           <label>USRENMAE:</label>
+                                           <input type="text" name="UNM" class="form-control" placeholder="Book Id">
+                                       </div>
+                                       
+                                       <div class="form-group">
+                                           <label>PASSWORD:</label>
+                                           <input type="password" name="pass" class="form-control" placeholder="Book Id">
+                                       </div>
 
                                        <div class="form-group">
                                            <label>NAME:</label>

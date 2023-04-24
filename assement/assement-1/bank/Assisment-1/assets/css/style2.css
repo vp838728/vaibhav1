@@ -1,7 +1,8 @@
 body {
 	margin: 0;
 	padding-top: 100px;
-  background-color: #363958;
+	background-color: white;
+  /* background-color: #363958; */
 }
 
 .submit-area {
@@ -10,7 +11,7 @@ body {
 	border-radius: 10px;
 	box-shadow: 5px 5px gray;
   color: white;
-  background-color: royalblue;
+  background-color: royalblue; 
 }
 
 #account-area {
@@ -18,7 +19,7 @@ body {
 }
 
 .deposit {
-	background-color: slateblue;
+	background-color: slateblue; 
 }
 
 .withdraw {

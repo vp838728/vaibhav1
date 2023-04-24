@@ -1,7 +1,7 @@
 <?php
 //  error_reporting(0);
 
-// error_reporting(0);
+//  error_reporting(0);
 
 include_once('model.php'); //step1 : load model page
 class control extends model
@@ -24,7 +24,8 @@ class control extends model
                break;
 
              case'/booking':
-
+                  $user_arr=$this->select('user1');
+                  $booking_arr=$this->select('booking');
                 if(isset($_REQUEST['submit']))
                 {
                     $name=$_REQUEST['name'];
@@ -34,11 +35,13 @@ class control extends model
                     $DESTINATION=$_REQUEST['DESTINATION'];
                     $STATE=$_REQUEST['STATE'];
                     $city=$_REQUEST['city'];
+                    $user_id=$_REQUEST['user_id'];
+                    $adv_id=$_REQUEST['adv_id'];
                     
                     date_default_timezone_set('asia/calcutta');
                     $updated=date('Y-m-d H:i:s');
                     $deleated_dt=date('Y-m-d H:i:s');
-                    $arr=array("name"=>$name,"email"=>$email,"moblie"=>$moblie,"PICKUPLOCATION	"=>$PICKUPLOCATION,"DESTINATION"=>$DESTINATION,"STATE"=>$STATE,"city"=>$city,"updated"=>$updated,"deleated_dt"=>$deleated_dt);
+                    $arr=array("name"=>$name,"email"=>$email,"moblie"=>$moblie,"PICKUPLOCATION	"=>$PICKUPLOCATION,"DESTINATION"=>$DESTINATION,"STATE"=>$STATE,"city"=>$city,"user_id"=>$user_id,"adv_id"=>$adv_id,"updated"=>$updated,"deleated_dt"=>$deleated_dt);
                     $res=$this->insert('booking',$arr);
                     if($res)
                     {
@@ -265,8 +268,7 @@ class control extends model
                     $fetch=$res->fetch_object();
                     include_once('profile.php');
                     break;
-
-                    case'/edit':
+                    case '/edit':
                         if(isset($_REQUEST['edit_user_id']))
                         {
                             $user_id=$_REQUEST['edit_user_id'];
@@ -274,7 +276,7 @@ class control extends model
                             $res=$this->select_where('user1',$where);
                             $fetch=$res->fetch_object();
                             // get old file for dekte
-                              $old_img=$fetch->file_upload;
+                            $old_img=$fetch->file_upload;
                             if(isset($_REQUEST['save']))
                             {
                                 $name=$_REQUEST['name'];
@@ -283,54 +285,55 @@ class control extends model
                                 $lag_arr=$_REQUEST['lag'];
                                 $lag=implode(",",$lag_arr);
                                 $cid=$_REQUEST['cid'];
-
-                                date_default_timezone_set('asia/calcutta');
+                    
+                                date_default_timezone_set('Asia/Kolkata'); // Fixed timezone name
                                 $updated_at=date('Y-m-d H:i:s');
                                 if($_FILES['file_upload']['size']>0)
+
                                 {
                                     $file_upload=$_FILES['file_upload']['name'];
                                     $path='UPLOAD/USER1/'.$file_upload;
                                     $tmp_file=$_FILES['file_upload']['tmp_name'];
                                     move_uploaded_file($tmp_file,$path);
-                                    $arr=array("name"=>$name,"unm"=>$unm,"gen"=>$gen,"lag"=>$lag,"cid"=>$cid,"file_upload"=>$file_upload,"updated_at"=>$updated_at);
+                                    $arr=array("name"=>$name,"unm"=>$unm,"gen"=>$gen,"lag"=>$lag,"file_upload"=>$file_upload,"cid"=>$cid,"updated_at"=>$updated_at);
                                     $res=$this->update('user1',$arr,$where);
                                     if($res)
                                     {
                                         unlink('UPLOAD/USER1/'.$old_img);
-                                        // echo"sucess";
-                                        echo"<script>
-                                         alert('Update sucess');
-                                         window.location='profile';
-                                         </script>
-                                        ";
-                                    }else{
+
+                                         echo "success";// Fixed spelling of 'success'
+                                        //  echo"<script>
+                                        //   alert('Update sucess');
+                                        //   window.location='profile';
+                                        //   </script>
+                                        //  ";
+                                    } else {
                                         echo "fail";
                                     }
                                 }
                                 else
                                 {
-
                                     $arr=array("name"=>$name,"unm"=>$unm,"gen"=>$gen,"lag"=>$lag,"cid"=>$cid,"updated_at"=>$updated_at);
-						
                                     $res=$this->update('user1',$arr,$where);
                                     if($res)
                                     {
-                                        // echo"sucesss";
-                                        echo "
-                                         <script>
-                                         alert('Update Success');
-                                         window.location='profile';
-                                          </script>
-                                         ";
+                                        echo "success"; // Fixed spelling of 'success'
+                                        // echo "
+                                        //  <script>
+                                        //  alert('Update Success');
+                                        //  window.location='profile';
+                                        //   </script>
+                                        //  ";
+                                    } else {
+                                        echo "fail";
                                     }
                                 }
-                                
-
                             }
                         }
                         $countries_arr=$this->select('country');
                         include_once('edit_profile.php');
                         break;
+                    
 
             default:
                 echo "<h1>Page Not Found</h1>";

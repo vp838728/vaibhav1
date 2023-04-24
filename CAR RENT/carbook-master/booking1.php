@@ -1,5 +1,18 @@
 <?php
+
 include_once('heder.php');
+if(isset($_SESSION['user_id']))
+{
+
+}else
+{
+	echo"
+	<script>
+	alert('login first');
+	window.location='sign';
+	</script>
+	";
+}
 ?>
 
 <section class="hero-wrap hero-wrap-2 js-fullheight" style="background-image: url('images/bg_3.jpg');"

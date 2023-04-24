@@ -114,7 +114,7 @@ include_once('heder.php');
                         
                         
                         <div class="form-group">
-                            <input type="file" name="file_upload" class="form-control" require="">
+                            <input type="file" name="file_upload" class="form-control" >
                             <img src="UPLOAD/USER1/<?php echo $fetch->file_upload?>"width="50px">
                          </div>
                          <div class="from-group">
@@ -144,13 +144,7 @@ include_once('heder.php');
                            <div class="form-group">
                            <input type="submit" name="save" value="save"  class="btn btn-warning py-3 px-5" >
 </div>
-                        <!-- <div class="form-group">
-                            <textarea name="" id="" cols="30" rows="7" class="form-control"
-                                placeholder="Message"></textarea>
-                        </div> -->
-                        <!-- <div class="form-group">
-                            <input type="submit" value="Send Message" class="btn btn-primary py-3 px-5">
-                        </div> -->
+                       
                     </form>
 
                 </div>

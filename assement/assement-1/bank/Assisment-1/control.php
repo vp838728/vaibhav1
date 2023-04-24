@@ -5,6 +5,7 @@ class control extends model
         function __construct()
 		{
 			session_start();
+
 			model::__construct();
 
 			$path=$_SERVER['PATH_INFO'];
@@ -34,6 +35,40 @@ class control extends model
 						include_once('add_book.php');
 						break;
 
+
+				case'/login':
+					if(isset($_REQUEST['submit']))
+					{
+						$UNM=$_REQUEST['UNM'];
+						$pass=md5($_REQUEST['pass']);
+
+						$arr=array("UNM"=>$UNM,"pass"=>$pass);
+
+						$res=$this->select_where('useraccount',$arr);
+						$chk=$res->num_rows;
+
+						if($chk==1)
+						{
+							$fetch=$res->fetch_object(); // data fetch after function call
+
+							$_SESSION['UNM']=$fetch->UNM;
+							$_SESSION['pass']=$fetch->pass;
+							 echo"<script>
+							 alert('login sucess');
+							 window.location='login';
+							 </script>
+							 ";
+						}else{
+							"echo
+							 <script>
+							 alert('login not sucess');
+							</script>
+							";
+						}
+					}
+					include_once('login.php');
+					break;		
+
 						
 				case '/serach_customer':
 					$user_arr=$this->select('useraccount');
@@ -61,7 +96,10 @@ class control extends model
 					break;
 
 				case '/view.balance':
-					$user_arr=$this->select('useraccount');
+					 $where=array("user_id"=>$_SESSION['user_id']);
+					$res=$this->select_where('useraccount',$where);
+					$fetch=$res->fetch_object();
+					// $user_arr=$this->select('useraccount');
 
 					include_once('view.balance.php');
 					break;
@@ -129,6 +167,8 @@ class control extends model
 				case '/addcustomer':
 					if(isset($_REQUEST['submit']))
 					{
+						$UNM=$_REQUEST['UNM'];
+						$pass=md5($_REQUEST['pass']);
 						$name=$_REQUEST['name'];
 						$email=$_REQUEST['email'];
 						$address=$_REQUEST['address'];
@@ -141,7 +181,7 @@ class control extends model
 						date_default_timezone_set('asia/calcutta');
 						$updated=date('Y-m-d H:i:s');
 						$delated=date('Y-m-d H:i:s');
-						$arr=array("name"=>$name,"email"=>$email,"address"=>$address,"phone"=>$phone,"accounttype"=>$accounttype,"initialdeposit"=>$initialdeposit,"accountno"=>$accountno,"balnce"=>$balnce,"updated"=>$updated,"delated"=>$delated);
+						$arr=array("UNM"=>$UNM,"pass"=>$pass,"name"=>$name,"email"=>$email,"address"=>$address,"phone"=>$phone,"accounttype"=>$accounttype,"initialdeposit"=>$initialdeposit,"accountno"=>$accountno,"balnce"=>$balnce,"updated"=>$updated,"delated"=>$delated);
 						$res=$this->insert('useraccount',$arr);
 
 						if($res)

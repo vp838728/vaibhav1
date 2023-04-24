@@ -71,6 +71,7 @@
 					<p>1.with draw amount</p>
 					<p>2.Deposit account</p>
                     <p>3view balance<p>
+                    <p>4.login</p>
 					
 
             </div>
@@ -112,8 +113,16 @@
         else if($var=="3")
         {
             echo"<script>
-            alert('Delete Book');
+            alert('view balnce');
             window.location='view.balance';
+            </script>" ;
+        }
+        
+        else if($var=="4")
+        {
+            echo"<script>
+            alert('login page');
+            window.location='login';
             </script>" ;
         }
         

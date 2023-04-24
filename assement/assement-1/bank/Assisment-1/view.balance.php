@@ -1,3 +1,15 @@
+<?php
+if(isset($_SESSION['user_Id'])){
+
+}
+else
+{
+ echo "fail";   
+	// echo "<script>
+	// window.location='viewbalance';
+	// </script>";
+}
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -14,26 +26,18 @@
 <div id="account-area">
         <div class="container">
             <div class="row">
-                <div class="col-lg-4 mb-3">
-                    <div class="deposit status">
-                        <h5>Deposit</h5>
-                        <h2>$ <span id="current-deposit">00</span></h2>
-                    </div>
-                </div>
                 
-                <div class="col-lg-4 mb-3">
-                    <div class="withdraw status">
-                        <h5>Withdraw</h5>
-                        <h2>$ <span id="current-withdraw">00</span></h2>
-                    </div>
-                </div>
                 
-                <div class="col-lg-4 mb-3">
+                <div class="col-lg-4 mb-1">
                     <div class="balance status">
                         <h5>Balance</h5>
-                        <h2>$ <span id="current-balance">1240</span></h2>
+
+                        <!-- <h2>$ <span id="current-balance">1240</span></h2> -->
                     </div>
-                 </div>
+                  
+                  </div>
+                  
+                 
             </div>
         </div>
 
