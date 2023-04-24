@@ -1,5 +1,5 @@
 <?php
-if(isset($_SESSION['user_Id'])){
+if(isset($_SESSION['user_ID'])){
 
 }
 else
@@ -30,7 +30,10 @@ else
                 
                 <div class="col-lg-4 mb-1">
                     <div class="balance status">
-                        <h5>Balance</h5>
+                        <h1>Balance</h1>
+                        <p><?php echo $fetch->user_ID;?></p>
+                        <P><?php echo $fetch->balnce;?></P>
+                        <p><?PHP echo $fetch->name;?></p>
 
                         <!-- <h2>$ <span id="current-balance">1240</span></h2> -->
                     </div>

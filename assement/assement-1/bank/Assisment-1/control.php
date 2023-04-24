@@ -50,9 +50,10 @@ class control extends model
 						if($chk==1)
 						{
 							$fetch=$res->fetch_object(); // data fetch after function call
-
+                            $_SESSION['user_ID']=$fetch->user_ID;
 							$_SESSION['UNM']=$fetch->UNM;
 							$_SESSION['pass']=$fetch->pass;
+							$_SESSION['name']=$fetch->name;
 							 echo"<script>
 							 alert('login sucess');
 							 window.location='login';
@@ -67,7 +68,18 @@ class control extends model
 						}
 					}
 					include_once('login.php');
-					break;		
+					break;
+				case'/logout':
+					unset($_SESSION['user_ID']);
+					unset($_SESSION['name']);
+					unset($accountno['UNM']);
+					echo"
+					<script>
+					alert('logout sucess');
+					window.location='cindex';
+					</script>
+					";
+					break;			
 
 						
 				case '/serach_customer':
@@ -96,7 +108,7 @@ class control extends model
 					break;
 
 				case '/view.balance':
-					 $where=array("user_id"=>$_SESSION['user_id']);
+					 $where=array("user_id"=>$_SESSION['user_ID']);
 					$res=$this->select_where('useraccount',$where);
 					$fetch=$res->fetch_object();
 					// $user_arr=$this->select('useraccount');

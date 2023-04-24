@@ -32,8 +32,11 @@
                 </a>
 
             </div>
-
             <div class="right-div">
+                <a href="view.balance" class="btn btn-primary pull-right"><?php echo $_SESSION['name']?></a>
+            </div>
+            <div class="right-div">
+                <a href="logout" class="btn btn-danger pull-right">LOG ME OUT</a>
             </div>
         </div>
     </div>
@@ -42,7 +45,6 @@
         <div class="container">
             <div class="row ">
                 <div class="col-md-12">
-                <a href="view.balance" class="nav-link"><?php echo $_SESSION['name']?></a>
 
                 </div>
 
