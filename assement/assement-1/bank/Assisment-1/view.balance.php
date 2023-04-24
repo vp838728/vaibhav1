@@ -31,9 +31,9 @@ else
                 <div class="col-lg-4 mb-1">
                     <div class="balance status">
                         <h1>Balance</h1>
-                        <p><?php echo $fetch->user_ID;?></p>
-                        <P><?php echo $fetch->balnce;?></P>
-                        <p><?PHP echo $fetch->name;?></p>
+                        <p>userid:<?php echo $fetch->user_ID;?></p>
+                        <P>balnce<?php echo $fetch->balnce;?></P>
+                        <p>name:<?PHP echo $fetch->name;?></p>
 
                         <!-- <h2>$ <span id="current-balance">1240</span></h2> -->
                     </div>
