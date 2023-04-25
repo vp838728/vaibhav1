@@ -54,7 +54,7 @@ include_once('header.php');
                                             
                                             <td>
 												<a href="#" class="btn btn-primary">Edit</a>
-												<a href="#" class="btn btn-danger">Delete</a>
+												<a href="delete?del_category_id=<?php echo $data->category_id?>" class="btn btn-danger">Delete</a>
 												<a href="#" class="btn btn-success"><?php echo $data->status;?></a>
 											</td>
                                         </tr>

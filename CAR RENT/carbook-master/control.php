@@ -23,9 +23,18 @@ class control extends model
                include_once('car2.php');
                break;
 
+            case'/viewbooking':
+                $where=array("user_id"=>$_SESSION['user_id']);
+                    $res=$this->select_where('booking',$where);
+                    
+                    $fetch=$res->fetch_object();
+                    include_once('viewbooking.php');
+                    break;
+
              case'/booking':
                   $user_arr=$this->select('user1');
-                  $booking_arr=$this->select('booking');
+                  $caradv_arr=$this->select('caradv');
+                //   $booking_arr=$this->select('booking');
                 if(isset($_REQUEST['submit']))
                 {
                     $name=$_REQUEST['name'];
@@ -35,13 +44,13 @@ class control extends model
                     $DESTINATION=$_REQUEST['DESTINATION'];
                     $STATE=$_REQUEST['STATE'];
                     $city=$_REQUEST['city'];
-                    $user_id=$_REQUEST['user_id'];
+                    $user_id=$_SESSION['user_id'];
                     $adv_id=$_REQUEST['adv_id'];
                     
                     date_default_timezone_set('asia/calcutta');
                     $updated=date('Y-m-d H:i:s');
                     $deleated_dt=date('Y-m-d H:i:s');
-                    $arr=array("name"=>$name,"email"=>$email,"moblie"=>$moblie,"PICKUPLOCATION	"=>$PICKUPLOCATION,"DESTINATION"=>$DESTINATION,"STATE"=>$STATE,"city"=>$city,"user_id"=>$user_id,"adv_id"=>$adv_id,"updated"=>$updated,"deleated_dt"=>$deleated_dt);
+                    $arr=array("email"=>$email,"moblie"=>$moblie,"PICKUPLOCATION"=>$PICKUPLOCATION,"DESTINATION"=>$DESTINATION,"STATE"=>$STATE,"city"=>$city,"user_id"=>$user_id,"adv_id"=>$adv_id,"updated"=>$updated,"deleated_dt"=>$deleated_dt);
                     $res=$this->insert('booking',$arr);
                     if($res)
                     {

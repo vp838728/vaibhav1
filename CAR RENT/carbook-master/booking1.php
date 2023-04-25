@@ -36,24 +36,23 @@ if(isset($_SESSION['user_id']))
                     <h1 class="text-center my-3">booking your car</h1>
                     <form action="" method="post" enctype="multipart/form-data" class="bg-light p-5 contact-form">
                         
+                    <div class="form-group">
+								<select name="adv_id" class="form-control" required="">
+									<option>----- Select ADV -----</option>
+									<?php
+							foreach($loc_arr as $d)
+							{
+							?>
+									<option value="<?php echo $d->location_id?>">
+										<?php echo $d->name?>
+									</option>
+									<?php	
+							}
+							?>
+								</select>
+							</div>
                         
-                        
-                         <div class="from-group">
-                            <select name="cid" class="form-control" require="">
-                                <option>------SELECT LOCATION-----</option>
-                                <?php
-                                foreach ($loc_arr as $d)
-                                 {
-                                    ?>
-                                  <option value="<?php echo $d->location_id;?>"><?php echo $d->name;?></option>
-                                  <?php
-                                 }
-                                 ?>
-                                 </select>
-                                    
-                                
-</select>
-                           </div>
+                         
                                 
                                 </br>
                            <div class="form-group">
@@ -94,6 +93,9 @@ if(isset($_SESSION['user_id']))
             </tr>
             <tr>
                 <td>Charge(per km) : <?php echo $d->charge?></td>
+            </tr>
+            <tr>
+                <td>loaction:id <?php echo $d->location_id?></td>
             </tr>
             <tr>
                 <td colspan="3">-----------------------------------------------------------------------------------------------------------------------</td>

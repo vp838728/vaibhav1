@@ -87,6 +87,30 @@
       <?php
       }
       ?>
+       <!-- booking id buuton -->
+       
+       <?php
+          if(isset ($_SESSION['user_id']))
+          {
+            ?>
+          <li class="nav-item"><a href="viewbooking" class="nav-link"><?php echo $_SESSION['unm']?></a></li>
+          <!-- <li class="nav-item"><a href="logout" class="nav-link">Logout</a></li> -->
+         
+          <?php
+          }
+          ?>
+
+        </ul> 
+
+
+
+
+
+
+
+      </div>
+     <!-- delte the code -->
+
       		<div class="dropdown">
   <button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown">Dropdown Example
   <span class="caret"></span></button>

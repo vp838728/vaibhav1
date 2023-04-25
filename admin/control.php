@@ -230,7 +230,7 @@ class control extends model // step2:extends model class for call function
 				}
 				if(isset($_REQUEST['del_location_id']))
 				{
-					$location_id=$_REQUEST['del_location_id'];
+					$location_id =$_REQUEST['del_location_id'];
 					$where=array("location_id"=>$location_id);
 					$res=$this->delete_where('location',$where);
 					if($res)
@@ -256,6 +256,42 @@ class control extends model // step2:extends model class for call function
 						<script>
 						alert('delete sucess');
 						window.location='view_booking';
+						</script>
+						";
+					}else{
+					      echo"fail";
+					}
+				}
+				
+				if(isset($_REQUEST['del_category_id']))
+				{
+					$category_id=$_REQUEST['del_category_id'];
+					$where=array("category_id "=>$category_id );
+					$res=$this->delete_where('category',$where);
+					if($res)
+					{
+						echo"
+						 <script>
+						 alert('delete sucess');
+						 window.location='manage_cat';
+						</script>
+						";
+					}else{
+					      echo"fail";
+					}
+				}
+				
+				if(isset($_REQUEST['del_adv_id']))
+				{
+					$adv_id=$_REQUEST['del_adv_id'];
+					$where=array("adv_id "=>$adv_id );
+					$res=$this->delete_where('caradv',$where);
+					if($res)
+					{
+						echo"
+						 <script>
+						 alert('delete sucess');
+						 window.location='manageCar_ Adv';
 						</script>
 						";
 					}else{

@@ -32,9 +32,10 @@ include_once('header.php');
                                             <th>mobile</th>
                                             <th>address</th>
                                             <th>driver</th>
+                                            <th>file</th>
+
                                             <th>updated</th>
                                             <th>deleated</th>
-                                            <th>file</th>
                                             <th>action</th>
                                         
                                         </tr>
@@ -64,8 +65,7 @@ include_once('header.php');
                                             
                                             <td>
 												<a href="#" class="btn btn-primary">Edit</a>
-												<a href="#" class="btn btn-danger">Delete</a>
-												<a href="#" class="btn btn-success"><?php echo $data->status;?></a>
+												<a href="delete?del_adv_id=<?php echo $data->adv_id?>" class="btn btn-danger">Delete</a>
 											</td>
                                         </tr>
                                         <?php

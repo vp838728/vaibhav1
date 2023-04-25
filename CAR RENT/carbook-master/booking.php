@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en">
 
@@ -35,50 +34,72 @@
 				<div class="row">
 					<div class="booking-form">
 						<div class="form-header">
-							<h1>Book a car</h1>
+							<!-- <h1>Book a car</h1> -->
 						</div>
 						<form method="post" action="">
 							<div class="row">
 								<div class="col-sm-6">
 									<div class="form-group">
 										<span class="form-label">Name</span>
-										<input class="form-control" type="text" name="name"placeholder="Enter your name">
-									</div>
-								</div>
+										<input class="form-control" type="text" name="name"
+											placeholder="Enter your name">
+									</div> 
+								</div> 
 								<div class="col-sm-6">
 									<div class="form-group">
 										<span class="form-label">Email</span>
-										<input class="form-control" type="email"name="email" placeholder="Enter your email">
+										<input class="form-control" type="email" name="email"
+											placeholder="Enter your email">
 									</div>
 								</div>
 							</div>
 							<div class="form-group">
 								<span class="form-label">Phone</span>
-								<input class="form-control" type="number" name="moblie" placeholder="Enter your phone number">
+								<input class="form-control" type="number" name="moblie"
+									placeholder="Enter your phone number">
 							</div>
+							<div class="from-group">
+                            <input name="booking_id" type="hidden" value="<?php echo $_SESSION['user_id'];""?> class="form-control" require="">
+                         </div>
+
 							<div class="form-group">
-								<span class="form-label">adv_id</span>
-								<input class="form-control" type="text" name="adv_id"value="<?php echo $_REQUEST['BOOKING_ID'];?>" placeholder="Enter your phone number">
+								<select name="adv_id" class="form-control" required="">
+									<option>----- Select ADV -----</option>
+									<?php
+							foreach($caradv_arr as $data)
+							{
+							?>
+									<option value="<?php echo $data->adv_id?>">
+										<?php echo $data->owner_name?>
+									</option>
+									<?php	
+							}
+							?>
+								</select>
 							</div>
 							<div class="form-group">
 								<span class="form-label">Pickup Location</span>
-								<input class="form-control" type="text" name="PICKUPLOCATION" placeholder="Enter ZIP/Location">
+								<input class="form-control" type="text" name="PICKUPLOCATION"
+									placeholder="Enter ZIP/Location">
 							</div>
 							<div class="form-group">
 								<span class="form-label">Destination</span>
-								<input class="form-control" type="text" name="DESTINATION" placeholder="Enter ZIP/Location">
+								<input class="form-control" type="text" name="DESTINATION"
+									placeholder="Enter ZIP/Location">
 							</div>
-                            <div class="row">
+							<div class="row">
 								<div class="col-sm-6">
 									<div class="form-group">
 										<span class="form-label">STATE</span>
-										<input class="form-control" type="text"name="STATE" placeholder="Enter your STATE">
+										<input class="form-control" type="text" name="STATE"
+											placeholder="Enter your STATE">
 									</div>
 								</div>
 								<div class="col-sm-6">
 									<div class="form-group">
 										<span class="form-label">CITY</span>
-										<input class="form-control" type="text" name="city" placeholder="Enter your CITY">
+										<input class="form-control" type="text" name="city"
+											placeholder="Enter your CITY">
 									</div>
 								</div>
 							</div>
@@ -90,7 +111,7 @@
 									</div>
 								</div> -->
 
-								<!-- <div class="col-sm-7">
+									<!-- <div class="col-sm-7">
 									<div class="row">
 										<div class="col-sm-4">
 											<div class="form-group">
@@ -143,11 +164,11 @@
 										</div>
 									</div>
 								</div> -->
-							</div>
-							<div class="form-btn">
-								<input type="submit" name="submit" class="submit-btn">
-								<!-- <button class="submit-btn">Book Now</button> -->
-							</div>
+								</div>
+								<div class="form-btn">
+									<input type="submit" name="submit" class="submit-btn">
+									<!-- <button class="submit-btn">Book Now</button> -->
+								</div>
 						</form>
 					</div>
 				</div>
