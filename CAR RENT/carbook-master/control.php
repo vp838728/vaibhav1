@@ -24,41 +24,44 @@ class control extends model
                break;
 
             case'/viewbooking':
-                $where=array("user_id"=>$_SESSION['user_id']);
-                    $res=$this->select_where('booking',$where);
-                    
-                    $fetch=$res->fetch_object();
+                $booking_arr=$this->select('booking1');
+
                     include_once('viewbooking.php');
                     break;
 
              case'/booking':
-                  $user_arr=$this->select('user1');
-                  $caradv_arr=$this->select('caradv');
-                //   $booking_arr=$this->select('booking');
+                
                 if(isset($_REQUEST['submit']))
-                {
+                {    
+                    
+
+
                     $name=$_REQUEST['name'];
                     $email=$_REQUEST['email'];
                     $moblie=$_REQUEST['moblie'];
+                    $adv_id=$_REQUEST['adv_id'];
+
                     $PICKUPLOCATION=$_REQUEST['PICKUPLOCATION'];
                     $DESTINATION=$_REQUEST['DESTINATION'];
                     $STATE=$_REQUEST['STATE'];
                     $city=$_REQUEST['city'];
                     $user_id=$_SESSION['user_id'];
-                    $adv_id=$_REQUEST['adv_id'];
+                    
+                     $adv_id=$_REQUEST['adv_id'];
                     
                     date_default_timezone_set('asia/calcutta');
+                    $created_dt=date('Y-m-d H:i:s');
                     $updated=date('Y-m-d H:i:s');
                     $deleated_dt=date('Y-m-d H:i:s');
-                    $arr=array("email"=>$email,"moblie"=>$moblie,"PICKUPLOCATION"=>$PICKUPLOCATION,"DESTINATION"=>$DESTINATION,"STATE"=>$STATE,"city"=>$city,"user_id"=>$user_id,"adv_id"=>$adv_id,"updated"=>$updated,"deleated_dt"=>$deleated_dt);
-                    $res=$this->insert('booking',$arr);
+                    $arr=array("name"=>$name,"email"=>$email,"moblie"=>$moblie,"adv_id"=>$adv_id,"PICKUPLOCATION"=>$PICKUPLOCATION,"DESTINATION"=>$DESTINATION,"STATE"=>$STATE,"city"=>$city,"user_id"=>$user_id,"adv_id"=>$adv_id,"created_dt"=>$created_dt,"updated"=>$updated,"deleated_dt"=>$deleated_dt);
+                    $res=$this->insert('booking1',$arr);
                     if($res)
                     {
                         echo"
-                        <script>
-                        alert('booking sucess');
-                        window.location='booking.php';
-                        </script>
+                         <script>
+                        alert('thnks for booking your car');
+                         window.location='index';
+                         </script>
                         ";
                     }
                     else{

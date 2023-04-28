@@ -43,8 +43,8 @@
 										<span class="form-label">Name</span>
 										<input class="form-control" type="text" name="name"
 											placeholder="Enter your name">
-									</div> 
-								</div> 
+									</div>
+								</div>
 								<div class="col-sm-6">
 									<div class="form-group">
 										<span class="form-label">Email</span>
@@ -59,24 +59,10 @@
 									placeholder="Enter your phone number">
 							</div>
 							<div class="from-group">
-                            <input name="booking_id" type="hidden" value="<?php echo $_SESSION['user_id'];""?> class="form-control" require="">
+								<span class="form-label">ADV ID:</SPAN>
+                            <input name="adv_id" type="text" value="<?php echo $_REQUEST['book_id'];?>" class="form-control" require="">
                          </div>
 
-							<div class="form-group">
-								<select name="adv_id" class="form-control" required="">
-									<option>----- Select ADV -----</option>
-									<?php
-							foreach($caradv_arr as $data)
-							{
-							?>
-									<option value="<?php echo $data->adv_id?>">
-										<?php echo $data->owner_name?>
-									</option>
-									<?php	
-							}
-							?>
-								</select>
-							</div>
 							<div class="form-group">
 								<span class="form-label">Pickup Location</span>
 								<input class="form-control" type="text" name="PICKUPLOCATION"

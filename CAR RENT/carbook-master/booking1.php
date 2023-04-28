@@ -1,18 +1,17 @@
 <?php
-
-include_once('heder.php');
 if(isset($_SESSION['user_id']))
 {
 
-}else
-{
-	echo"
-	<script>
-	alert('login first');
-	window.location='sign';
-	</script>
-	";
 }
+else{
+echo "
+        <script>
+        alert('Login First...');
+        window.location='login';
+        </script>
+        ";
+}
+include_once('heder.php')
 ?>
 
 <section class="hero-wrap hero-wrap-2 js-fullheight" style="background-image: url('images/bg_3.jpg');"
@@ -30,35 +29,38 @@ if(isset($_SESSION['user_id']))
     </div>
 </section>
 
+<section class="ftco-section contact-section">
+    <div class="container">
+        <div class="row d-flex mb-5 contact-info">
 
             <div class="col-md-12 block-9 mb-md-5">
                 <div class="contact-from-top">
-                    <h1 class="text-center my-3">booking your car</h1>
-                    <form action="" method="post" enctype="multipart/form-data" class="bg-light p-5 contact-form">
-                        
-                    <div class="form-group">
-								<select name="adv_id" class="form-control" required="">
-									<option>----- Select ADV -----</option>
-									<?php
-							foreach($loc_arr as $d)
-							{
-							?>
-									<option value="<?php echo $d->location_id?>">
-										<?php echo $d->name?>
-									</option>
-									<?php	
-							}
-							?>
-								</select>
-							</div>
-                        
-                         
-                                
-                                </br>
-                           <div class="form-group">
-                           <input type="submit" class="btn btn-warning py-3 px-5" name="submit" value="search">
-</div>
-                        
+                    <h3 class="text-center">booking your car</h3>
+                    <form action="" method="post" enctype="multipart/form-data" onsubmit="return validate()"
+                        class="bg-light p-5 contact-form">
+
+
+
+                        <div class="from-group">
+                            <!-- <select name="cid" class="form-control" require=""> -->
+                            <select name="location_id" class="form-control" required="">
+                                <option>----- Select Location -----</option>
+                                <?php
+				foreach($loc_arr as $i)
+				{
+				?>
+                                <option value="<?php echo $i->location_id?>">
+                                    <?php echo $i->name?>
+                                </option>
+                                <?php	
+				}
+				?>
+                            </select>
+                        </div>
+                        </br>
+                        <div class="form-group">
+                            <input type="submit" class="btn btn-warning py-3 px-5 " name="submit" value="submit">
+                        </div>
                     </form>
                     
 		<div class="row why-grids">	
@@ -66,36 +68,31 @@ if(isset($_SESSION['user_id']))
         <?php
          if(isset($_REQUEST['submit']))
          {
-            $search=$_REQUEST['location_id'];
-             $caradv_arr=$this->select_search('caradv','location_id',$search);
-         if($caradv_arr){
-            foreach($caradv_arr as $d)
+             $search=$_REQUEST['location_id'];
+             $car_arr=$this->select_search('caradv','location_id',$search);
+         if($car_arr){
+            foreach($car_arr as $c)
             {
         ?>	
                     
         <table width="100%">
-            
+            <tr>
+            <td rowspan="5"width="500px" height="200px"><img src="UPLOAD/CARADV/<?PHP echo $c->file;?>"width="500px"height="200px"alt="imges"></td>
 
-            <tr>
-            <td rowspan="5"width="500px" height="200px"><img src="UPLOAD/CARADV/<?PHP echo $d->file;?>"width="500px"height="200px"alt="imges"></td>
-
-                <td>Car Name : <?php echo $d->car_name?></td>
-                <td rowspan="5"><a href="booking?BOOKING_ID =<?php echo $d->adv_id;?>" class="btn btn-warning">Book</a></td>
+                <td>Car Name : <?php echo $c->car_name?></td>
+                <td rowspan="5"><a href="booking?book_id=<?php echo $c->adv_id;?>" class="btn btn-warning">Book</a></td>
             </tr>
             <tr>
-                <td >Vehicle Number : <?php echo $d->vehical_number?></td>
+                <td >Vehicle Number : <?php echo $c->vehical_number?></td>
             </tr>
             <tr>
-                <td>Address : <?php echo $d->address?></td>
+                <td>Address : <?php echo $c->address?></td>
             </tr>
             <tr>
-                <td>Deposite : <?php echo $d->deposite?></td>
+                <td>Deposite : <?php echo $c->deposite?></td>
             </tr>
-            <tr>
-                <td>Charge(per km) : <?php echo $d->charge?></td>
-            </tr>
-            <tr>
-                <td>loaction:id <?php echo $d->location_id?></td>
+            <tr >
+                <td>Charge(per km) : <?php echo $c->charge?></td>
             </tr>
             <tr>
                 <td colspan="3">-----------------------------------------------------------------------------------------------------------------------</td>
@@ -105,14 +102,13 @@ if(isset($_SESSION['user_id']))
         
         <?php	
             }} else
-            {echo "fail";
-                // echo "
-                // <script>
-                // alert('Sorry.. Cars not available in this area..');
-                // window.location='booking1';
-                // </script>
-                // ";
-
+            {
+                echo "
+                <script>
+                alert('Sorry.. Cars not available in this area..');
+                window.location='book';
+                </script>
+                ";
             }
         }
         ?>
@@ -128,33 +124,6 @@ if(isset($_SESSION['user_id']))
         </div>
 </section>
 
-
-
-
-
-
-
-<script src="js/jquery.min.js"></script>
-<script src="js/jquery-migrate-3.0.1.min.js"></script>
-<script src="js/popper.min.js"></script>
-<script src="js/bootstrap.min.js"></script>
-<script src="js/jquery.easing.1.3.js"></script>
-<script src="js/jquery.waypoints.min.js"></script>
-<script src="js/jquery.stellar.min.js"></script>
-<script src="js/owl.carousel.min.js"></script>
-<script src="js/jquery.magnific-popup.min.js"></script>
-<script src="js/aos.js"></script>
-<script src="js/jquery.animateNumber.min.js"></script>
-<script src="js/bootstrap-datepicker.js"></script>
-<script src="js/jquery.timepicker.min.js"></script>
-<script src="js/scrollax.min.js"></script>
-<!-- <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBVWaKrjvy3MaE7SQ74_uJiULgl1JY0H2s&sensor=false"></script> -->
-<script src="js/google-map.js"></script>
-<script src="js/main.js"></script>
-
-</body>
-
-</html>
-<?php
+<?php 
 include_once('footer.php');
 ?>

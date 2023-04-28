@@ -87,7 +87,7 @@
   <ul class="dropdown-menu">
     <li><a href="booking1">booking</a></li>
     <li><a href="addcaradv">caradv</a></li>
-    <li><a href="#">JavaScript</a></li>
+    <li><a href="viewbooking">viewbooking</a></li>
   </ul>
 </div>
             

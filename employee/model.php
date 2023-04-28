@@ -104,6 +104,8 @@ class model
 		$run=$this->conn->query($upd);	 // run query database
 		return $run;
 	}
+	// create function for get records
+	
 }
 
 $obj = new model();

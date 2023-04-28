@@ -33,15 +33,17 @@ include_once('heder.php')
             <div class="col-md-12 block-9 mb-md-5">
                 <div class="contact-from-top">
                     <h3 class="text-center">sign up</h3>
-                    <form action="" method="post" enctype="multipart/form-data" class="bg-light p-5 contact-form">
+                    <form action="" method="post" enctype="multipart/form-data"onsubmit="return validate()"class="bg-light p-5 contact-form">
                         <div class="form-group">
-                            <input type="text" class="form-control" name="name" placeholder="Your Name">
+                            <input type="text" class="form-control" name="name" id="name" placeholder="Your Name">
+                            <span style="color:red" id="name"></span>
+
                         </div>
                         <div class="form-group">
-                            <input type="text" class="form-control" name="unm" placeholder="Your USERNAME">
+                            <input type="text" class="form-control" name="unm" id="unm" placeholder="Your USERNAME"required>
                         </div>
                         <div class="form-group">
-                            <input type="password" class="form-control" name="pass" placeholder="password">
+                            <input type="password" class="form-control" name="pass" id="pass" placeholder="password"required>
                         </div>
                         <div class="form-group">
                             gen:
@@ -57,7 +59,7 @@ include_once('heder.php')
 
 
                         <div class="form-group">
-                            <input type="file" name="file_upload" class="form-control" require="">
+                            <input type="file" name="file_upload" id="file_upload" class="form-control" require="">
                         </div>
                         <div class="from-group">
                             <select name="cid" class="form-control" require="">
@@ -172,8 +174,7 @@ include_once('heder.php')
         <circle class="path" cx="24" cy="24" r="22" fill="none" stroke-width="4" stroke-miterlimit="10"
             stroke="#F96D00" />
     </svg></div>
-
-
+<script src="js/custom.js"></script>
 <script src="js/jquery.min.js"></script>
 <script src="js/jquery-migrate-3.0.1.min.js"></script>
 <script src="js/popper.min.js"></script>

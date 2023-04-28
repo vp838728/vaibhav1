@@ -20,13 +20,16 @@ include_once('header.php');
                         <div class="panel-body">
                             <div class="row">
                                 <div class="col-lg-12">
-                                    <form role="form" action="" method="post">
+                                    <form role="form" action="" method="post"enctype="multipart/form-data">
                                        
                                         <div class="form-group">
                                             Categories Name:
                                             <input type="text" name="category_name" class="form-control" placeholder="Categories Name">
                                         </div>
-                                        
+                                        <div class="form-group">
+                                            Categories photo:
+                                            <input type="file" name="file" class="form-control" placeholder="Categories Name">
+                                        </div>
                                         
                                         <input type="submit" name="submit" class="btn btn-primary" name="Submit">
                                        

@@ -106,16 +106,21 @@ class control extends model // step2:extends model class for call function
 					date_default_timezone_set('asia/calcutta');
 					$created_dt=date('Y-m-d H:i:s');
 					$updated_dt=date('Y-m-d H:i:s');
+					
+                    $file=$_FILES['file']['name'];
+                    $path='UPLOAD/CARADV/'.$file;
+                    $tmp_file=$_FILES['file']['tmp_name'];
+                    move_uploaded_file($tmp_file,$path);
 
-					$arr=array("category_name"=>$category_name,"created_dt"=>$created_dt,"updated_dt"=>$updated_dt);
+					$arr=array("category_name"=>$category_name,"file"=>$file,"created_dt"=>$created_dt,"updated_dt"=>$updated_dt);
 					$res=$this->insert('category',$arr);
 					if($res)
-					{
-						echo"
-						<script>
-						alert('catogory sucess');
-						window.location='add_cat';
-						</script>
+					{   
+						echo"done
+						//  <script>
+						//  alert('catogory sucess');
+						//  window.location='add_cat';
+						//  </script>
                          ";
 			
 					}else
@@ -185,7 +190,7 @@ class control extends model // step2:extends model class for call function
 				break;
 
 			case '/view_booking':
-			$booking_arr=$this->select('booking');
+			$booking_arr=$this->select('booking1');
 			include_once('view_booking.php');
 			break;
 

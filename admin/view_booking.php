@@ -21,7 +21,7 @@ include_once('header.php');
                             View booking
                         </div>
                         <div class="panel-body">
-                            <div class="table-responsive">
+                            <div style="overflow:scroll">
                                 <table class="table table-striped table-bordered table-hover" id="dataTables-example">
                                     <thead>
                                         <tr>
@@ -52,7 +52,7 @@ include_once('header.php');
                                         
                                         
                                         <tr class="odd gradeX">
-                                            <td><?php echo $data->BOOKING_ID;?></td>
+                                            <td><?php echo $data->book_id;?></td>
                                             <td><?php echo $data->user_id;?></td>
                                             <td><?php echo $data->adv_id;?></td>
                                             <td><?php echo $data->name;?></td>

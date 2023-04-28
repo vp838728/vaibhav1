@@ -31,7 +31,9 @@ include_once('heder.php');
          ?>
     			<div class="col-md-4">
     				<div class="car-wrap rounded ftco-animate">
-    					<div class="img rounded d-flex align-items-end" style="background-image: url(images/car-1.jpg);">
+    					<div class="img rounded d-flex align-items-end">
+              <td rowspan="5"width="500px" height="200px"><img src="UPLOAD/CARADV/<?PHP echo $d->file;?>"width="500px"height="200px"alt="imges"></td>
+
     					</div>
     					<div class="text">
     						<h2 class="mb-0"><a href="car-single.php"><?php echo $d->category_name;?></a></h2>

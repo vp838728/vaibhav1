@@ -1,59 +1,138 @@
 <?php
-if(isset($_SESSION['user_id'])){
+include_once('heder.php');
+if(isset($_SESSION['user_id']))
+{
 
 }
-else
-{
-    
-	echo "<script>
-	window.location='index';
-	</script>";
+else{
+echo "
+        <script>
+        alert('Login First...');
+        window.location='login';
+        </script>
+        ";
 }
-include_once('heder.php');
 ?>
 
-    
+<!-- Contact -->
+<section class="contact py-5">
+	<div class="container py-lg-5">
+		<h1 class="heading text-capitalize text-center"> VIEW Booking</h1>
+		<div class="row agile-contact-form">
+			
+			<div class="col-md-12 mt-md-0 mt-4 contact-form-right">
+				<div class="contact-form-top">
+				</div>
+				<div>
+					<?php
+                     if($booking_arr){
+                        foreach($booking_arr as $c)
+                        {
+                            $user_id=$c->user_id;
+                            if($_SESSION['user_id']==$user_id)
+                            { 
+                    ?>
 
+                    <table width="100%" class="table table-dark">
+                    <tr>
+                        <td width="50%">Booking ID</td>
+                        <td> <?php echo $c->book_id?></td>
+                    </tr>
+                        <td>Advertisement ID</td>
+                        <td > <?php echo $c->adv_id?></td>
+                    </tr>
+                        <td>Booking Name</td>
+                        <td> <?php echo $c->name?></td>
+                    </tr>
+                    <tr>
+                        <td>Email</td>
+                        <td> <?php echo $c->email?></td>
+                    </tr>
+                    <tr>
+                        <td>Mobile Number </td>
+                        <td> <?php echo $c->moblie?></td>
+                    </tr>
+                    <tr>
+                        <td>
+                    <tr>
+                        <td>PICKUPLOCATION</td>
+                        
+                        <td> <?php echo $c->PICKUPLOCATION?></td>
+                    </tr>
+					
+                    <tr>
+                        <td>DESTINATION</td>
+                        <td> <?php echo $c->DESTINATION?></td>
+                    </tr>
+                    <tr>
+                        <td>Booking Date</td>
+                        <td> <?php echo $c->created_dt?></td>
+                    </tr>
+                    <tr></tr>
+                   
+                    </table>
 
-
-    <section class="ftco-section testimony-section bg-light">
-      <div class="container">
-        <div class="row justify-content-center mb-5">
-          <div class="col-md-7 text-center heading-section ftco-animate">
-          	<span class="subheading">Testimonial</span>
-            <h2 class="mb-3">Happy Clients</h2>
-          </div>
-        </div>
-        <div class="row ftco-animate">
-          <div class="col-md-12">
-            <div class="carousel-testimony owl-carousel ftco-owl">
-              <div class="item">
-                <div class="testimony-wrap rounded text-center py-4 pb-5">
-                  <!-- <div class="user-img mb-2" style="background-image: url(images/person_1.jpg)">
-                  </div> -->
-                  <div class="text pt-4">
-                    <h4><i class="fas fa-user" aria-hidden="true"></i></h4>
-                    <img src="UPLOAD/USER1/<?php echo $fetch->file_upload ?>" alt="img" width="100%" height="300px">
-                    
-                    <P class="id">ID:<?php echo $fetch->BOOKING_ID;?></P>
-                    <P class="id">NAME:<?php echo $fetch->email;?></P>
-                    <P class="id">owner_name:<?php echo $fetch->name;?></P>
-
-
-
-     
-                    <!-- <P><a href="#" class="btn btn-primary">Edit</a></P> -->
-                    <span class="position">PHP Developer</span>
-                   </div>
-                </div>
-              
-              
-              
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-    <?php
-    include_once('footer.php');
-    ?>
+                    <?php
+                            }
+                            else{
+                                echo "
+                                <script>
+                                alert('Sorry.. No booking...');
+                                window.location='index';
+                                </script>
+                                ";
+                            }}}
+                            
+                    ?>
+				</div>
+			</div>
+		</div>
+				<div class="row top mt-5">
+					<div class="col-lg-4 mb-lg-0 mb-4 address-grid">
+						<div class="row address-info">
+							<div class="col-lg-3 col-sm-2 mb-sm-0 mb-3 address-left">
+								<i class="fas fa-map-marker-alt"></i>
+							</div>
+							<div class="col-lg-9 col-sm-10 address-right text-left">
+								<h6>Address</h6>
+								<p> 3481 Jack Street Beverly Jack Hills<span> 90210 Block, USA </span>
+								</p>
+							</div>
+						</div>
+					</div>
+					<div class="col-lg-4 mb-lg-0 mb-4 address-grid">
+						<div class="row address-info">
+							<div class="col-lg-3 col-sm-2 mb-sm-0 mb-3 address-left">
+								<i class="fas fa-envelope-open"></i>
+							</div>
+							<div class="col-lg-9 col-sm-10 address-right text-left">
+								<h6>Email</h6>
+								<p>Email :
+									<a href="mailto:example@email.com"> mail@example.com</a>
+								</p>
+							</div>
+						</div>
+					</div>
+					<div class="col-lg-4 address-grid">
+						<div class="row address-info">
+							<div class="col-lg-3 col-sm-2 mb-sm-0 mb-3 address-left">
+								<i class="fas fa-phone"></i>
+							</div>
+							<div class="col-lg-9 col-sm-10 address-right text-left">
+								<h6>Phone</h6>
+								<p>Phone : 112 367 896 2449</p>
+								<p>Fax : 112 367 896 2449</p>
+								</p>
+							</div>
+						</div>
+					</div>
+				</div>
+			
+	</div>
+</section>
+<!-- //Contact -->
+	
+	
+<?php
+include_once('footer.php');
+?>

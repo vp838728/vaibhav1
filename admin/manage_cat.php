@@ -26,8 +26,9 @@ include_once('header.php');
                                         <tr>
                                             <th>category_id</th>
                                             <th>category_name</th>
-                                            <th>created_dt</th>
+                                            <th>file</th>
 
+                                            <th>created_dt</th>
  
                                             <th>updated_dt</th>
                                             <th>Action</th>
@@ -49,6 +50,8 @@ include_once('header.php');
                                         <tr class="odd gradeX">
                                             <td><?php echo $data->category_id?></td>
                                             <td><?php echo $data->category_name?></td>
+                                            <td><img src="../CAR RENT/carbook-master/UPLOAD/CARADV/<?PHP echo $data->file;?>"width="50px"alt="imges"></td>
+
                                             <td><?php echo $data->created_dt;?></td>
                                             <td><?php echo $data->updated_dt;?></td>
                                             
