@@ -1,3 +1,10 @@
+<?php
+// error_reporting(0);
+// session_start();
+
+
+?>
+
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
@@ -32,12 +39,32 @@
                 </a>
 
             </div>
+            <?php
+             if (isset($_SESSION['user_ID']))
+             {
+                ?>
+
             <div class="right-div">
                 <a href="view.balance" class="btn btn-primary pull-right"><?php echo $_SESSION['name']?></a>
             </div>
             <div class="right-div">
                 <a href="logout" class="btn btn-danger pull-right">LOG ME OUT</a>
             </div>
+            <?php
+            }
+            else
+            {
+            ?>
+            
+           
+            <div class="right-div">
+                <a href="login" class="btn btn-danger pull-right">LOGin</a>
+            </div>
+            <?php
+            }
+        
+        ?>
+            
         </div>
     </div>
     <!-- LOGO HEADER END-->

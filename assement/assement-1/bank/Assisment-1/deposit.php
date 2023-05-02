@@ -61,29 +61,20 @@
                                        
                                        
 
-                                       <div class="form-group">
-                                           <label>ACCOUTT NO:</label>
-                                           <input type="text" name="accountno" class="form-control" placeholder="amount">
+                                      <div class="form-group">
+                                           <input type="hidden" name="user_ID" class="form-control" value="<?php echo $fetch->user_ID;?>" placeholder="amount">
                                        </div>
+
                                        <div class="form-group">
                                            <label> Deposit Amount</label>
-                                           <input type="text" name="amount" class="form-control" placeholder="amount">
+                                           <input type="text" name="balnce" class="form-control"  value="<?php echo $fetch->balnce;?>"laceholder="amount">
                                        </div>
                                        
-                                     <div class="form-group">
-                                          <label for="account-type">Account no:</label>
-		                                   <select  name="user_id"  class="form-control" required>
-                                            <option> -- select account no ---</option>
-                                            <?php 
-                                            foreach($user_arr as $data)
-                                            {
-                                                ?>
-			                                <option value="<?php echo $data->user_id ?>"><?php echo $data->accountno;?></option>
-                                            <?php
-                                            }
-                                            ?>
-		                                   </select>
-                                      </div>
+                                       <div class="form-group">
+                                           <label> Deposit Amount</label>
+                                           <input type="text" name="amount" class="form-control"  placeholder="amount">
+                                       </div>
+                                     
 
 
 <!-- 

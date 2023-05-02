@@ -27,7 +27,7 @@ class model
 		$value_arr=array_values($arr);
 		$value=implode("','",$value_arr);
 		
-		echo $sel="insert into $tbl($col) values('$value')"; // query
+		 $sel="insert into $tbl($col) values('$value')"; // query
 		
 		$run=$this->conn->query($sel);	 // run query database
 		return $run;
@@ -41,7 +41,7 @@ class model
 		$i=0;
 		foreach($arr as $w)
 		{
-		  echo	$sel.=" and $col_arr[$i]='$value_arr[$i]'";
+		  $sel.=" and $col_arr[$i]='$value_arr[$i]'";
 			$i++;	
 		}
 		$run=$this->conn->query($sel);	 // run query database
@@ -57,7 +57,7 @@ class model
 		$i=0;
 		foreach($arr as $w)
 		{
-			echo $sel.=" and $col_arr[$i]='$value_arr[$i]'";
+			 $sel.=" and $col_arr[$i]='$value_arr[$i]'";
 			$i++;	
 		}
 		$run=$this->conn->query($sel);	 // run query database

@@ -69,6 +69,7 @@ class model
 	}
     
 	
+	
 	function update($tbl,$arr,$where)
 	{
 		$col_arr=array_keys($arr);
@@ -96,7 +97,7 @@ class model
 		$i=0;
 		foreach($where as $w)
 		{
-		 echo	$upd.=" and $wcol_arr[$i]='$wvalue_arr[$i]'";
+			echo $upd.=" and $wcol_arr[$i]='$wvalue_arr[$i]'";
 			$i++;	
 		}
 		 

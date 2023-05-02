@@ -68,11 +68,9 @@
                 <div class="col-md-12">
                 </div>
 					<p>1.Add CUSTOMER ACOOUNT</p>
-					<p>3.Search customer</p>
-					<p>4.View CUTOMER</p>
-					<p>5.VIEW ALL ACOUNT</p>
-                    <p>7.view balance</p>
-					<p>8.Close</p>
+					<p>2.Search customer</p>
+					<p>3.View CUTOMER</p>
+					<p>4.VIEW ALL ACOUNT</p>
 
             </div>
         </div>
@@ -104,50 +102,29 @@
         }
        
         
-         else if($var=="3")
+         else if($var=="2")
         {
             echo"<script>
-            alert('Search Book');
+            alert('Search customer');
             window.location='serach_customer';
             </script>";
         }
-        else if($var=="4")
+        else if($var=="3")
         {
             echo"<script>
             alert('view customer');
             window.location='view';
             </script>";
         }
-        else if($var=="5")
+        else if($var=="4")
         {
             echo"<script>
-            alert('Edit your book');
-            window.location='edit_book';
-            </script>";
-        }
-       else if($var=="6")
-        {
-            echo"<script>
-            alert('Change Your password ');
-            window.location='change_pass';
+            alert('view all accont');
+            window.location='viewall';
             </script>";
         }
         
-       else if($var=="7")
-       {
-           echo"<script>
-           alert('enter in balance ');
-           window.location='view.balance';
-           </script>";
-       }
-       /*else($var=="7")
-        {
-            echo
-            "<script>
-            alert('close');
-            window.location='index';
-            </script>";
-        }*/
+       
     }
         
 

@@ -89,26 +89,17 @@
                                         </tr>
                                     </thead>
                                     <tbody>
-                                        <?php
-                                        {
-                                        if(!empty($user_arr))
-                                        foreach($user_arr as $data)
-                                        {
-                                            ?>
                                     <tr class="odd gradeX">
-                                           <td><?php echo $data->user_id?></td>
-                                            <td><?php echo $data->name?></td>
-                                            <td><?php echo $data->email?></td>
-                                            <td><?php echo $data->accounttype?></td>
-                                            <td><?php echo $data->address?></td>
-                                            <td><?php echo $data->updated;?></td>
+                                           <td><?php echo $fetch->user_ID?></td>
+                                            <td><?php echo $fetch->name?></td>
+                                            <td><?php echo $fetch->accounttype?></td>
+                                            <td><?php echo $fetch->email?></td>
+                                            <td><?php echo $fetch->address?></td>
+                                            <td><?php echo $fetch->updated;?></td>
                                             
                                             
                                         </tr>
-                                        <?php
-                                        }
-                                    }
-                                    ?>
+                                      
                                     </tbody>
                                 </table>
                             </div>

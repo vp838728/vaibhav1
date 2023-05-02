@@ -23,6 +23,10 @@
     <div class="navbar navbar-inverse set-radius-zero" >
         <div class="container">
             <div class="navbar-header">
+				
+				<h2 class="text-center">Search customer</h2>
+            </div>
+
                 <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
@@ -50,13 +54,15 @@
 				foreach($user_arr as $data)
 				{
 				?>
-				<option value="<?php echo $data->user_id ?>"><?php echo $data->user_id?></option>
+				<option value="<?php echo $data->user_ID ?>"><?php echo $data->user_ID?></option>
 				<?php	
 				}
 				?>
 			</select>	
 			
 			<input type="submit" name="submit" value="search" class="btn btn-primary" >
+			</br>
+			</br>
 
 
             <select name="name" class="form-control" required="">
@@ -65,11 +71,12 @@
 				foreach($user_arr as $data)
 				{
 				?>
-				<option value="<?php echo $data->user_id ?>"><?php echo $data->name?></option>
+				<option value="<?php echo $data->user_ID ?>"><?php echo $data->name?></option>
 				<?php	
 				}
 				?>
-			</select>	
+			</select>
+				
 			
 			<input type="submit" name="submit" value="search" class="btn btn-primary" >
 		</form>
@@ -88,7 +95,7 @@
 						
 			<table width="100%">
             <tr>
-					<td>user_id: <?php echo $data->user_id ?></td>
+					<td>user_id: <?php echo $data->user_ID ?></td>
 				</tr>
 				<tr>
 					<td>email: <?php echo $data->email?></td>

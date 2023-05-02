@@ -24,7 +24,11 @@ class control extends model
                break;
 
             case'/viewbooking':
-                $booking_arr=$this->select('booking1');
+                // $booking_arr=$this->select('booking1');
+                $where=array("user_id"=>$_SESSION['user_id']);
+                $res=$this->select_where('booking1',$where);
+                
+                $fetch=$res->fetch_object();
 
                     include_once('viewbooking.php');
                     break;
@@ -170,7 +174,7 @@ class control extends model
                             <script>
                             alert('contact sucess');
                             window.location='contact';
-                            </>
+                            </script>
                             ";
                     }else
                     {
@@ -251,7 +255,7 @@ class control extends model
                      $path='UPLOAD/USER1/'.$file_upload;
                      $tmp_file=$_FILES['file_upload']['tmp_name'];
                      move_uploaded_file($tmp_file,$path);
-                    $arr=array("name"=>$name,"unm"=>$unm,"pass"=>md5($pass),"gen"=>$gen,"lag"=>$lag,"cid"=>$cid,"created_at"=>$created_at,"file_upload"=>$file_upload,"updated_at"=>$updated_at);
+                    $arr=array("name"=>$name,"unm"=>$unm,"pass"=>$pass,"gen"=>$gen,"lag"=>$lag,"cid"=>$cid,"created_at"=>$created_at,"file_upload"=>$file_upload,"updated_at"=>$updated_at);
 
                     $res=$this->insert('user1',$arr);
                     if($res)
@@ -301,27 +305,27 @@ class control extends model
                                 date_default_timezone_set('Asia/Kolkata'); // Fixed timezone name
                                 $updated_at=date('Y-m-d H:i:s');
                                 if($_FILES['file_upload']['size']>0)
-
                                 {
                                     $file_upload=$_FILES['file_upload']['name'];
                                     $path='UPLOAD/USER1/'.$file_upload;
                                     $tmp_file=$_FILES['file_upload']['tmp_name'];
                                     move_uploaded_file($tmp_file,$path);
+
+
                                     $arr=array("name"=>$name,"unm"=>$unm,"gen"=>$gen,"lag"=>$lag,"file_upload"=>$file_upload,"cid"=>$cid,"updated_at"=>$updated_at);
                                     $res=$this->update('user1',$arr,$where);
                                     if($res)
                                     {
                                         unlink('UPLOAD/USER1/'.$old_img);
 
-                                         echo "success";// Fixed spelling of 'success'
-                                        //  echo"<script>
-                                        //   alert('Update sucess');
-                                        //   window.location='profile';
-                                        //   </script>
-                                        //  ";
-                                    } else {
-                                        echo "fail";
-                                    }
+                                         // Fixed spelling of 'success'
+                                          echo"<script>
+                                           alert('Update sucess');
+                                           window.location='profile';
+                                          </script>
+                                          ";
+                                    } 
+                                        
                                 }
                                 else
                                 {
@@ -329,15 +333,12 @@ class control extends model
                                     $res=$this->update('user1',$arr,$where);
                                     if($res)
                                     {
-                                        echo "success"; // Fixed spelling of 'success'
-                                        // echo "
-                                        //  <script>
-                                        //  alert('Update Success');
-                                        //  window.location='profile';
-                                        //   </script>
-                                        //  ";
-                                    } else {
-                                        echo "fail";
+                                         echo "
+                                         <script>
+                                         alert('Update Success');
+                                         window.location='profile';
+                                          </script>
+                                        ";
                                     }
                                 }
                             }

@@ -110,7 +110,7 @@
                                         {
                                             ?>
                                     <tr class="odd gradeX">
-                                           <td><?php echo $data->user_id?></td>
+                                           <td><?php echo $data->user_ID?></td>
                                             <td><?php echo $data->name?></td>
                                             <td><?php echo $data->email?></td>
                                             <td><?php echo $data->accounttype?></td>
@@ -120,8 +120,8 @@
                                             
                                             <td>
 												<a href="#" class="btn btn-primary">Edit</a>
-												<a href="delete?del_user_id=<?php echo $data->user_id?>" class="btn btn-danger">Delete</a>
-												<a href="view?view_user_id=<?php echo $data->user_id?>" class="btn btn-success">view</a>
+												<a href="delete?del_user_ID=<?php echo $data->user_ID?>" class="btn btn-danger">Delete</a>
+												<a href="#" class="btn btn-success">view</a>
 											</td>
                                         </tr>
                                         <?php

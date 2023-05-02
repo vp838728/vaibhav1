@@ -24,66 +24,47 @@ echo "
 				<div class="contact-form-top">
 				</div>
 				<div>
-					<?php
-                     if($booking_arr){
-                        foreach($booking_arr as $c)
-                        {
-                            $user_id=$c->user_id;
-                            if($_SESSION['user_id']==$user_id)
-                            { 
-                    ?>
+					<!-- delete the code -->
 
                     <table width="100%" class="table table-dark">
                     <tr>
                         <td width="50%">Booking ID</td>
-                        <td> <?php echo $c->book_id?></td>
+                        <td> <?php echo $fetch->book_id?></td>
                     </tr>
                         <td>Advertisement ID</td>
-                        <td > <?php echo $c->adv_id?></td>
+                        <td > <?php echo $fetch->adv_id?></td>
                     </tr>
                         <td>Booking Name</td>
-                        <td> <?php echo $c->name?></td>
+                        <td> <?php echo $fetch->name?></td>
                     </tr>
                     <tr>
                         <td>Email</td>
-                        <td> <?php echo $c->email?></td>
+                        <td> <?php echo $fetch->email?></td>
                     </tr>
                     <tr>
                         <td>Mobile Number </td>
-                        <td> <?php echo $c->moblie?></td>
+                        <td> <?php echo $fetch->moblie?></td>
                     </tr>
                     <tr>
                         <td>
                     <tr>
                         <td>PICKUPLOCATION</td>
                         
-                        <td> <?php echo $c->PICKUPLOCATION?></td>
+                        <td> <?php echo $fetch->PICKUPLOCATION?></td>
                     </tr>
 					
                     <tr>
                         <td>DESTINATION</td>
-                        <td> <?php echo $c->DESTINATION?></td>
+                        <td> <?php echo $fetch->DESTINATION?></td>
                     </tr>
                     <tr>
                         <td>Booking Date</td>
-                        <td> <?php echo $c->created_dt?></td>
+                        <td> <?php echo $fetch->created_dt?></td>
                     </tr>
                     <tr></tr>
                    
                     </table>
-
-                    <?php
-                            }
-                            else{
-                                echo "
-                                <script>
-                                alert('Sorry.. No booking...');
-                                window.location='index';
-                                </script>
-                                ";
-                            }}}
-                            
-                    ?>
+                        <!-- delete the code -->
 				</div>
 			</div>
 		</div>

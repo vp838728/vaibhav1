@@ -63,23 +63,25 @@
 
                                        <div class="form-group">
                                            <label>ACCOUTT NO:</label>
-                                           <input type="text" name="accountno" class="form-control" placeholder="amount">
+                                           <input type="hidden" name="user_ID" class="form-control" value="<?php  echo $fetch->user_ID;?>" placeholder="amount">
+                                       </div>
+                                       
+                                       <div class="form-group">
+                                           <label>TO:</label>
+                                           <input type="text" name="name" class="form-control" value="<?php echo $fetch->name;?>" placeholder="amount">
+                                       </div>
+                                       <div class="form-group">
+                                           <label>TO:</label>
+                                           <input type="text" name="tranction_id" class="form-control" value="<?php echo $fetch->tranction_id;?>" placeholder="amount">
                                        </div>
                                        <div class="form-group">
                                            <label>AMOUNT:</label>
                                            <input type="text" name="amount" class="form-control" placeholder="amount">
                                        </div>
+                                       
 
 
 
-                                     <div class="form-group">
-                                          <label for="account-type">Account Type:</label>
-		                                   <select id="accounttype" class="form-control" name="type" required>
-			                                <option value="">Select Account Type</option>
-			                             <option value="Checking Account">Deposit</option>
-			                              <option value="Credit Card Account">Withdraw</option>
-		                                   </select>
-                                      </div>
 
                                        
                                        <input type="submit" name="submit" class="btn btn-primary" value="Submit">

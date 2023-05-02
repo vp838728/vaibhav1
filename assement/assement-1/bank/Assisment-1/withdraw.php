@@ -69,22 +69,9 @@
                                            <label> Withdraw Amount</label>
                                            <input type="text" name="amount" class="form-control" placeholder="amount">
                                        </div>
+                                       
 
                                         
-                                     <div class="form-group">
-                                          <label for="account-type">Account no:</label>
-		                                   <select  name="user_id"  class="form-control" required>
-                                            <option> -- select account no ---</option>
-                                            <?php 
-                                            foreach($user_arr as $data)
-                                            {
-                                                ?>
-			                                <option value="<?php echo $data->user_id ?>"><?php echo $data->accountno;?></option>
-                                            <?php
-                                            }
-                                            ?>
-		                                   </select>
-                                      </div>
 
 
                                        

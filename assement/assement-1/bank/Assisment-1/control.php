@@ -56,7 +56,7 @@ class control extends model
 							$_SESSION['name']=$fetch->name;
 							 echo"<script>
 							 alert('login sucess');
-							 window.location='login';
+							 window.location='cindex';
 							 </script>
 							 ";
 						}else{
@@ -88,23 +88,22 @@ class control extends model
 							break;
 
 				case '/view':
-					 $user_arr=$this->select('useraccount');
 
 
 					
-					// $where=array("user_id"=>$_SESSION['user_id']);
+					$where=array("user_ID"=>$_SESSION['user_ID']);
 
-				 	//  $res=$this->select_where('useraccount',$where);
-					//  $fetch=$res->fetch_object();
+				 	$res=$this->select_where('useraccount',$where);
+					 $fetch=$res->fetch_object();
 					     include_once('view.php');
 								break;
 
-				case '/edit_book':
+				case '/viewall':
 
 					$user_arr=$this->select('useraccount');
 				
 
-					include_once('edit_book.php');
+					include_once('viewall.php');
 					break;
 
 				case '/view.balance':
@@ -123,20 +122,26 @@ class control extends model
 						{
 							$accountno=$_REQUEST['accountno'];
 							$amount=$_REQUEST['amount'];
-							$user_id=$_REQUEST['user_id'];
+							$user_ID=$_REQUEST['user_ID'];
+							$withdraw=$_REQUEST['withdaw'];
+							$balnce=$_REQUEST['balnce'];
+							$total=($balnce-$withdraw);
+
+
+							echo"the total number of =.$total.";
 
 							date_default_timezone_set('asia/calcutta');
 							$create_dt=date('Y-m-d H:i:s');
 
-							$arr=array("accountno"=>$accountno,"amount"=>$amount,"create_dt"=>$create_dt,"user_id"=>$user_id);
+							$arr=array("accountno"=>$accountno,"amount"=>$amount,"create_dt"=>$create_dt,"user_ID"=>$user_ID,"withdraw"=>$withdraw,"balnce"=>$balnce);
 							$res=$this->insert('tranction',$arr);
 							if($res)
 							{
 								echo"
-								<script>
-								alert('with draw sucess');
-								window.location='withdraw';
-								</script>
+								 <script>
+								 alert('with draw sucess');
+								 window.location='withdraw';
+								 </script>
 								";
 							}else
 							{
@@ -145,27 +150,40 @@ class control extends model
 						}
 					include_once('withdraw.php');
 					break;
+
+
+                               
+							
+
 					
 				case '/deposit':
-					$user_arr=$this->select('useraccount');
+					
+					$where=array("user_ID"=>$_SESSION['user_ID']);
+					$res=$this->select_where('useraccount',$where);
+					$fetch=$res->fetch_object();
+
+					// $user_arr=$this->select('useraccount');
 						if(isset($_REQUEST['submit']))
 						{
-							$accountno=$_REQUEST['accountno'];
-							$amount=$_REQUEST['amount'];
-							$user_id=$_REQUEST['user_id'];
+							// $accountno=$_REQUEST['accountno'];
+							// $total=$deposit+$amount;
+						   $amount=$_REQUEST['amount'];
+						   $user_ID=$_REQUEST['user_ID'];
+						   $balnce=$_REQUEST['balnce'];
+						   
 
 							date_default_timezone_set('asia/calcutta');
 							$create_dt=date('Y-m-d H:i:s');
 
-							$arr=array("accountno"=>$accountno,"amount"=>$amount,"user_id"=>$user_id,"create_dt"=>$create_dt);
-							$res=$this->insert('tranction',$arr);
+							$arr=array("amount"=>$amount,"user_ID"=>$user_ID,"balnce"=>$balnce,"create_dt"=>$create_dt);
+							$res=$this->insert('deposit',$arr);
 							if($res)
-							{echo"
+							{echo"done
 								
-								 <script>
-								 alert('deposit sucess');
-							 window.location='deposit';
-								 </script>
+							// 	 <script>
+							// 	 alert('deposit sucess');
+							//  window.location='deposit';
+							// 	 </script>
 								 ";
 								
 							}else
@@ -175,6 +193,7 @@ class control extends model
 						}
 					include_once('deposit.php');
 					break;
+						
 				
 				case '/addcustomer':
 					if(isset($_REQUEST['submit']))
@@ -213,17 +232,17 @@ class control extends model
 						include_once('addcustomer.php');
 						break;
 						case'/delete':
-							if(isset($_REQUEST['del_user_id']))
+							if(isset($_REQUEST['del_user_ID']))
 					{
-						$user_id=$_REQUEST['del_user_id'];
-						$where=array("user_id"=>$user_id);
+						$user_ID=$_REQUEST['del_user_ID'];
+						$where=array("user_ID"=>$user_ID);
 						$res=$this->delete_where('useraccount',$where);
 						if($res)
 						{
 							echo"
 							<script>
 							alert('delete sucess');
-							window.location='edit_book';
+							window.location='viewall';
 							</script>
 							";
 						}else
@@ -234,18 +253,22 @@ class control extends model
 					break;
 
 					case'/tranction':
-						$res=$this->select('useraccount');
+						$where=array("user_ID"=>$_SESSION['user_ID']);
+						$res=$this->select_where('tranction',$where);
+						$fetch=$res->fetch_object();
+
+						$user_arr=$this->select('useraccount');
 						if(isset($_REQUEST['submit']))
 						{
 							$accountno=$_REQUEST['accountno'];
 							$amount=$_REQUEST['amount'];
 							$type=$_REQUEST['type'];
-							$user_id=$_REQUEST['user_id'];
+							$user_ID=$_REQUEST['user_ID'];
 
 							date_default_timezone_set('asia/calcutta');
 							$create_dt=date('Y-m-d H:i:s');
 
-							$arr=array("accountno"=>$accountno,"amount"=>$amount,"type"=>$type,"create_dt"=>$create_dt,"user_id"=>$user_id);
+							$arr=array("accountno"=>$accountno,"amount"=>$amount,"type"=>$type,"create_dt"=>$create_dt,"user_ID"=>$user_ID);
 							$res=$this->insert('tranction',$arr);
 							if($res)
 							{

@@ -27,16 +27,19 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <a class="navbar-brand" href="index.html">
+                 <a class="navbar-brand" href="#">
+                  <i class="fa fa-bank" style="font-size:24px"></i>
 
-                    <img src="assets/img/img2.jpg"/>
-                    <img src="assets/img/bank-logo.html"/>
-                </a>
+
+
+                </a> 
+
+            
 
             </div>
 
             <div class="right-div">
-                <a href="#" class="btn btn-danger pull-right">LOG ME OUT</a>
+                <a href="login" class="btn btn-danger pull-right">LOGiN</a>
             </div>
         </div>
     </div>
@@ -72,6 +75,7 @@
 					<p>2.Deposit account</p>
                     <p>3view balance<p>
                     <p>4.login</p>
+                    <p>5.tranction</p>
 					
 
             </div>
@@ -125,7 +129,13 @@
             window.location='login';
             </script>" ;
         }
-        
+        else if($var=="5")
+        {
+            echo"<script>
+            alert('tranction page');
+            window.location='tranction';
+            </script>" ;
+        }
        /*else($var=="7")
         {
             echo

@@ -59,8 +59,7 @@
 									placeholder="Enter your phone number">
 							</div>
 							<div class="from-group">
-								<span class="form-label">ADV ID:</SPAN>
-                            <input name="adv_id" type="text" value="<?php echo $_REQUEST['book_id'];?>" class="form-control" require="">
+                            <input name="adv_id" type="hidden" value="<?php echo $_REQUEST['book_id'];?>" class="form-control" require="">
                          </div>
 
 							<div class="form-group">

@@ -106,7 +106,7 @@ include_once('heder.php')
                 echo "
                 <script>
                 alert('Sorry.. Cars not available in this area..');
-                window.location='book';
+                window.location='booking1';
                 </script>
                 ";
             }

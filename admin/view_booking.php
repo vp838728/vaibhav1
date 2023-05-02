@@ -67,8 +67,8 @@ include_once('header.php');
                                             
                                             <td>
 												<a href="#" class="btn btn-primary">Edit</a>
-												<a href="delete?del_BOOKING_ID=<?php echo $data->BOOKING_ID;?>" class="btn btn-danger">Delete</a>
-												<a href="#" class="btn btn-success"><?php echo $data->status;?></a>
+												<a href="delete?del_book_id=<?php echo $data->book_id;?>" class="btn btn-danger">Delete</a>
+												<a href="status?status_book_id=<?php echo $data->book_id?>" class="btn btn-success"><?php echo $data->status;?></a>
 											</td>
                                         </tr>
                                         <?php

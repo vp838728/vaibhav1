@@ -62,27 +62,27 @@
                                        
                                 <div class="form-group">
                                            <label>USRENMAE:</label>
-                                           <input type="text" name="UNM" class="form-control" placeholder="Book Id">
+                                           <input type="text" name="UNM" class="form-control" placeholder="enter your usrename">
                                        </div>
                                        
                                        <div class="form-group">
                                            <label>PASSWORD:</label>
-                                           <input type="password" name="pass" class="form-control" placeholder="Book Id">
+                                           <input type="password" name="pass" class="form-control" placeholder="enter your password">
                                        </div>
 
                                        <div class="form-group">
                                            <label>NAME:</label>
-                                           <input type="text" name="name" class="form-control" placeholder="Book Id">
+                                           <input type="text" name="name" class="form-control" placeholder="enter your name">
                                        </div>
                                        <div class="form-group">
                                            <label>EMAIL:</label>
-                                           <input type="text" name="email" class="form-control" placeholder="Category">
+                                           <input type="text" name="email" class="form-control" placeholder="enter your email">
                                        </div>
 
 
                                        <div class="form-group">
                                            <label>ADDRESS:</label>
-                                           <input type="text" name="address" class="form-control" placeholder="Book Name">
+                                           <input type="text" name="address" class="form-control" placeholder="enter your address">
                                        </div>
 
                                        <div class="form-group">
@@ -102,16 +102,16 @@
 
                                        <div class="form-group">
                                            <label>DEPOSIT:</label>
-                                           <input type="text" name="initialdeposit" class="form-control" placeholder="price">
+                                           <input type="text" name="initialdeposit" class="form-control" placeholder="deposit">
                                        </div>
                                        
                                        <div class="form-group">
                                            <label>ACCOUNT NO:</label>
-                                           <input type="text" name="accountno" class="form-control" placeholder="price">
+                                           <input type="text" name="accountno" class="form-control" placeholder="enter your account number">
                                        </div>
                                        <div class="form-group">
                                            <label>BALNCE:</label>
-                                           <input type="text" name="balnce" class="form-control" placeholder="price">
+                                           <input type="text" name="balnce" class="form-control" placeholder="enter your balnce">
                                        </div>
                                        
                                        <input type="submit" name="submit" class="btn btn-primary" value="Submit">

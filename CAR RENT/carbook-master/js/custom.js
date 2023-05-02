@@ -29,8 +29,79 @@ function validate()
     else{
         document.getElementById('pass').innerHTML="";
     }
+       //password validation
+    if(!(pass.length >=3 && pass.length <=8))
+    {
+        alert('please ,provide min 3 & max 8 char in pass');
+        return false;
+    }
+       //cpassword validation
+    var cpass=document.forms["myforms"]["cpass"].value;
+    if(cpass=="" || cpass==null)
+    {
+        alert('please the fill out the cpass');
+        return false;
+    }
+    // password validation and cpass validation
+    if(pass==cpass)
+    {
 
-    var
+    }
+    else
+    {
+        alert('plaese enter same values');
+        return false;
+    }
+        //email validation
+    var email=documnet.forms["myform"]["email"].value;
+    if(email=="" || email==null)
+    {
+        alert('please fill out the email');
+        return false;
+    }
 
+    var mail=/^[a-zA-Z0-9_]+@[a-za-z]+\.[a-za-Z]{2,4}$/;
+    if(!mail.test(email))
+    {
+        alert('please fill proper email id');
+        return false;
+    }
+    // gen validation
+
+    var gen_arr= document.getElementsByName("gen")
+    if(gen_arr[0].checked == true)
+    {
+
+    }
+    else if (gen_arr[1].checked == true)
+    {
+
+    }
+    else
+    {
+        alert('! Please Select Gender');
+        return false;
+    }
+
+    // lanague validation
+
+    var chk_arr = document.getElementsByName("lag")
+      if(chk_arr[0].checked == true)
+      {
+
+      }
+      else if (chk_arr[1].checked == true)
+      {
+
+      }
+      else if (chk_arr[2].checked == true)
+      {
+
+      }
+      else
+      {
+        alert("! Please the select hobyy");
+        return false;
+      }
     
 }

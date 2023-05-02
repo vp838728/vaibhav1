@@ -61,7 +61,7 @@ include_once('heder.php');
             <div class="col-md-8 block-9 mb-md-5">
                 <div class="contact-from-top">
                     <h3>EDIT PROFILE</h3>
-                    <form action="" method="post" enctype="multipart/from-data" class="bg-light p-5 contact-form">
+                    <form action="" method="post"  class="bg-light p-5 contact-form"enctype="multipart/form-data">
                         <div class="form-group">
                             <input type="text" class="form-control" name="name" value="<?php echo $fetch->name;?>" placeholder="Your Name">
                         </div>

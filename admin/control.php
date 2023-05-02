@@ -94,6 +94,7 @@ class control extends model // step2:extends model class for call function
 			break;
 			
 			case '/manage_emp':
+				
 			$emp_arr=$this->select('employee');
 			include_once('manage_emp.php');
 			break;
@@ -250,17 +251,17 @@ class control extends model // step2:extends model class for call function
 						echo"fail";
 					}
 				}
-				if(isset($_REQUEST['del_BOOKING_ID']))
+				if(isset($_REQUEST['del_book_id']))
 				{
-					$BOOKING_ID=$_REQUEST['del_BOOKING_ID'];
-					$where=array("BOOKING_ID"=>$BOOKING_ID);
-					$res=$this->delete_where('booking',$where);
+					$book_id=$_REQUEST['del_book_id'];
+					$where=array("book_id"=>$book_id);
+					$res=$this->delete_where('booking1',$where);
 					if($res)
 					{
 						echo"
-						<script>
+						 <script>
 						alert('delete sucess');
-						window.location='view_booking';
+						 window.location='view_booking';
 						</script>
 						";
 					}else{
@@ -301,6 +302,26 @@ class control extends model // step2:extends model class for call function
 						";
 					}else{
 					      echo"fail";
+					}
+				}
+				if(isset($_REQUEST['del_employee_id']))
+				{
+					$employee_id=$_REQUEST['del_employee_id'];
+					$where=array("employee_id"=>$employee_id);
+					$res=$this->delete_where('employee',$where);
+					if($res)
+					{
+						echo"
+						<script>
+						alert('delete sucess');
+						window.location='manage_emp';
+						</script>
+						";
+
+
+					}else
+					{
+						echo "fail";
 					}
 				}
 				break;
@@ -346,7 +367,118 @@ class control extends model // step2:extends model class for call function
 							}
 						}
 					}
+
+					if(isset($_REQUEST['status_book_id']))
+					{
+						$book_id=$_REQUEST['status_book_id'];
+						$where=array("book_id"=>$book_id);
+						$res=$this->select_where('booking1',$where);
+						$fetch=$res->fetch_object();
+
+						if($fetch->status=="booking panding")
+						{
+							$arr=array("status"=>"booking sucess");
+							$res=$this->update('booking1',$arr,$where);
+							if($res)
+							{
+								echo"
+								<script>
+								alert('booking sucess');
+								window.location='view_booking';
+								</script>
+								";
+							}
+						}else{
+							$arr=array("status"=>"booking panding");
+							$res=$this->update('booking1',$arr,$where);
+
+							if($res)
+							{
+								echo"
+								<script>
+								alert('booking paning');
+								window.location='view_booking';
+								</script>
+								";
+							}
+						}
+					}
+					if(isset($_REQUEST['status_employee_id']))
+					{
+						$employee_id=$_REQUEST['status_employee_id'];
+						$where=array("employee_id"=>$employee_id);
+						$res=$this->select_where('employee',$where);
+						$fetch=$res->fetch_object();
+
+						if($fetch->status=="unblock")
+						{
+							$arr=array("status"=>"block");
+							$res=$this->update('employee',$arr,$where);
+
+							if($res)
+							{
+								echo"
+								<script>
+								alert('employee block');
+								window.location='manage_emp';
+								</script>
+								";
+							}
+						}else
+						{
+							$arr=array("status"=>"unblock");
+							$res=$this->update('employee',$arr,$where);
+
+							if($res)
+							{
+								echo"
+								<script>
+								alert('employee unblock');
+								window.location='manage_emp';
+								</script>
+								";
+							}
+						}
+					}
 					break;
+
+					case'/editemp':
+						if(isset($_REQUEST['edit_employee_id']))
+						{
+							$employee_id=$_REQUEST['edit_employee_id'];
+							$where=array("employee_id"=>$employee_id);
+							$res=$this->select_where('employee',$where);
+							$fetch=$res->fetch_object();
+							if(isset($_REQUEST['submit']))
+							{
+								$name=$_REQUEST['name'];
+								$mobile=$_REQUEST['mobile'];
+								$email=$_REQUEST['email'];
+								$address=$_REQUEST['address'];
+								$username=$_REQUEST['username'];
+								// $pass=$_REQUEST['pass'];
+								
+								date_default_timezone_set('asia/calcutta');
+								$updated=date('Y-m-d H:i:s');
+
+								$arr=array("name"=>$name,"mobile"=>$mobile,"email"=>$email,"address"=>$address,"username"=>$username,"updated"=>$updated);
+								$res=$this->update('employee',$arr,$where);
+								if($res)
+								{
+									echo"
+									 <script>
+									 alert('update sucess');
+								   window.location='manage_emp';
+								 	 </script>
+									 ";
+								}else{
+									echo "fail";
+								}
+							}
+						}
+						include_once('editemp.php');
+						break;
+
 
 			
 			default:
