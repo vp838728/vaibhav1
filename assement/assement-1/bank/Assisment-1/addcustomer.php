@@ -100,10 +100,7 @@
 		                                   </select>
                                       </div>
 
-                                       <div class="form-group">
-                                           <label>DEPOSIT:</label>
-                                           <input type="text" name="initialdeposit" class="form-control" placeholder="deposit">
-                                       </div>
+                                       
                                        
                                        <div class="form-group">
                                            <label>ACCOUNT NO:</label>

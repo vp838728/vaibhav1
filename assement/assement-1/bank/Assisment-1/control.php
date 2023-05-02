@@ -205,14 +205,13 @@ class control extends model
 						$address=$_REQUEST['address'];
 						$phone=$_REQUEST['phone'];
 						$accounttype=$_REQUEST['accounttype'];
-						$initialdeposit=$_REQUEST['initialdeposit'];
 						$accountno=$_REQUEST['accountno'];
 						$balnce=$_REQUEST['balnce'];
 
 						date_default_timezone_set('asia/calcutta');
 						$updated=date('Y-m-d H:i:s');
 						$delated=date('Y-m-d H:i:s');
-						$arr=array("UNM"=>$UNM,"pass"=>$pass,"name"=>$name,"email"=>$email,"address"=>$address,"phone"=>$phone,"accounttype"=>$accounttype,"initialdeposit"=>$initialdeposit,"accountno"=>$accountno,"balnce"=>$balnce,"updated"=>$updated,"delated"=>$delated);
+						$arr=array("UNM"=>$UNM,"pass"=>$pass,"name"=>$name,"email"=>$email,"address"=>$address,"phone"=>$phone,"accounttype"=>$accounttype,"accountno"=>$accountno,"balnce"=>$balnce,"updated"=>$updated,"delated"=>$delated);
 						$res=$this->insert('useraccount',$arr);
 
 						if($res)
