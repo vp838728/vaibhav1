@@ -186,40 +186,55 @@ class control extends model
 
             case '/login':
                 if(isset($_REQUEST['submit']))
-                {
-                    $unm=$_REQUEST['unm'];
-                    $pass=md5($_REQUEST['pass']);
-                    
-                    $arr=array("unm"=>$unm,"pass"=>md5($pass));
-                    
-                    $res=$this->select_where('user1',$arr);
-                    $chk=$res->num_rows;
-                    if($chk==1)
-                    {
-                        $fetch=$res->fetch_object();
-                        //create the session
-                        $_SESSION['user_id']=$fetch->user_id;
-                        $_SESSION['unm']=$fetch->unm;
-                        $_SESSION['pass']=$fetch->pass;
-                        $_SESSION['name']=$fetch->name;
-                        echo "
-                        <script>
-                        alert('login sucess');
-                        window.location='index';
-                        </script>
-                        ";
-                    }
-                    else{
-                        echo"
-                        <script>
-                        alert('not sucess');
-                        </script>
-                        ";
-                    
-                    }
-
-                    
-                }
+			{
+				$unm=$_REQUEST['unm'];
+				$pass=md5($_REQUEST['pass']); 
+				
+				$arr=array("unm"=>$unm,"pass"=>$pass);
+				
+				$res=$this->select_where('user1',$arr); // func call  and cond check 
+				$chk=$res->num_rows; // check res by rows that cond true or not
+			
+				if($chk==1) // 1 means true / and 0 means false
+				{
+					
+					$fetch=$res->fetch_object(); // data fetch after function call
+					$status=$fetch->status;
+					
+					if($status=="unblock")
+					{
+						// session create 
+						$_SESSION['user_id']=$fetch->user_id;
+						$_SESSION['unm']=$fetch->unm;
+						$_SESSION['name']=$fetch->name;
+						
+						echo "
+						<script>
+						alert('Login Success');
+						window.location='index';
+						</script>
+						";
+					}
+					else
+					{
+						echo "
+						<script>
+						alert('Login Failed due to Block Account');
+						window.location='index';
+						</script>
+						";
+					}
+				}
+				else
+				{
+					echo "
+					<script>
+					alert('Login Failed due to wrong creadential !');
+					window.location='login';
+					</script>
+					";
+				}
+			}
                 include_once('login.php');
                 break;
                 case'/logout':
