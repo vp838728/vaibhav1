@@ -4,7 +4,7 @@ class control extends model
 {
 	function __construct()
 	{
-		session_start();
+        session_start();
 		model::__construct();
 		$path=$_SERVER['PATH_INFO']; //http://localhost/Project/empolyee/control.php	
 		switch($path)
@@ -24,6 +24,15 @@ class control extends model
 			case '/dashboard':
 			include_once('dashboard.php');
 			break;
+
+			
+			case '/profile':
+				$where=array("employee_id"=>$_SESSION['employee_id']);
+                $res=$this->select_where('employee',$where);
+                
+                $fetch=$res->fetch_object();
+				include_once('profile.php');
+				break;
 			
 
 			case'/employee':
@@ -38,6 +47,9 @@ class control extends model
 					if($chk==1)
 					{
 						$fetch=$res->fetch_object();
+						$status=$fetch->status;
+						if($status="unblock")
+						{
 						//session create
 
 						$_SESSION['employee_id']=$fetch->employee_id;
@@ -52,7 +64,18 @@ class control extends model
 						window.location='dashboard';
 						</script>
 						";
-					}else
+						}
+						else
+						{
+							echo"
+							<script>
+							alert('Login Failed due to Block Account');
+							window.location='employee';
+							</script>
+							";
+						}	
+					}
+					else
 					{
 						echo"fail";
 					}

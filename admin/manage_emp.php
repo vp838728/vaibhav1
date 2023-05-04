@@ -24,12 +24,14 @@ include_once('header.php');
                                 <table class="table table-striped table-bordered table-hover" id="dataTables-example">
                                     <thead>
                                         <tr>
+                                            <th>file</th>
                                             <th>employee_id</th>
                                             <th>name</th>
                                             <th>mobile</th>
                                             <th>email</th>
                                             <th>address</th>
                                             <th>username</th>
+                                            <th>JOB PROFILE</th>
                                             <th>created</th>
                                             <th>updated</th>
                                             <th>ACTION</th>
@@ -44,12 +46,14 @@ include_once('header.php');
                                             {
                                         ?>
                                         <tr class="odd gradeX">
+                                            <td><img src="upload/employee/<?php echo $data->file;?>"width="50px"alt="imges"></td>
                                             <td><?php echo $data->employee_id;?></td>
                                             <td><?php echo $data->name;?></td>
                                             <td><?php echo $data->mobile;?></td>
                                             <td><?php echo $data->email;?></td>
                                             <td><?php echo $data->address;?></td>
                                             <td><?php echo $data->username;?></td>
+                                            <td><?php echo $data->work;?></td>
                                             <td><?php echo $data->created;?></td>
                                             <td><?php echo $data->created;?></td>
                                             <td><?php echo $data->updated;?></td>

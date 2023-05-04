@@ -20,7 +20,7 @@ include_once('header.php');
                 <div class="panel-body">
                     <div class="row">
                         <div class="col-lg-12">
-                            <form action="" method="post">
+                            <form action="" method="post" enctype="multipart/form-data">
                                 <div class="form-group">
                                     NAME:
                                     <input class="form-control" name="name" value="<?php echo $fetch->name;?>" placeholder="name">
@@ -42,6 +42,12 @@ include_once('header.php');
                                 <div class="form-group">
                                     username
                                     <input type="text" class="form-control" name="username"value="<?php echo $fetch->username;?>" placeholder="enter username">
+                                </div>
+                                <div class="form-group">
+                                    file
+                                    <td><img src="upload/employee/<?php echo $fetch->file;?>"width="50px"alt="imges"></td>
+
+                                    <input type="file" class="form-contol" name="file"value="<?php echo $fetch->file;?>" placeholder="enter username">
                                 </div>
                                 
 

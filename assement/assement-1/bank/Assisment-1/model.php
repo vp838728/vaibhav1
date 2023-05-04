@@ -108,27 +108,25 @@ class model
         }
         return $arr;
     }
-	function addJoiningBalance($user_id){
-		global $db;
-		$query="INSERT INTO trans(from_user_id,to_user_id,amount) VALUES(121,$user_id,1000)";
-		return mysqli_query($db,$query);
+
+	function getwalletAMT($user_id)
+	{
+		$sel="select *from deposit where user_id='$user_id";
+		$run=$this->conn->query($sel);
+		$in=0;
+		$out=0;
+		while($fetch=$run->fetch_object())
+		{
+			if($fetch['type']=='in'){
+				$in=$in+$fetch['balnce'];
+			}
+			if($fetch['type']=='out')
+			{
+				$out=$out+$fetch['balnce'];
+			}
+		}
+		return $in-$out;
 	}
-   
-    // function select1_where($tbl,$arr)
-	// {
-	// 	$col_arr=array_keys($arr);
-	// 	$value_arr=array_values($arr);
-	// 	$sel="select * from sum($tbl) where 1=1"; // query continue
-	// 	// loop $arr 
-	// 	$i=0;
-	// 	foreach($arr as $w)
-	// 	{
-	// 	   $sel.=" and $col_arr[$i]='$value_arr[$i]'";
-	// 		$i++;	
-	// 	}
-	// 	$run=$this->conn->query($sel);	 // run query database
-	// 	return $run;
-	// }
 
 
 	

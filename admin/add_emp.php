@@ -20,7 +20,7 @@ include_once('header.php');
                 <div class="panel-body">
                     <div class="row">
                         <div class="col-lg-12">
-                            <form action="" method="post">
+                            <form action="" method="post" enctype="multipart/form-data">
                                 <div class="form-group">
                                     NAME:
                                     <input class="form-control" name="name" placeholder="name">
@@ -46,6 +46,14 @@ include_once('header.php');
                                 <div class="form-group">
                                     password
                                     <input type="password" class="form-control" name="pass" placeholder="enter password">
+                                </div>
+                                <div class="form-group">
+                                    file
+                                    <input type="file" class="form-control" name="file" placeholder="enter password">
+                                </div>
+                                <div class="form-group">
+                                    JOB PROFILE
+                                    <input type="text" class="form-control" name="work" placeholder="enter password">
                                 </div>
 
 

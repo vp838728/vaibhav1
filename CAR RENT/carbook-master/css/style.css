@@ -3363,6 +3363,20 @@ input[type="button"].btn-block {
   margin-bottom: 0;
   list-style: none; }
 
+  .dropdown-menu{
+    
+  display: block;
+  padding: 0.5rem 1rem;
+  }
+  /* .dropdown{
+    
+  display: block;
+  padding: 0.5rem 1rem;
+  padding-right: 0;
+  } */
+
+  
+
 .nav-link {
   display: block;
   padding: 0.5rem 1rem; }

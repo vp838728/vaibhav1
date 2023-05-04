@@ -60,6 +60,10 @@ class control extends model // step2:extends model class for call function
 			include_once('dashboard.php');
 			break;
 			
+			case '/profile':
+				include_once('profile.php');
+				break;
+			
 			case '/add_emp':
 				if(isset($_REQUEST['submit']))
 				{
@@ -69,20 +73,25 @@ class control extends model // step2:extends model class for call function
 					$address=$_REQUEST['address'];
 					$username=$_REQUEST['username'];
 					$pass=$_REQUEST['pass'];
+					$file=$_FILES['file']['name'];
+					$path='upload/employee/'.$file;
+					$tmp_file=$_FILES['file']['tmp_name'];
+					move_uploaded_file($tmp_file,$path);
+					$work=$_REQUEST['work'];
 
 					date_default_timezone_set('asia/calcutta');
 					$created= date('Y-m-d H:i:s');
 					$updated=date('Y-m-d H:i:s');
 
-					$arr= array("name"=>$name,"mobile"=>$mobile,"email"=>$email,"address"=>$address,"username"=>$username,"pass"=>$pass,"created"=>$created,"updated"=>$updated);
+					$arr= array("name"=>$name,"mobile"=>$mobile,"email"=>$email,"address"=>$address,"username"=>$username,"pass"=>$pass,"file"=>$file,"work"=>$work,"created"=>$created,"updated"=>$updated);
 					$res=$this->insert('employee',$arr);
 					if($res)
 					{
                         echo"
-                            <script>
-                            alert('register sucess');
-                            window.location='add_emp';
-                            </script>
+                             <script>
+                             alert('register sucess');
+                             window.location='add_emp';
+                         </script>
                             ";
                     }
 					else
@@ -449,6 +458,7 @@ class control extends model // step2:extends model class for call function
 							$where=array("employee_id"=>$employee_id);
 							$res=$this->select_where('employee',$where);
 							$fetch=$res->fetch_object();
+							$old_img=$fetch->file;
 							if(isset($_REQUEST['submit']))
 							{
 								$name=$_REQUEST['name'];
@@ -460,7 +470,28 @@ class control extends model // step2:extends model class for call function
 								
 								date_default_timezone_set('asia/calcutta');
 								$updated=date('Y-m-d H:i:s');
+								if($_FILES['file']['size']>0)
+								{
+									$file=$_FILES['file']['name'];
+									$path='upload/employee/'.$file;
+									$tmp_file=$_FILES['file']['tmp_name'];
+									move_uploaded_file($tmp_file,$path);
+								
 
+								$arr=array("name"=>$name,"mobile"=>$mobile,"email"=>$email,"address"=>$address,"username"=>$username,"file"=>$file,"updated"=>$updated);
+								$res=$this->update('employee',$arr,$where);
+								if($res)
+								{
+									unlink('upload/employee/'.$old_img);
+									echo"
+							      <script>
+								 alert('update sucess');
+								  window.location='manage_emp';
+								 </script>
+									 ";
+								}
+								}else{
+									
 								$arr=array("name"=>$name,"mobile"=>$mobile,"email"=>$email,"address"=>$address,"username"=>$username,"updated"=>$updated);
 								$res=$this->update('employee',$arr,$where);
 								if($res)
@@ -468,11 +499,10 @@ class control extends model // step2:extends model class for call function
 									echo"
 									 <script>
 									 alert('update sucess');
-								   window.location='manage_emp';
-								 	 </script>
-									 ";
-								}else{
-									echo "fail";
+									 window.location='manage_emp';
+									 </script>
+									";
+								}
 								}
 							}
 						}
