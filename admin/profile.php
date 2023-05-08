@@ -1,12 +1,12 @@
 <?php
-if(isset($_SESSION['employee_id'])){
+if(isset($_SESSION['aid'])){
 
 }
 else
 {
     
 	echo "<script>
-	window.location='employee';
+	window.location='admin';
 	</script>";
 }
 ?>
@@ -54,7 +54,8 @@ button:hover, a:hover {
   opacity: 0.7;
 }
  body{
-color:white;
+  color:black;
+
   background: lightblue url("assets/img/benjamin-voros-phIFdC6lA4E-unsplash.jpg") no-repeat fixed center;
 
 }  
@@ -97,10 +98,9 @@ color:white;
 <h2 style="text-align:center">User Profile Card</h2>
 
 <div class="card">
-  <img src="../admin/upload/employee/<?php echo $fetch->file;?>" alt="John" style="width:100%">
-  <h1><?php echo $fetch->name;?></h1>
-  <p class="title"><?php echo $fetch->work;?></p>
-  <p><?php echo $fetch->address;?></p>
+  <img src="../admin/upload/employee/<?php echo $fetch->file;?>" alt="John" style="width:100% ">
+  <h1><?php echo $fetch->aid;?></h1>
+  <p class="title">name:<?php echo $fetch->anm;?></p>
   <div style="margin: 24px 0;">
     <a href="#"><i class="fa fa-dribbble"></i></a> 
     <a href="#"><i class="fa fa-twitter"></i></a>  

@@ -125,7 +125,7 @@ class control extends model
 							$user_ID=$_REQUEST['user_ID'];
 							$withdraw=$_REQUEST['withdaw'];
 							$balnce=$_REQUEST['balnce'];
-							$total=($balnce-$withdraw);
+
 
 
 							echo"the total number of =.$total.";
@@ -133,7 +133,7 @@ class control extends model
 							date_default_timezone_set('asia/calcutta');
 							$create_dt=date('Y-m-d H:i:s');
 
-							$arr=array("accountno"=>$accountno,"amount"=>$amount,"create_dt"=>$create_dt,"user_ID"=>$user_ID,"withdraw"=>$withdraw,"balnce"=>$balnce);
+							$arr=array("accountno"=>$accountno,"amount"=>$amount,"create_dt"=>$create_dt,"user_ID"=>$user_ID,"withdraw"=>$withdraw,"balnce"=>$balnce,"total"=>$total);
 							$res=$this->insert('tranction',$arr);
 							if($res)
 							{

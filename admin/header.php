@@ -27,6 +27,7 @@ if(isset($_SESSION['aid']))
     <link href="assets/plugins/morris/morris-0.4.3.min.css" rel="stylesheet" />
    </head>
 <body>
+
     <!--  wrapper -->
     <div id="wrapper">
         <!-- navbar top -->
@@ -246,7 +247,7 @@ if(isset($_SESSION['aid']))
                     </a>
                     <!-- dropdown user-->
                     <ul class="dropdown-menu dropdown-user">
-                        <li><a href="#"><i class="fa fa-user fa-fw"></i>User Profile</a>
+                        <li><a href="profile"><i class="fa fa-user fa-fw"></i>User Profile</a>
                         </li>
                         <li><a href="#"><i class="fa fa-gear fa-fw"></i>Settings</a>
                         </li>

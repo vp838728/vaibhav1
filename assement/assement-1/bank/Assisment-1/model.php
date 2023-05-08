@@ -109,31 +109,39 @@ class model
         return $arr;
     }
 
-	function getwalletAMT($user_id)
-	{
-		$sel="select *from deposit where user_id='$user_id";
-		$run=$this->conn->query($sel);
-		$in=0;
-		$out=0;
-		while($fetch=$run->fetch_object())
-		{
-			if($fetch['type']=='in'){
-				$in=$in+$fetch['balnce'];
-			}
-			if($fetch['type']=='out')
-			{
-				$out=$out+$fetch['balnce'];
-			}
-		}
-		return $in-$out;
-	}
+   function getwalletamount($tbl,$arr)
+   {
+	$col_arr=array_values($arr);
+	$value_arr=array_values($arr);
+	$sel="select * from $tbl where 1=1";
 
+	$i=0;
+	foreach($arr as $w)
+	{
+		$sel.="and $col_arr[$i]='$value_arr[$i]'";
+		$i++;
+	}
+	$run=$this->conn->query($sel);
+	$in=0;
+	$out=0;
+	while($fetch=$run->fetch_object())
+	{
+		if($fetch['type']=='in'){
+			$in=$in+$fetch['amt'];
+
+		}
+		if($fetch['type']=='out'){
+			$out=$out+$fetch['amt'];
+	}
+  return $in-$out;
+	 return $arr;
+ }
 
 	
 	
 }	
 	
 
-$obj=new model;
+$obj=new model();
 
 ?>

@@ -66,8 +66,20 @@
                                            <input type="text" name="accountno" class="form-control" placeholder="amount">
                                        </div>
                                        <div class="form-group">
-                                           <label> Withdraw Amount</label>
+                                           <label>  Amount</label>
                                            <input type="text" name="amount" class="form-control" placeholder="amount">
+                                       </div>
+                                       <div class="form-group">
+                                           <label> Withdraw Amount</label>
+                                           <input type="text" name="withdraw" class="form-control" placeholder="amount">
+                                       </div>
+                                       <div class="form-group">
+                                           <label> balnce</label>
+                                           <input type="text" name="balnce" class="form-control" placeholder="amount">
+                                       </div>
+                                       <div class="form-group">
+                                           <label> total</label>
+                                           <input type="text" name="total" class="form-control" placeholder="amount">
                                        </div>
                                        
 

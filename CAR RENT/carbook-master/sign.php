@@ -33,17 +33,17 @@ include_once('heder.php')
             <div class="col-md-12 block-9 mb-md-5">
                 <div class="contact-from-top">
                     <h3 class="text-center">sign up</h3>
-                    <form action="" method="post" enctype="multipart/form-data"onsubmit="return validate()"class="bg-light p-5 contact-form">
+                    <form action="" id="form1" method="post" enctype="multipart/form-data"onsubmit="return validate()"class="bg-light p-5 contact-form">
                         <div class="form-group">
-                            <input type="text" class="form-control" name="name" id="name" placeholder="Your Name">
+                            <input type="text" class="form-control" name="name" id="name" data-bvalidator="required,rangelength[3:8]" placeholder="Your Name">
                             <span style="color:red" id="name"></span>
 
                         </div>
                         <div class="form-group">
-                            <input type="text" class="form-control" name="unm" id="unm" placeholder="Your USERNAME"required>
+                            <input type="text" class="form-control" name="unm" id="unm" placeholder="Your USERNAME">
                         </div>
                         <div class="form-group">
-                            <input type="password" class="form-control" name="pass" id="pass" placeholder="password"required>
+                            <input type="password" class="form-control" name="pass" id="pass" placeholder="password">
                         </div>
                         <div class="form-group">
                             gen:
@@ -52,14 +52,14 @@ include_once('heder.php')
                         </div>
                         <div class="form-group">
                             lag:
-                            <input type="checkbox" name="lag[]" value="HINDI"required>HINDI
-                            <input type="checkbox" name="lag[]" value="ENGLISH"required>ENGLISH
-                            <input type="checkbox" name="lag[]" value="Gujarati"required>Gujarati
+                            <input type="checkbox" name="lag[]" value="Gujarati">Gujarati
+                            <input type="checkbox" name="lag[]" value="HINDI">HINDI
+                            <input type="checkbox" name="lag[]" value="ENGLISH">ENGLISH
                         </div>
 
 
                         <div class="form-group">
-                            <input type="file" name="file_upload" id="file_upload" class="form-control" require="">
+                            <input type="file" name="file_upload" id="file_upload" class="form-control">
                         </div>
                         <div class="from-group">
                             <select name="cid" class="form-control" require="">
@@ -174,7 +174,7 @@ include_once('heder.php')
         <circle class="path" cx="24" cy="24" r="22" fill="none" stroke-width="4" stroke-miterlimit="10"
             stroke="#F96D00" />
     </svg></div>
-<script src="js/custom.js"></script>
+     <script src="js/custom.js"></script>
 <script src="js/jquery.min.js"></script>
 <script src="js/jquery-migrate-3.0.1.min.js"></script>
 <script src="js/popper.min.js"></script>
@@ -189,10 +189,20 @@ include_once('heder.php')
 <script src="js/bootstrap-datepicker.js"></script>
 <script src="js/jquery.timepicker.min.js"></script>
 <script src="js/scrollax.min.js"></script>
+<script src="js/jbvalidator.js"></script>
+
 <!-- <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBVWaKrjvy3MaE7SQ74_uJiULgl1JY0H2s&sensor=false"></script> -->
 <script src="js/google-map.js"></script>
 <script src="js/main.js"></script>
 
+<script type="text/javascript"> 
+    $(document).ready(function () {
+	
+        $('#form1').bValidator();
+    });
+	</script> 
+<script> 
+
 </body>
 
-</html>
+</html> 

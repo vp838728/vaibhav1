@@ -61,6 +61,9 @@ class control extends model // step2:extends model class for call function
 			break;
 			
 			case '/profile':
+				$where=array("aid"=>$_SESSION['aid']);
+				$res=$this->select_where('admin',$where);
+				$fetch=$res->fetch_object();
 				include_once('profile.php');
 				break;
 			
@@ -186,7 +189,14 @@ class control extends model // step2:extends model class for call function
 			break;
 			
 			case '/manage_user':
+				if(isset($_REQUEST['search']))
+				{
+					$search=$_REQUEST['search'];
+					$user_arr=$this->select_search('user1','name',$search);
+				}
+				else{
 			$user_arr=$this->select('user1');
+				}
 			include_once('manage_user.php');
 			break;
 			

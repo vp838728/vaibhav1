@@ -29,8 +29,7 @@ include_once('header.php');
                                             <th>email</th>
                                             <th>subject</th>
                                             <th>msg</th>
-                                            <th>created_dt</th>
-                                            <th>updated_dt</th>
+                                         
                                             <th>Action</th>
                                         </tr>
                                     </thead>

@@ -41,7 +41,7 @@ class model
 		$i=0;
 		foreach($arr as $w)
 		{
-			echo $sel.=" and $col_arr[$i]='$value_arr[$i]'";
+			 $sel.=" and $col_arr[$i]='$value_arr[$i]'";
 			$i++;	
 		}
 		$run=$this->conn->query($sel);	 // run query database
@@ -104,16 +104,17 @@ class model
 		$run=$this->conn->query($upd);	 // run query database
 		return $run;
 	}
-	function select_search($tbl,$col,$saerch)
+	
+	function select_search($tbl,$col,$search)
 	{
-		$sel="select * from $tbl where $col like '$search%'";
-		$run=$this->conn->query($sel);
+		$sel="select * from $tbl where $col like '$search%'"; // query
+		$run=$this->conn->query($sel);	 // run query database
 		while($fetch=$run->fetch_object())
 		{
 			$arr[]=$fetch;
 		}
 		return $arr;
-	}
+	}	
 
 	function select_where_fetch($tbl,$arr)
 	{
