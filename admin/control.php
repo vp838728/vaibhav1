@@ -128,12 +128,12 @@ class control extends model // step2:extends model class for call function
 					$arr=array("category_name"=>$category_name,"file"=>$file,"created_dt"=>$created_dt,"updated_dt"=>$updated_dt);
 					$res=$this->insert('category',$arr);
 					if($res)
-					{   
+					{
 						echo"done
-						//  <script>
-						//  alert('catogory sucess');
-						//  window.location='add_cat';
-						//  </script>
+					// 	 <script>
+					// 	  alert('catogory sucess');
+					//  window.location='add_cat';
+					// 	 </script>
                          ";
 			
 					}else
@@ -493,11 +493,11 @@ class control extends model // step2:extends model class for call function
 								if($res)
 								{
 									unlink('upload/employee/'.$old_img);
-									echo"
-							      <script>
-								 alert('update sucess');
-								  window.location='manage_emp';
-								 </script>
+									echo"done
+							    //   <script>
+								//  alert('update sucess');
+								//   window.location='manage_emp';
+								//  </script>
 									 ";
 								}
 								}else{
@@ -506,11 +506,11 @@ class control extends model // step2:extends model class for call function
 								$res=$this->update('employee',$arr,$where);
 								if($res)
 								{
-									echo"
-									 <script>
-									 alert('update sucess');
-									 window.location='manage_emp';
-									 </script>
+									echo"done
+									//  <script>
+									//  alert('update sucess');
+									//  window.location='manage_emp';
+									//  </script>
 									";
 								}
 								}

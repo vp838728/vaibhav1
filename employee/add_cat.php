@@ -20,14 +20,19 @@ include_once('header.php');
                         <div class="panel-body">
                             <div class="row">
                                 <div class="col-lg-12">
-                                    <form role="form" method="post">
+                                    <form role="form"action="" method="post" enctype="multipart/form-data">
                                        
                                         <div class="form-group">
                                             <label>Categories Name</label>
-                                            <input type="text" name="cate_name" class="form-control" placeholder="Categories Name">
+                                            <input type="text" name="category_name" class="form-control" placeholder="Categories Name">
+
+                                        </div>
+                                        <div class="form-group">
+                                            <label>file</label>
+                                            <input type="file" name="file" class="form-control" placeholder="Categories Name">
                                         </div>
                                         
-                                        <input type="submit" name="submit" class="btn btn-primary" value="Submit">
+                                        <input type="submit" name="submit" class="btn btn-primary" >
                                        
                                     </form>
                                 </div>

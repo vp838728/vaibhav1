@@ -20,7 +20,7 @@ include_once('header.php');
                             Manage Car Adv
                         </div>
                         <div class="panel-body">
-                            <div class="table-responsive">
+                            <div style="overflow:scroll">
                                 <table class="table table-striped table-bordered table-hover" id="dataTables-example">
                                     <thead>
                                         <tr>

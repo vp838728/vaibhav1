@@ -9,9 +9,7 @@ class control extends model
 		$path=$_SERVER['PATH_INFO']; //http://localhost/Project/empolyee/control.php	
 		switch($path)
 		{
-			case '/add_cat':
-			include_once('add_cat.php');
-			break;
+			
 	
 			case '/add_emp':
 			include_once('add_emp.php');
@@ -34,7 +32,42 @@ class control extends model
 				include_once('profile.php');
 				break;
 			
-
+				case '/add_cat':
+					if(isset($_REQUEST['submit']))
+					{
+						$category_name=$_REQUEST['category_name'];
+						
+						date_default_timezone_set('asia/calcutta');
+						$created_dt=date('Y-m-d H:i:s');
+						$updated_dt=date('Y-m-d H:i:s');
+						
+						$file=$_FILES['file']['name'];
+						$path='UPLOAD/CARADV/'.$file;
+						$tmp_file=$_FILES['file']['tmp_name'];
+						move_uploaded_file($tmp_file,$path);
+	
+						$arr=array("category_name"=>$category_name,"file"=>$file,"created_dt"=>$created_dt,"updated_dt"=>$updated_dt);
+						$res=$this->insert('category',$arr);
+						if($res)
+						{   
+							echo"done
+							//   <script>
+							//   alert('catogory sucess');
+							//   window.location='add_cat';
+							//  </script>
+							 ";
+				
+						}else
+						{
+							echo"
+							<script>
+							alert('not success');
+							</srcipt>
+							";
+						}
+					}
+				include_once('add_cat.php');
+				break;
 			case'/employee':
 				if(isset($_REQUEST['submit']))
 				{
@@ -95,7 +128,7 @@ class control extends model
 				break;
 			
 			case '/manage_cat':
-			$cat_arr=$this->select('employee');
+			$cat_arr=$this->select('category');
 			include_once('manage_cat.php');
 			break;
 
