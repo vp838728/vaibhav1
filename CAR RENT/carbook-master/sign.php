@@ -11,6 +11,16 @@ if(isset($_SESSION['user_id']))
 include_once('heder.php')
 ?>
 
+<script type="text/javascript"> 
+    $(document).ready(function () {
+	
+        $('#form1').bValidator();
+    });
+    
+
+
+	</script>  
+
 <section class="hero-wrap hero-wrap-2 js-fullheight" style="background-image: url('images/bg_3.jpg');"
     data-stellar-background-ratio="0.5">
     <div class="overlay"></div>
@@ -33,22 +43,22 @@ include_once('heder.php')
             <div class="col-md-12 block-9 mb-md-5">
                 <div class="contact-from-top">
                     <h3 class="text-center">sign up</h3>
+
                     <form action="" id="form1" method="post" enctype="multipart/form-data"onsubmit="return validate()"class="bg-light p-5 contact-form">
                         <div class="form-group">
-                            <input type="text" class="form-control" name="name" id="name" data-bvalidator="required,rangelength[3:8]" placeholder="Your Name">
-                            <span style="color:red" id="name"></span>
+                            <input type="text" class="form-control" name="name" id="name" data-bvalidator="required,alpha" placeholder="Your Name">
 
                         </div>
                         <div class="form-group">
-                            <input type="text" class="form-control" name="unm" id="unm" placeholder="Your USERNAME">
+                            <input type="text" class="form-control" name="unm" id="unm" data-bvalidator="required,rangelength[3:8]" placeholder="Your USERNAME">
                         </div>
                         <div class="form-group">
-                            <input type="password" class="form-control" name="pass" id="pass" placeholder="password">
+                            <input type="password" class="form-control" name="pass" id="pass" data-bvalidator="required,number" placeholder="password">
                         </div>
                         <div class="form-group">
                             gen:
-                            <input type="radio" name="gen" value="male">Male
-                            <input type="radio" name="gen" value="female">female
+                            <input type="radio" name="gen" class="gender" onclick = "myCourseFunction(this.value)"   value="male">Male
+                            <input type="radio" name="gen" class="gender" onclick = "myCourseFunction(this.value)"  value="female">female
                         </div>
                         <div class="form-group">
                             lag:
@@ -174,7 +184,6 @@ include_once('heder.php')
         <circle class="path" cx="24" cy="24" r="22" fill="none" stroke-width="4" stroke-miterlimit="10"
             stroke="#F96D00" />
     </svg></div>
-     <script src="js/custom.js"></script>
 <script src="js/jquery.min.js"></script>
 <script src="js/jquery-migrate-3.0.1.min.js"></script>
 <script src="js/popper.min.js"></script>
@@ -189,19 +198,18 @@ include_once('heder.php')
 <script src="js/bootstrap-datepicker.js"></script>
 <script src="js/jquery.timepicker.min.js"></script>
 <script src="js/scrollax.min.js"></script>
-<script src="js/jbvalidator.js"></script>
+ <!-- <script src="jquery.bvalidator.js" type="text/javascript"></script>  -->
+ <script src="js/jquery.bvalidator.js" type="text/javascript"></script>
 
-<!-- <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBVWaKrjvy3MaE7SQ74_uJiULgl1JY0H2s&sensor=false"></script> -->
+
+
+ <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBVWaKrjvy3MaE7SQ74_uJiULgl1JY0H2s&sensor=false"></script>
 <script src="js/google-map.js"></script>
 <script src="js/main.js"></script>
 
-<script type="text/javascript"> 
-    $(document).ready(function () {
-	
-        $('#form1').bValidator();
-    });
-	</script> 
-<script> 
+
+
+
 
 </body>
 

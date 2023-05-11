@@ -334,7 +334,8 @@ class control extends model
                                         unlink('UPLOAD/USER1/'.$old_img);
 
                                          // Fixed spelling of 'success'
-                                          echo"<script>
+                                          echo"
+                                          <script>
                                            alert('Update sucess');
                                            window.location='profile';
                                           </script>

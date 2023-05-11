@@ -27,18 +27,18 @@
   <link rel="stylesheet" href="css/flaticon.css">
   <link rel="stylesheet" href="css/style.css">
   <link rel="stylesheet" href="css/icomoon.css">
-  <!-- js valdation css start -->
+  <link href="bvalidator.css" type="text/css" rel="stylesheet" />
 
-  <link rel="stylesheet"type="text/css" href="css/bvalidator.css">
-    <!-- js valdation css end -->
-    
-  <!-- script js validation start -->
-<script src="js/jquery-2.1.3.min.js" type="text/javascript"></script>
+  
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
+    <title>car rent</title>
+
+    <script src="js/jquery-2.1.3.min.js" type="text/javascript"></script>
 
 <script src="js/jquery.bvalidator.js" type="text/javascript"></script>
+  <!-- js valdation css start -->
 
- <!-- script valiation end -->
-  <script src="https://apps.elfsight.com/p/platform.js" defer></script>
+  
 </head>
 
 
@@ -93,7 +93,7 @@
       <div class="collapse navbar-collapse" id="ftco-nav" class="dropdown-menu"aria-labelledby="navbarDropdown">
         <ul class="navbar-nav ml-auto">
           <li class="nav-item active"><a href="index" class="nav-link">Home</a></li>
-          <li class="nav-item"><a href="car2" class="nav-link">Cars</a></li>
+          <li class="nav-item"><a href="car2" class="nav-link">booking</a></li>
 
           <li class="nav-item"><a href="about" class="nav-link">About</a></li>
           <li class="nav-item"><a href="pricing" class="nav-link">Pricing</a></li>

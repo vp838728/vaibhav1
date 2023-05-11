@@ -30,7 +30,7 @@ include_once('header.php');
                                 <input type="submit" name="submit" class="btn btn-primary">
                                 <form>
                             <div class="table-responsive">
-                                <table class="table table-striped table-bordered table-hover" >
+                                <table class="table table-striped table-bordered table-hover" id="table">
                                     <thead>
                                         <tr>
 

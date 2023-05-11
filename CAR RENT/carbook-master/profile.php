@@ -46,6 +46,7 @@ include_once('heder.php');
                     <span class="position">PHP Developer</span>
                    </div>
                 </div>
+             </div>
               
               
               

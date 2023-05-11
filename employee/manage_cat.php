@@ -26,13 +26,27 @@ include_once('header.php');
                                         <tr>
                                             <th>Categories ID</th>
                                             <th>Categories Name</th>
+                                            <th>file</th>
+                                            <th>craeate_dt</th>
+                                            <th>upadate_dt</th>
                                             <th>Action</th>
                                         </tr>
                                     </thead>
                                     <tbody>
+                                        <?php
+
+                                        if(!empty($cat_arr))
+                                        {
+                                        foreach($cat_arr as $data)
+                                        {
+                                            ?>
                                         <tr class="odd gradeX">
-                                            <td>1</td>
-                                            <td>Sedan</td>
+                                            <td><?php echo $data->category_id;?></td>
+                                            <td><?php echo $data->category_name;?></td>
+                                            <td><img src="../CAR RENT/carbook-master/UPLOAD/CARADV/<?PHP echo $data->file;?>"width="50px"alt="imges"></td>
+                                             <td><?php echo $data->created_dt;?></td>
+                                             <td><?php echo $data->updated_dt;?></td>
+
                                             <td>
 												<a href="#" class="btn btn-primary">Edit</a>
 												<a href="#" class="btn btn-danger">Delete</a>
@@ -41,7 +55,10 @@ include_once('header.php');
                                         
                                             
                                         </tr>
-                                        
+                                        <?php
+                                        }
+                                    }
+                                    ?>
                                     </tbody>
                                 </table>
                             </div>

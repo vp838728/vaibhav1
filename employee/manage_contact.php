@@ -29,7 +29,8 @@ include_once('header.php');
                                             <th>email</th>
                                             <th>subject</th>
                                             <th>msg</th>
-                                         
+                                            <th>created_dt</th>
+                                            <th>upadate_dt</th>
                                             <th>Action</th>
                                         </tr>
                                     </thead>
@@ -45,6 +46,7 @@ include_once('header.php');
                                             <td><?php echo $data->name;?></td>
                                             <td><?php echo $data->email;?></td>
                                             <td><?php echo $data->subject;?></td>
+                                            <td><?php echo $data->msg;?></td>
                                             <td><?php echo $data->created_dt;?></td>
                                             <td><?php echo $data->updated_dt;?></td>
                                             <td>

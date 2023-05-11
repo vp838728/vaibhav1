@@ -21,7 +21,7 @@ include_once('header.php');
                         </div>
                         <div class="panel-body">
                             <div class="table-responsive">
-                                <table class="table table-striped table-bordered table-hover" id="dataTables-example">
+                                <table class="table table-striped table-bordered table-hover" id="table">
                                     <thead>
                                         <tr>
                                             <th>adv_id</th>
@@ -110,6 +110,13 @@ include_once('header.php');
             $('#dataTables-example').dataTable();
         });
     </script>
+    
+<script>
+	$(document).ready(function() 
+	{
+		$('#table').DataTable();
+	} );
+</script>
 
 </body>
 
