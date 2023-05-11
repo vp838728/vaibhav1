@@ -17,6 +17,16 @@
 
 	<!-- Custom stlylesheet -->
 	<link type="text/css" rel="stylesheet" href="css/style3.css" />
+	
+	<link href="css/bvalidator.css" type="text/css" rel="stylesheet" />
+
+  
+	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
+		<title>car rent</title>
+	
+		<script src="js/jquery-2.1.3.min.js" type="text/javascript"></script>
+	
+	<script src="js/jquery.bvalidator.js" type="text/javascript"></script>
 
 	<!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
 	<!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -25,6 +35,14 @@
 		  <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
 		<![endif]-->
 
+		<script type="text/javascript"> 
+    $(document).ready(function () {
+	
+        $('#form1').bValidator();
+    });
+    
+
+	</script>  
 </head>
 
 <body>
@@ -36,12 +54,12 @@
 						<div class="form-header">
 							<!-- <h1>Book a car</h1> -->
 						</div>
-						<form method="post" action="">
+						<form method="post" action="" id="form1">
 							<div class="row">
 								<div class="col-sm-6">
 									<div class="form-group">
 										<span class="form-label">Name</span>
-										<input class="form-control" type="text" name="name"
+										<input class="form-control" type="text" name="name" data-bvalidtor="required,alpha"
 											placeholder="Enter your name">
 									</div>
 								</div>
@@ -59,8 +77,9 @@
 									placeholder="Enter your phone number">
 							</div>
 							<div class="from-group">
-                            <input name="adv_id" type="hidden" value="<?php echo $_REQUEST['book_id'];?>" class="form-control" require="">
-                         </div>
+								<input name="adv_id" type="hidden" value="<?php echo $_REQUEST['book_id'];?>"
+									class="form-control" require="">
+							</div>
 
 							<div class="form-group">
 								<span class="form-label">Pickup Location</span>
@@ -90,65 +109,7 @@
 							</div>
 							<div class="row">
 								<div class="col-sm-12">
-									<!-- <div class="form-group">
-										<span class="form-label">Pickup Date</span>
-										<input class="form-control" type="date" required>
-									</div>
-								</div> -->
-
-									<!-- <div class="col-sm-7">
-									<div class="row">
-										<div class="col-sm-4">
-											<div class="form-group">
-												<span class="form-label">Hour</span>
-												<select class="form-control">
-													<option>1</option>
-													<option>2</option>
-													<option>3</option>
-													<option>4</option>
-													<option>5</option>
-													<option>6</option>
-													<option>7</option>
-													<option>8</option>
-													<option>9</option>
-													<option>10</option>
-													<option>11</option>
-													<option>12</option>
-												</select>
-												<span class="select-arrow"></span>
-											</div>
-										</div>
-										<div class="col-sm-4">
-											<div class="form-group">
-												<span class="form-label">Min</span>
-												<select class="form-control">
-													<option>05</option>
-													<option>10</option>
-													<option>15</option>
-													<option>20</option>
-													<option>25</option>
-													<option>30</option>
-													<option>35</option>
-													<option>40</option>
-													<option>45</option>
-													<option>50</option>
-													<option>55</option>
-												</select>
-												<span class="select-arrow"></span>
-											</div>
-										</div>
-										<div class="col-sm-4">
-											<div class="form-group">
-												<span class="form-label">AM/PM</span>
-												<select class="form-control">
-													<option>AM</option>
-													<option>PM</option>
-												</select>
-												<span class="select-arrow"></span>
-											</div>
-										</div>
-									</div>
-								</div> -->
+									
 								</div>
 								<div class="form-btn">
 									<input type="submit" name="submit" class="submit-btn">
@@ -160,6 +121,8 @@
 			</div>
 		</div>
 	</div>
+	 <script src="js/jquery.bvalidator.js" type="text/javascript"></script>
+
 </body><!-- This templates was made by Colorlib (https://colorlib.com) -->
 
 </html>

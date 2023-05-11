@@ -1,7 +1,16 @@
 <?php
 include_once('heder.php')
 ?>
+  
+<script type="text/javascript"> 
+    $(document).ready(function () {
+	
+        $('#form1').bValidator();
+    });
     
+
+
+	</script>    
     <section class="hero-wrap hero-wrap-2 js-fullheight" style="background-image: url('images/bg_3.jpg');" data-stellar-background-ratio="0.5">
       <div class="overlay"></div>
       <div class="container">
@@ -46,18 +55,18 @@ include_once('heder.php')
 		        </div>
           </div>
           <div class="col-md-8 block-9 mb-md-5">
-            <form action=""  method="post" class="bg-light p-5 contact-form" onsubmit= "return validate()">
+            <form action="" id="form1" method="post" class="bg-light p-5 contact-form" onsubmit= "return validate()">
               <div class="form-group">
-                <input type="text" name="name"  id="name"class="form-control" placeholder="Your Name">
+                <input type="text" name="name"  id="name"class="form-control"data-bvalidator="required,alpha" placeholder="Your Name">
               </div>
               <div class="form-group">
-                <input type="text" name="email" id="email" class="form-control" placeholder="Your Email">
+                <input type="text" name="text" id="email" class="form-control" data-bvalidator="required,email"placeholder="Your Email">
               </div>
               <div class="form-group">
-                <input type="text" name="subject" id="subject" class="form-control" placeholder="Subject">
+                <input type="text" name="subject" id="subject" class="form-control" data-bvalidator="required" placeholder="Subject">
               </div>
               <div class="form-group">
-                <textarea  id=""name="msg" cols="30" id="msg" rows="7" class="form-control" placeholder="Message"></textarea>
+                <textarea  id=""name="msg" cols="30" id="msg" rows="7" class="form-control" data-bvalidator="required" placeholder="Message"></textarea>
               </div>
               <div class="form-group">
                 <input type="submit" name="submit" value="submit" class="btn btn-primary py-3 px-5">
@@ -160,6 +169,8 @@ include_once('heder.php')
   <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBVWaKrjvy3MaE7SQ74_uJiULgl1JY0H2s&sensor=false"></script>
   <script src="js/google-map.js"></script>
   <script src="js/main.js"></script>
+   <script src="js/jquery.bvalidator.js" type="text/javascript"></script>
+
 <!-- 
   <script>
     // NAME VALIDATION

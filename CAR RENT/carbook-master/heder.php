@@ -27,7 +27,7 @@
   <link rel="stylesheet" href="css/flaticon.css">
   <link rel="stylesheet" href="css/style.css">
   <link rel="stylesheet" href="css/icomoon.css">
-  <link href="bvalidator.css" type="text/css" rel="stylesheet" />
+  <link href="css/bvalidator.css" type="text/css" rel="stylesheet" />
 
   
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>

@@ -44,7 +44,7 @@ include_once('heder.php')
                 <div class="contact-from-top">
                     <h3 class="text-center">sign up</h3>
 
-                    <form action="" id="form1" method="post" enctype="multipart/form-data"onsubmit="return validate()"class="bg-light p-5 contact-form">
+                    <form action="" id="form1" method="post" enctype="multipart/form-data"class="bg-light p-5 contact-form">
                         <div class="form-group">
                             <input type="text" class="form-control" name="name" id="name" data-bvalidator="required,alpha" placeholder="Your Name">
 
@@ -69,7 +69,7 @@ include_once('heder.php')
 
 
                         <div class="form-group">
-                            <input type="file" name="file_upload" id="file_upload" class="form-control">
+                            <input type="file" name="file_upload" data-bvalidator="required,image" id="file_upload" class="form-control">
                         </div>
                         <div class="from-group">
                             <select name="cid" class="form-control" require="">

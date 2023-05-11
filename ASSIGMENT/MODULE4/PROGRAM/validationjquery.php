@@ -36,7 +36,9 @@
 	
         $('#form1').bValidator();
     });
-	</script>  
+	</script> 
+<script>
+    </script>
 </head>
 
 <body>

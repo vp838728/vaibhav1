@@ -2,6 +2,17 @@
 include_once('heder.php')
 ?>
 
+
+
+<script type="text/javascript"> 
+    $(document).ready(function () {
+	
+        $('#form1').bValidator();
+    });
+    
+
+
+	</script>  
 <section class="hero-wrap hero-wrap-2 js-fullheight" style="background-image: url('images/bg_3.jpg');"
   data-stellar-background-ratio="0.5">
   <div class="overlay"></div>
@@ -22,31 +33,31 @@ include_once('heder.php')
     <h2 class="text-center py-3 px-5"> ADD CAR ADV </H2>
     </br>
     <div class="col-md-12 block-9 mb-md-5">
-      <form action="" method="post" class="bg-light p-5 contact-form" enctype="multipart/form-data">
+      <form action="" id="form1" method="post" class="bg-light p-5 contact-form" enctype="multipart/form-data">
         <div class="form-group">
           <label>owner_name</label>
-          <input type="text" name="owner_name" class="form-control" placeholder="Your Name">
+          <input type="text" name="owner_name" id="name" data-bvalidator="required,alpha" class="form-control" placeholder="Your Name">
         </div>
         <div class="form-group">
           <label>carname:</label>
-          <input type="text" name="car_name" class="form-control" placeholder="Your Email">
+          <input type="text" name="car_name" class="form-control"data-bvalidator="required" placeholder="Your carname">
         </div>
         <div class="form-group">
           <label>vehical_number</label>
-          <input type="text" name="vehical_number" class="form-control" placeholder="vehical_number">
+          <input type="text" name="vehical_number" class="form-control"data-bvalidator="required" placeholder="vehical_number">
         </div>
         <div class="form-group">
           <label>mobile</label>
-          <input type="text" name="mobile" class="form-control" placeholder="mobile">
+          <input type="text" name="mobile" class="form-control" data-bvalidator="required,number" placeholder="mobile">
         </div>
         <div class="form-group">
           <label>UPLOAD YOUR CAR PICTURE:</label>
-          <input type="file" name="file" class="form-control" placeholder="file">
+          <input type="file" name="file" class="form-control" data-bvalidator="required,image" placeholder="file">
         </div>
 
         <div class="form-group">
           <label>Charge</label>
-          <input type="text" name="charge" class="form-control" placeholder="Enter Charge" required="">
+          <input type="text" name="charge" class="form-control" data-bvalidator="required,number" placeholder="Enter Charge" >
         </div>
 
         <div class="form-group">
@@ -57,21 +68,21 @@ include_once('heder.php')
 
         <div class="form-group">
           <label>ADDRESS</label>
-          <textarea id="" name="address" cols="30" rows="7" class="form-control" placeholder="address"></textarea>
+          <textarea id="" name="address" cols="30" rows="7" class="form-control"data-bvalidator="required" placeholder="address"></textarea>
         </div>
         <div class="form-group">
           <label>DEPOSITE</label>
-          <input type="text" name="deposite" class="form-control" placeholder="deposite">
+          <input type="text" name="deposite" class="form-control" data-bvalidator="required,number" placeholder="deposite">
         </div>
 
         <div class="form-group">
           <label>Terms And Conditions</label>
-          <input type="text" name="terms_condition" class="form-control" placeholder="Enter Terms And Conditions"
-            required="">
+          <input type="text" name="terms_condition" class="form-control"data-bvalidator="required" placeholder="Enter Terms And Conditions"
+         >
         </div>
 
         <div class="form-group">
-          <select name="location_id" class="form-control" required="">
+          <select name="location_id" class="form-control"data-bvalidator="required">
             <option>----- Select Location -----</option>
             <?php
 							foreach($loc_arr as $d)
@@ -214,6 +225,8 @@ include_once('heder.php')
 <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBVWaKrjvy3MaE7SQ74_uJiULgl1JY0H2s&sensor=false"></script>
 <script src="js/google-map.js"></script>
 <script src="js/main.js"></script>
+<script src="js/jquery.bvalidator.js" type="text/javascript"></script>
+
 
 </body>
 
