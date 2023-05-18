@@ -65,12 +65,12 @@
     var bookingtype=$('#bookingtype').val();
     var checkindate=$('#checkoutdate').val();
     var checkoutdate=$('#checkoutdate').val();
-    var slot=$('$slot').val();
+    var slot=$('#slot').val();
   var bookingdata ={
     bookingtype:bookingtype,
     checkindate:checkindate,
     checkoutdate:checkoutdate,
-    slot:slot,
+    slot:slot
   };
   $.ajax({
     type:'POST',
