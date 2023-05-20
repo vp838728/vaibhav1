@@ -59,7 +59,9 @@
                                 <div class="col-lg-12">
                                 <form action="" method="post">
                                        
-                                       
+                                       <div class="form-group">
+                                           <input type="hidden" name="user_ID" class="form-control" value="<?php echo $fetch->user_ID;?>" placeholder="amount">
+                                       </div>
 
                                        <div class="form-group">
                                            <label>ACCOUTT NO:</label>

@@ -30,10 +30,12 @@ else
                 
                 <div class="col-lg-4 mb-1">
                     <div class="balance status">
-                        <h1 class="text-center">Balance</h1>
-                        <p class="text-center">userid:<?php echo $fetch->user_ID;?></p>
-                        <P class="text-center">balnce<?php echo $fetch->balnce;?></P>
-                        <p class="text-center">name:<?PHP echo $fetch->name;?></p>
+                        <h1>Total Balance</h1>
+                        <?php $total_balance = 0; ?>
+                        <?php foreach($res as $data){ ?>
+                            <?php $total_balance = $total_balance + $data->balnce; ?>
+                        <?php } ?>
+                        <P>THE  TOTAL BALNCE IS: <?php echo $total_balance; ?></P>
 
                         <!-- <h2>$ <span id="current-balance">1240</span></h2> -->
                     </div>

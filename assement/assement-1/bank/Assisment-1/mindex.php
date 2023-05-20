@@ -55,7 +55,7 @@
          <div class="container">
         <div class="row pad-botm">
             <div class="col-md-12">
-                <h4 class="header-line">BANK MANGEMNET SYSTEM</h4><br/>
+                <h4 class="header-line text-center">BANK MANGEMNET SYSTEM</h4><br/>
                 
              </div>
 
@@ -69,8 +69,9 @@
                 </div>
 					<p>1.Add CUSTOMER ACOOUNT</p>
 					<p>2.Search customer</p>
-					<p>3.View CUTOMER</p>
 					<p>4.VIEW ALL ACOUNT</p>
+                    <p>5.VIEW ALL balnce</p>
+
 
             </div>
         </div>
@@ -109,18 +110,21 @@
             window.location='serach_customer';
             </script>";
         }
-        else if($var=="3")
-        {
-            echo"<script>
-            alert('view customer');
-            window.location='view';
-            </script>";
-        }
+      
+        
         else if($var=="4")
         {
             echo"<script>
             alert('view all accont');
             window.location='viewall';
+            </script>";
+        }
+        
+        else if($var=="5")
+        {
+            echo"<script>
+            alert('view all balnce');
+            window.location='view.totalbalnce';
             </script>";
         }
         

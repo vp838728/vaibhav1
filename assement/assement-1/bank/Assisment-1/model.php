@@ -27,7 +27,7 @@ class model
 		$value_arr=array_values($arr);
 		$value=implode("','",$value_arr);
 		
-		echo $sel="insert into $tbl($col) values('$value')"; // query
+		$sel="insert into $tbl($col) values('$value')"; // query
 		
 		$run=$this->conn->query($sel);	 // run query database
 		return $run;
@@ -109,33 +109,7 @@ class model
         return $arr;
     }
 
-   function getwalletamount($tbl,$arr)
-   {
-	$col_arr=array_values($arr);
-	$value_arr=array_values($arr);
-	$sel="select * from $tbl where 1=1";
-
-	$i=0;
-	foreach($arr as $w)
-	{
-		$sel.="and $col_arr[$i]='$value_arr[$i]'";
-		$i++;
-	}
-	$run=$this->conn->query($sel);
-	$in=0;
-	$out=0;
-	while($fetch=$run->fetch_object())
-	{
-		if($fetch['type']=='in'){
-			$in=$in+$fetch['amt'];
-
-		}
-		if($fetch['type']=='out'){
-			$out=$out+$fetch['amt'];
-	}
-  return $in-$out;
-	 return $arr;
- }
+	
 
 	
 	

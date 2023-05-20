@@ -51,8 +51,8 @@
 
 </form>
     <div class="panel panel-default">
-                        <div class="panel-heading">
-                            Add Book
+                        <div class="panel-heading text-center">
+                          <H2>  Add ACCOUNT</H2>
                         </div>
                         <div class="panel-body">
                             <div class="row">

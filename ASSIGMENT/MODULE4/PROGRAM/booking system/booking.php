@@ -6,5 +6,5 @@ $slot=$_POST['slot'];
 $responce = array('message' => 'Room booked successfully.');
 
 header('Content-Type: application/json');
-echo json_encode($response);
+echo json_encode($responce);
 ?>

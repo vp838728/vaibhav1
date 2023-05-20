@@ -59,7 +59,7 @@
          <div class="container">
         <div class="row pad-botm">
             <div class="col-md-12">
-                <h4 class="header-line">BANK MANGEMNET SYSTEM</h4><br/>
+                <h4 class="header-line text-center">BANK MANGEMNET SYSTEM</h4><br/>
                 
              </div>
 
@@ -75,7 +75,6 @@
 					<p>2.Deposit account</p>
                     <p>3view balance<p>
                     <p>4.login</p>
-                    <p>5.tranction</p>
 					
 
             </div>
@@ -102,7 +101,7 @@
         if($var=="1")
         {
             echo"<script>
-            alert('add with draw amount');
+            alert(' with draw amount');
             window.location='withdraw';
             </script>" ;
         }
@@ -110,7 +109,7 @@
         else if($var=="2")
         {
             echo"<script>
-            alert('Delete Book');
+            alert('add deposit');
             window.location='deposit';
             </script>" ;
         }
@@ -129,13 +128,7 @@
             window.location='login';
             </script>" ;
         }
-        else if($var=="5")
-        {
-            echo"<script>
-            alert('tranction page');
-            window.location='tranction';
-            </script>" ;
-        }
+        
        /*else($var=="7")
         {
             echo

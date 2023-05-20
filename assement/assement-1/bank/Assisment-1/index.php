@@ -57,7 +57,7 @@
          <div class="container">
         <div class="row pad-botm">
             <div class="col-md-12">
-                <h4 class="header-line">BANK MANGEMNET SYSTEM</h4><br/>
+                <h4 class="header-line text-center">BANK MANGEMNET SYSTEM</h4><br/>
                 
              </div>
 
@@ -96,14 +96,14 @@
         if($var=="1")
         {
             echo"<script>
-            alert('add Book');
+            alert('welcome customer ');
             window.location='cindex.php';
             </script>" ;
         }
         if($var=="2")
         {
             echo"<script>
-            alert('add Book');
+            alert('welcome manager');
             window.location='mindex.php';
             </script>" ;
         }

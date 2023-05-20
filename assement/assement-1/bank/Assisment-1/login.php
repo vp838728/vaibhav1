@@ -81,8 +81,8 @@
 
 </form>
     <div class="panel panel-default">
-                        <div class="panel-heading">
-                            Add Book
+                        <div class="panel-heading text-center">
+                            <h2>login page</h2>
                         </div>
                         <div class="panel-body">
                             <div class="row">

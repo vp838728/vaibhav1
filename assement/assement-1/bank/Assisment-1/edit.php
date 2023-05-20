@@ -52,7 +52,7 @@
 </form>
     <div class="panel panel-default">
                         <div class="panel-heading">
-                            <h2 class="text-center">Tranction</h2>
+                            Add Book
                         </div>
                         <div class="panel-body">
                             <div class="row">
@@ -60,29 +60,40 @@
                                 <form action="" method="post">
                                        
                                        
-
-                                       <div class="form-group">
-                                           <label>ACCOUTT NO:</label>
-                                           <input type="hidden" name="user_ID" class="form-control" value="<?php  echo $fetch->user_ID;?>" placeholder="amount">
-                                       </div>
-                                       
-                                       <div class="form-group">
-                                           <label>TO:</label>
-                                           <input type="text" name="name" class="form-control" value="<?php echo $fetch->name;?>" placeholder="amount">
-                                       </div>
-                                       <div class="form-group">
-                                           <label>TO:</label>
-                                           <input type="text" name="tranction_id" class="form-control" value="<?php echo $fetch->tranction_id;?>" placeholder="amount">
-                                       </div>
-                                       <div class="form-group">
-                                           <label>AMOUNT:</label>
-                                           <input type="text" name="amount" class="form-control" placeholder="amount">
+                                <div class="form-group">
+                                           <label>USRENMAE:</label>
+                                           <input type="text" name="UNM" value="<?php echo $fetch->UNM?>" class="form-control" placeholder="enter your usrename">
                                        </div>
                                        
 
+                                       <div class="form-group">
+                                           <label>NAME:</label>
+                                           <input type="text" name="name" value="<?php echo $fetch->name;?>"class="form-control" placeholder="enter your name">
+                                       </div>
+                                       <div class="form-group">
+                                           <label>EMAIL:</label>
+                                           <input type="text" name="email"value="<?php echo $fetch->email;?>" class="form-control" placeholder="enter your email">
+                                       </div>
 
 
+                                       <div class="form-group">
+                                           <label>ADDRESS:</label>
+                                           <input type="text" name="address" value="<?php echo $fetch->address;?>" class="form-control" placeholder="enter your address">
+                                       </div>
 
+                                       <div class="form-group">
+                                           <label>PHONE</label>
+                                           <input type="number" name="phone" value="<?php echo $fetch->phone;?>" class="form-control" placeholder="enter phone">
+                                       </div>
+
+
+                                       
+                                       
+                                       <div class="form-group">
+                                           <label>ACCOUNT NO:</label>
+                                           <input type="text" name="accountno" value="<?php echo $fetch->accountno;?>" class="form-control" placeholder="enter your account number">
+                                       </div>
+                                       
                                        
                                        <input type="submit" name="submit" class="btn btn-primary" value="Submit">
                                       

@@ -67,13 +67,13 @@
 
                                        <div class="form-group">
                                            <label> Deposit Amount</label>
-                                           <input type="text" name="balnce" class="form-control"  value="<?php echo $fetch->balnce;?>"laceholder="amount">
+                                           <input type="text" name="balnce" class="form-control"  value=""laceholder="amount">
                                        </div>
                                        
-                                       <div class="form-group">
+                                       <!-- <div class="form-group">
                                            <label> Deposit Amount</label>
                                            <input type="text" name="amount" class="form-control"  placeholder="amount">
-                                       </div>
+                                       </div> -->
                                      
 
 

@@ -21,7 +21,7 @@ class control extends model
 					case '/index2':
 						include_once('index2.php');
 						break;
-
+                       
 						case '/cindex':
 							include_once('cindex.php');
 							break;
@@ -87,17 +87,6 @@ class control extends model
 							include_once('serach_customer.php');
 							break;
 
-				case '/view':
-
-
-					
-					$where=array("user_ID"=>$_SESSION['user_ID']);
-
-				 	$res=$this->select_where('useraccount',$where);
-					 $fetch=$res->fetch_object();
-					     include_once('view.php');
-								break;
-
 				case '/viewall':
 
 					$user_arr=$this->select('useraccount');
@@ -115,26 +104,48 @@ class control extends model
 					include_once('view.balance.php');
 					break;
 					
+				case '/view.totalbalnce':
+				   $res=$this->select('useraccount');
+				   // $user_arr=$this->select('useraccount');
+
+				   include_once('view.totalbalnce.php');
+				   break;
+					
 				case '/withdraw':
-					$user_arr=$this->select('useraccount');
+					$where=array("user_ID"=>$_SESSION['user_ID']);
+					$res=$this->select_where('useraccount',$where);
+					$fetch=$res->fetch_object();
+
+					//$user_arr=$this->select('useraccount');
 
 					if(isset($_REQUEST['submit']))
 						{
 							$accountno=$_REQUEST['accountno'];
 							$amount=$_REQUEST['amount'];
-							$user_ID=$_REQUEST['user_ID'];
-							$withdraw=$_REQUEST['withdaw'];
-							$balnce=$_REQUEST['balnce'];
-
-
-
-							echo"the total number of =.$total.";
+							$user_ID=$_SESSION['user_ID'];
+							$withdraw=$_REQUEST['withdraw'];
+							$initial_balance = $fetch->balnce;
+							$new_balance = (int)$initial_balance - (int)$withdraw;
+							if($initial_balance <= 0 || $new_balance <= 0)
+							{
+								echo"
+								 <script>
+								 alert('Your balance is low');
+								 window.location='withdraw';
+								 </script>
+								";
+								break;
+							}
 
 							date_default_timezone_set('asia/calcutta');
 							$create_dt=date('Y-m-d H:i:s');
 
-							$arr=array("accountno"=>$accountno,"amount"=>$amount,"create_dt"=>$create_dt,"user_ID"=>$user_ID,"withdraw"=>$withdraw,"balnce"=>$balnce,"total"=>$total);
-							$res=$this->insert('tranction',$arr);
+							$arr=array("balnce"=>$new_balance);
+							$whr=array("user_ID"=>$user_ID);
+							$res=$this->update('useraccount',$arr,$whr);
+
+							$arr=array("user_ID"=>$user_ID,"amount"=>$new_balance,"create_dt"=>$create_dt);
+							$res=$this->insert('transaction',$arr);
 							if($res)
 							{
 								echo"
@@ -167,23 +178,28 @@ class control extends model
 						{
 							// $accountno=$_REQUEST['accountno'];
 							// $total=$deposit+$amount;
-						   $amount=$_REQUEST['amount'];
+						   //$amount=$_REQUEST['amount'];
 						   $user_ID=$_REQUEST['user_ID'];
 						   $balnce=$_REQUEST['balnce'];
-						   
+						   $initial_balance = $fetch->balnce;
+						   $new_balance = (int)$initial_balance + (int)$balnce;
 
 							date_default_timezone_set('asia/calcutta');
 							$create_dt=date('Y-m-d H:i:s');
 
-							$arr=array("amount"=>$amount,"user_ID"=>$user_ID,"balnce"=>$balnce,"create_dt"=>$create_dt);
-							$res=$this->insert('deposit',$arr);
+							$arr=array("balnce"=>$new_balance);
+							$whr=array("user_ID"=>$user_ID);
+							$res=$this->update('useraccount',$arr,$whr);
+
+							$arr=array("user_ID"=>$user_ID,"amount"=>$new_balance,"create_dt"=>$create_dt);
+							$res=$this->insert('transaction',$arr);
 							if($res)
 							{echo"done
 								
-							// 	 <script>
-							// 	 alert('deposit sucess');
-							//  window.location='deposit';
-							// 	 </script>
+								 <script>
+								 alert('deposit sucess');
+							 window.location='deposit';
+							 	 </script>
 								 ";
 								
 							}else
@@ -250,40 +266,40 @@ class control extends model
 						}
 					}
 					break;
-
-					case'/tranction':
-						$where=array("user_ID"=>$_SESSION['user_ID']);
-						$res=$this->select_where('tranction',$where);
-						$fetch=$res->fetch_object();
-
-						$user_arr=$this->select('useraccount');
-						if(isset($_REQUEST['submit']))
-						{
-							$accountno=$_REQUEST['accountno'];
-							$amount=$_REQUEST['amount'];
-							$type=$_REQUEST['type'];
-							$user_ID=$_REQUEST['user_ID'];
-
-							date_default_timezone_set('asia/calcutta');
-							$create_dt=date('Y-m-d H:i:s');
-
-							$arr=array("accountno"=>$accountno,"amount"=>$amount,"type"=>$type,"create_dt"=>$create_dt,"user_ID"=>$user_ID);
-							$res=$this->insert('tranction',$arr);
-							if($res)
-							{
+					case'/edit':
+						if(isset($_REQUEST['edit_user_ID']))
+					{
+							$user_ID=$_REQUEST['edit_user_ID'];
+							$where=array("user_ID"=>$user_ID);
+							$res=$this->select_where('useraccount',$where);
+							$fetch=$res->fetch_object();
+							if(isset($_REQUEST['submit']))
+						 {
+                              $UNM=$_REQUEST['UNM'];
+							  $name=$_REQUEST['name'];
+							  $email=$_REQUEST['email'];
+							  $address=$_REQUEST['address'];
+							  $phone=$_REQUEST['phone'];
+							  
+							  date_default_timezone_set('asia/calcutta');
+							  $updated=date('Y-m-d H:i:s');
+							  $arr=array("UNM"=>$UNM,"name"=>$name,"email"=>$email,"address"=>$address,"phone"=>$phone,"updated"=>$updated);
+							  $res=$this->update('useraccount',$arr,$where);
+							  if($res)
+							  {
 								echo"
 								<script>
-								alert('tranction sucess');
-								window.location='tranction.php';
+								alert('update sucess');
+								window.location='viewall';
 								</script>
 								";
-							}else
-							{
-								echo"fail";
-							}
+							  }
+
 						}
-						include_once('tranction.php');
-						 break;
+						include_once('edit.php');
+						break;
+					}
+
 
 					
 							default:
