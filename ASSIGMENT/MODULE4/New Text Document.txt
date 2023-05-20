@@ -1,0 +1,196 @@
+(1)What Is Object Oriented Programming?
+=>OOP stands for Object-Oriented Programming.
+=>Procedural programming is about writing procedures or functions that perform operations on the data, while object-oriented programming is about creating objects that contain both data and functions.
+
+(2)What Are Properties Of Object Oriented Systems? 
+=>OOP is faster and easier to execute.
+=>OOP provides a clear structure for the programs.
+=>OOP helps to keep the PHP code DRY "Don't Repeat Yourself", and makes the code easier to maintain, modify and debug.
+=>OOP makes it possible to create full reusable applications with less code and shorter development time.
+
+(3)What Is Difference Between Class And Interface?
+=> Interfaces cannot have properties, while abstract classes can
+=>All interface methods must be public, while abstract class methods is public or protected.
+=>All methods in an interface are abstract, so they cannot be implemented in code and the abstract keyword is not necessary
+Classes can implement an interface while inheriting from another class at the same time.
+
+(4)What Is Overloading?
+=>Function overloading contains same function name and that function performs different task according to number of arguments.
+
+(5)What Is T_PAAMAYIM_NEKUDOTAYIM (Scope Resolution Operator (::) with 
+Example.
+=>The Scope Resolution Operator (also called Paamayim Nekudotayim) or in simpler terms, the double colon, is a token that allows access to static, constant, and overridden properties or methods of a class.
+Example:
+<?php
+class MyClass {
+    const CONST_VALUE = 'A constant value';
+}
+
+$classname = 'MyClass';
+echo $class name::CONST_VALUE;
+
+echo MyClass::CONST_VALUE;
+?>
+
+(6)• What are the differences between abstract classes and interfaces?.
+=>=> Interfaces cannot have properties, while abstract classes can
+=>All interface methods must be public, while abstract class methods is public or protected.
+=>All methods in an interface are abstract, so they cannot be implemented in code and the abstract keyword is not necessary
+Classes can implement an interface while inheriting from another class at the same time.
+
+(7)Define Constructor and Destructor?.
+=>Constructors: Constructors are called when an object is created from a class.
+
+=>Destructors: Destructors are called when an object destructs. Usually, it is when the script ends.
+
+(8)How to Load Classes in PHP?
+=>PHP load classes are used for declaring its object etc.
+=>in object oriented applications. PHP parser loads it automatically, if it is registered with spl_autoload_register() function.
+=>PHP parser gets the least chance to load class/interface before emitting an error.
+
+(9)How to Call Parent Constructor?
+=>We can't run directly the parent class constructor in child class if the child class defines a constructor.
+
+=> In order to run a parent constructor, a call to parent::__construct() within the child constructor is required.
+
+(10)Use of The $this keyword.
+=>The $this keyword refers to the current object, and is only available inside methods.
+
+(11)What are PHP Magic Methods/Functions? List them Write program for Static 
+Keyword in PHP?
+=>Magic methods are special methods which override php’s default ‘s action when certain actions are performed on an object Caution. All methods names starting with __ are reserved by PHP. Therefore, it is not recommended to use such method names unless overriding PHP's behavior.
+
+
+=>static keyword program:
+
+<?php
+class MyClass {
+  public static $str = "Hello World!";
+  
+  public static function hello() {
+    echo MyClass::$str;
+  }
+}
+
+echo MyClass::$str;
+echo "<br>";
+echo MyClass::hello();
+?>
+
+(12)What Happen, If Constructor Is Defined As Private Or Protected?
+=>The constructor may be made private or protected to prevent it from being called externally.
+=>If so, only a static method will be able to instantiate the class.
+=>Because they are in the same class definition they have access to private methods, even if not of the same object instance.
+
+(13)create multiple traits and use it in to a single class? in php
+=>
+<?php
+ Trait message1 {
+ public function msg1() {
+    echo “oop is fun “;
+  }
+}
+
+class Welcome {
+  use message1;
+}
+
+$obj = new Welcome();
+$obj->msg1();
+?>
+(14)write php script of object Iteration?
+=> <?php
+Class myclass{
+Private $var;
+Protected $var1;
+Public $x,$y,$z;
+ Public function __construct(){
+$this->var=”private variable”;
+$this->var1=TRUE;
+$THIS->x=100;
+$this->v=200;
+$this->z=300;
+   }
+Public function iterate(){
+foreach($this as $key=>$value){
+print”$key=>$value
+“;
+}
+}
+}
+$obj=new class();
+foreach($obj as $key=>$value){
+Print “$key =>$value
+“;
+}
+echo”
+“ ;
+$obj->iterate();
+?>   
+  
+
+
+(15)are parent constructor called implicitly when create an object of class?
+=> parent constructors are not called implicitly if the child class define a constructor in order to run a parent constructor, a call to parent::__ construct() within the child constructor is required is required.if the child does not define a constructor then it may be inherited form the parent class just like a normal class method (if it was not declared as private):
+
+Jqery
+a) What is jQuery?
+=>jQuery is a lightweight, "write less, do more", JavaScript library.
+
+=>The purpose of jQuery is to make it much easier to use JavaScript on your website.
+
+(b)How are JavaScript and jQuery different?
+=>jquery:
+1.	    It is a javascript library.
+
+2.	The user only need to write the required jQuery code.
+3.	jQuery creates DOM faster.
+4.	It is less time-consuming.
+=> javascript:
+1.	   It is a dynamic and interpreted web-development programming language.
+2.	The user needs to write the complete js code.
+3.	It is more time consuming as the whole script is written.
+4.	JavaScript is slow in creating DOM.
+(c) Document Load Vs Window. Load() jQuery.
+=> Document load:
+●	   The ready() method is used to make a function available after the document is loaded. 
+●	Whatever code you write inside the $( document ).ready() method will run once the page DOM is ready to execute JavaScript code.
+=>  window load():
+●	  The code which gets included inside $( window ).on( "load", function() { ... }) runs only once the entire page is ready (not only DOM).
+
+(d)What is the difference between prop and attr?
+=> prop()
+●	   This method returns the current value.
+●	This method is mainly used when the user wants to change the value for an HTML tag’s attribute.
+●	It changes properties for that HTML tag as per the DOM tree.It changes attributes for that HTML tag.
+Its syntax is -:$(selector).prop(property)
+●	 It takes three parameters Property , value and a function.     
+
+   => attr()
+●	This method returns the default value.
+●	 This method is mainly used to set the default value for an HTML tag’s attribute.
+●	It changes attributes for that HTML tag.
+Its syntax is -:
+$(selector).attr(attribute).
+●	 It takes three parameters an attribute, value, and a function.
+  
+(e)Explain Difference Between JQuery And JavaScript?
+=> javascript:
+●	JavaScript is a programming language.
+●	There are no special symbols to define JavaScript like JQuery.
+●	JavaScript uses JIT[Just in Time Compiler] which is a combination of interpreter and Compile and is written in C. It’s a combination of ECMA script and DOM (Document Object Model).
+●	JavaScript is a language, obviously, it would be heavier than JQuery.
+●	JavaScript is an independent language and can exist on its own.
+=>jquery :
+●	jQuery is an Application Programming Interface (API).
+●	 There are special symbols to define JQuery.
+●	While JQuery Uses the resources that are provided by JavaScript to make things easier. It is a lightweight JavaScript library. It has only the DOM.
+●	While JQuery is a library, derived from JavaScript hence, it is lightweight.
+●	JQuery is a JavaScript library. It would not have been invented had JavaScript was not there. jQuery is still dependent on JavaScript as it has to be converted to JavaScript for the browser in-built JavaScript engine to interpret and run it.
+(f) How We Can Select The Specified <li> Element From The ListOf <li> 
+Elements In <ul>?
+=>
+
+
+
+     
