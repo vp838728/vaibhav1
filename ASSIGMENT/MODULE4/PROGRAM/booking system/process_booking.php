@@ -2,6 +2,8 @@
 // Retrieve booking data from AJAX request
 $bookingType = $_POST['bookingType'];
 $checkinDate = $_POST['checkinDate'];
+$checkoutDate = $_POST['checkoutDate'];
+
 $slot = $_POST['slot'];
 
 // echo $bookingType;
@@ -27,7 +29,7 @@ if ($conn->connect_error) {
     exit;
 }
 
-$sql = "INSERT INTO bookings (booking_type, checkin_date, slot) VALUES ('$bookingType', '$checkinDate', '$slot')";
+$sql = "INSERT INTO bookings (booking_type, checkin_date,checkout_date, slot) VALUES ('$bookingType', '$checkinDate', '$checkoutDate','$slot')";
 // echo $sql;
 // exit;
 

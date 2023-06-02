@@ -11,11 +11,14 @@
     <div style="background:#213ebf;height:100px;width:100px;position:absolute;"></div>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
 <script>
-     $(document).ready(function(){
-        $("button").click(function(){
+     $("button").click(function(){
+  $("div").animate({
+    height: 'toggle'
+  });
+  $("button").click(function(){
             $("div").animate({left:'500px'});
         })
-     })
+}); 
     </script>
 
 </body>
