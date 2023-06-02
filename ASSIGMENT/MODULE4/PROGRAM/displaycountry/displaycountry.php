@@ -13,6 +13,21 @@
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 
   <script src="jquery-2.1.3.min.js" type="text/javascript"></script>
+  <style>
+    .container{
+        border:2px solid black;
+        margin-top:35px;
+
+    }
+    .heder:hover{
+      color:red;
+    }
+    .heder{
+        text-align:center;
+    }
+    
+
+    </style>
 </head>
 
 <body>
@@ -33,16 +48,13 @@
   ?>
 
       </select>
+</br>
       <select id="sid" name="sid" class="form-select" aria-label="Default select example">
         <option selected>---select state</option>
     
 
       </select>
-      <!-- <select id="ccid" name="ccid"  class="form-select" aria-label="Default select example">
-        <option selected>---select state</option>
-    
-
-      </select> -->
+</br>
       <div class="form-group">
         <input type="submit" name="submit" class="btn btn-primary">
       </div>

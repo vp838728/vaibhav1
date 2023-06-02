@@ -35,6 +35,7 @@
     $(document).ready(function () {
 	
         $('#form1').bValidator();
+       
     });
 	</script> 
 <script>
@@ -43,7 +44,7 @@
 
 <body>
     <form action="" id="form1" method="post">
-        <div class="container col- md-4">
+        <div class="container col-md-8">
             <h2 class="heder">form validation using jquery</h2>
         <div class="form-group">
             <label>first name:</label>
