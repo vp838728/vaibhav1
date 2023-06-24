@@ -24,8 +24,12 @@
         <br>
         <label id="slot-label" style="display: none;">Slot:</label>
         <select id="slot" class="form-control" style="display: none;">
-            <option value="morning">Morning (8AM to 6PM)</option>
-            <option value="evening">Evening (7PM to Morning 7AM)</option>
+            <option value="morning">Morning (8AM to 12PM)</option>
+            <option value="afternoon">Aternoon (12PM to 4PM)</option>
+            <option value="evening">Evening (4PM to 8PM)</option>
+            <option value="night">Night (8PM to 12AM)</option>
+
+
         </select>
         <br>
         <button id="submit-button" class="btn btn-primary">Book Room</button>
