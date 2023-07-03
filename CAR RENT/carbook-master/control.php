@@ -22,15 +22,27 @@ class control extends model
 
                include_once('car2.php');
                break;
+               case '/viewbooking':
+                echo"<pre>";
+                print_r($_SESSION);
+                exit;
+                if (isset($_SESSION['user_id'])) {
+                    if (isset($_SESSION['book_id'])) {
+                        $where = array("user_id" => $_SESSION['user_id']);
+                        $res = $this->select_where('booking1', $where);
+                        $fetch = $res->fetch_object();
+                        include_once('viewbooking.php');
+                    } else {
+                        // User has not booked a car
+                        echo "<script>alert('please first choose area for booking ');window.location='booking1';</script>";
+                    }
+                } else {
+                    // User is not logged in
+                    echo "<script>alert('please first login');window.location='login';</script>";
+                }
+                break;
+            
 
-            case'/viewbooking':
-                // $booking_arr=$this->select('booking1');
-                $where=array("user_id"=>$_SESSION['user_id']);
-                $res=$this->select_where('booking1',$where);
-                
-                $fetch=$res->fetch_object();
-
-                    include_once('viewbooking.php');
                     break;
 
              case'/booking':
@@ -292,11 +304,19 @@ class control extends model
                 include_once('sign.php');
                 break;
                 case'/profile':
-                    // $where=array("user_id"=>$user_id);
+                    if(isset($_SESSION['user_id'])){
+                        // $where=array("user_id"=>$user_id);
                      $where=array("user_id"=>$_SESSION['user_id']);
                     $res=$this->select_where('user1',$where);
                     
                     $fetch=$res->fetch_object();
+                }else{
+                                
+                echo "<script>
+                window.location='index';
+                </script>"; 
+                }
+
                     include_once('profile.php');
                     break;
                     case '/edit':

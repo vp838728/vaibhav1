@@ -27,6 +27,11 @@
 		<script src="js/jquery-2.1.3.min.js" type="text/javascript"></script>
 	
 	<script src="js/jquery.bvalidator.js" type="text/javascript"></script>
+	<link href="css/bvalidator.css" type="text/css" rel="stylesheet" />
+
+  
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
+ 
 
 	<!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
 	<!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -60,7 +65,7 @@
 									<div class="form-group">
 										<span class="form-label">Name</span>
 										<input class="form-control" type="text" name="name" data-bvalidtor="required,alpha"
-											placeholder="Enter your name">
+											placeholder="Enter your name"data-bvalidator="required,alpha">
 									</div>
 								</div>
 								<div class="col-sm-6">
