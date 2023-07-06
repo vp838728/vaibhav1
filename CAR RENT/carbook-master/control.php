@@ -23,9 +23,7 @@ class control extends model
                include_once('car2.php');
                break;
                case '/viewbooking':
-                echo"<pre>";
-                print_r($_SESSION);
-                exit;
+               
                 if (isset($_SESSION['user_id'])) {
                     if (isset($_SESSION['book_id'])) {
                         $where = array("user_id" => $_SESSION['user_id']);
