@@ -10,7 +10,7 @@ $a='{"name": "vaibhav",
     {
         "publisher":"litle brown"
     }
-}';
+}'; 
 $j1=json_decode($a,true);
 array_walk_recursive($j1,"vaibhav");
 ?>
