@@ -1,0 +1,4 @@
+ASSIGNMENT/ZIP/MODULE9.zip filter=lfs diff=lfs merge=lfs -text
+*MODULE9.zip filter=lfs diff=lfs merge=lfs -text
+*MODULE7.zip filter=lfs diff=lfs merge=lfs -text
+*zip.zip filter=lfs diff=lfs merge=lfs -text
